@@ -1,0 +1,56 @@
+@keyframes slideInFromTop {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  
+
+  .navbar {
+    animation: slideInFromTop 0.5s ease-out, bounce 2s infinite;
+    background-color: #f7926c !important;
+    box-shadow: 0 4px 6px rgba(208, 61, 61, 0.1);
+  }
+
+  .navbar-brand {
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .navbar-nav .nav-link {
+    color: #fff;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #222b2f;
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='%23ffd700' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  li:hover{
+    border:  2px solid rgb(49, 238, 109);
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    color: black;
+  }
+  .logos:hover {
+    animation: rotate360 1s linear infinite; /* Apply the rotation animation */
+    content: url('https://cdn-icons-png.flaticon.com/128/11796/11796759.png');
+}
+
+@keyframes rotate360 {
+    from {
+        transform: rotate(0deg); /* Start rotation from 0 degrees */
+    }
+    to {
+        transform: rotate(360deg); /* End rotation at 360 degrees */
+    }
+}

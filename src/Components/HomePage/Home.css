@@ -1,0 +1,14 @@
+.Header-sec {
+    background-image: url('https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/037/488/original/FP_Academy.jpeg');
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+}
+
+@media (max-width: 768px) {
+    /* Adjust card layout for small screens */
+    .Header-sec {
+      background-image: url('https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/037/489/original/FP_Academy_MB.jpeg?1687337973');
+      height: 400px !important;
+      
+    }
+  }
