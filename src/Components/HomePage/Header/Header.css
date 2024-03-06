@@ -1,13 +1,15 @@
 .Header-sec {
-    background-image: url('https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/037/488/original/FP_Academy.jpeg');
+    background-image: url('https://res.cloudinary.com/dzhl7dmsp/image/upload/v1709644354/bkbtmmcmfjadoc03cqad.jpg');
     background-size: cover; /* Cover the entire container */
     background-position: center; /* Center the background image */
+    height: 60vh;
+    width: 100% !important;
 }
 
 @media (max-width: 768px) {
     /* Adjust card layout for small screens */
     .Header-sec {
-      background-image: url('https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/037/489/original/FP_Academy_MB.jpeg?1687337973');
+      background-image: url('https://res.cloudinary.com/dzhl7dmsp/image/upload/v1709644098/x2ep4mhxygww2huphu0r.jpg');
       height: 400px !important;
       
     }

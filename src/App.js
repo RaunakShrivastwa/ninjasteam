@@ -1,7 +1,7 @@
 import AboutMain from "./Components/AboutPage/AboutMain";
 import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
 import NavigationMenu from "./Components/NavigationBar/NavigationMenu";
-import Home from "./Components/HomePage/Home";
+import Home from "./Components/HomePage/Home/Home";
 
 function App() {
   return (
