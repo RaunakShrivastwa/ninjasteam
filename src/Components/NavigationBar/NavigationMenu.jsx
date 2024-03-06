@@ -50,7 +50,7 @@ function NavigationMenu() {
                             </li>
 
                             <li className="nav-item">
-                                <Link className="nav-link" to="#" onClick={(e) => handleItemClick(e, "Courses")} style={getActiveStyles("Courses")}>Courses</Link>
+                                <Link className="nav-link" to="/can/course" onClick={(e) => handleItemClick(e, "Courses")} style={getActiveStyles("Courses")}>Courses</Link>
                             </li>
 
                             <li className="nav-item">
