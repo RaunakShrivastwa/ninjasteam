@@ -48,15 +48,9 @@ function NavigationMenu() {
                             <li className="item nav-item">
                                 <Link className="nav-link" to="#" onClick={(e) => handleItemClick(e, "All Jobs")} style={getActiveStyles("All Jobs")}>All Jobs</Link>
                             </li>
-
-<<<<<<<<< Temporary merge branch 1
                             <li className="nav-item">
                                 <Link className="nav-link" to="/can/course" onClick={(e) => handleItemClick(e, "Courses")} style={getActiveStyles("Courses")}>Courses</Link>
-=========
-                            <li className="item nav-item">
-                                <Link className="nav-link" to="#" onClick={(e) => handleItemClick(e, "Courses")} style={getActiveStyles("Courses")}>Courses</Link>
->>>>>>>>> Temporary merge branch 2
-                            </li>
+                            </li>                          
 
                             <li className="item nav-item">
                                 <Link className="nav-link" to="/can/about" onClick={(e) => handleItemClick(e, "About Us")} style={getActiveStyles("About Us")}>About Us</Link>
