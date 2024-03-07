@@ -1,22 +1,22 @@
 import React from 'react'
 
-const CourseHeader = () => {
+const CourseHeader = ({ pageHeading, pageNarration }) => {
     return (
         <>
-            <div class="row mt-5 pt-4">
-                <div class="col-sm-7 mb-3 mb-sm-0">
-                    <div class="card border-0">
-                        <div class="card-body border-0">
-                            <h3 class="card-title fw-bold">Ninjas Course</h3>
-                            <p class="card-text h5">Interactive LIVE & Self-Paced Courses</p>
-                        </div>
+            <div className="row my-5 pt-4">
+                <div className="col-sm-7 mb-3 mb-sm-0">
+                    <div className="card border-0">
+                        <h3 className="card-title fw-bold">{pageHeading}</h3>
+                        <p className="card-text h6">{pageNarration}</p>
                     </div>
                 </div>
-                <div class="col-sm-5 border-0">
-                    <div class="card border-0">
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button class="btn btn-outline-success" type="submit">Search</button>
+                <div className="col-sm-5 border-0">
+                    <div className="card border-0 pt-2">
+                        <form className="d-flex" role="search">
+                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                            <button className="btn btn-outline-success" type="submit">
+                                <i className="bi bi-search"></i>
+                            </button>
                         </form>
                     </div>
                 </div>

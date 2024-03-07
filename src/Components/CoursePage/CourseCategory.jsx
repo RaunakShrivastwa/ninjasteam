@@ -1,7 +1,7 @@
 import React from 'react'
 
 const CourseCategory = ({ heading }) => {
-    var caretogyData = [,{
+    var caretogyData = [{
         image: "/Image/algorithms.png",
         name: "DSA & Algorithms",
         color: "#F39893"
@@ -29,20 +29,20 @@ const CourseCategory = ({ heading }) => {
 
     return (
         <>
-            <h3 class='fw-bold mt-4 mb-3'>{heading}</h3>
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mb-4">
+            <h4 className='fw-bold mt-4 mb-3'>{heading}</h4>
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mb-5">
                 {
                     caretogyData.map((data) => (
-                        <div class="col">
-                            <div class="card h-100 py-2 text-light" style={{background: `${data.color}`}}>
-                                <div class="d-flex justify-content-center align-items-center py-0 my-0 h-100">
-                                    <div class="col-3">
-                                        <div class="d-flex justify-content-center">
+                        <div className="col">
+                            <div className="card h-100 py-2 text-light" style={{background: `${data.color}`}}>
+                                <div className="d-flex justify-content-center align-items-center py-0 my-0 h-100">
+                                    <div className="col-3">
+                                        <div className="d-flex justify-content-center">
                                             <img src={data.image} alt={data.name+' image'} style={{ width: '50%' }} />
                                         </div>
                                     </div>
-                                    <div class="col-9">
-                                        <h5 class="card-title fw-bold">{data.name}</h5>
+                                    <div className="col-9">
+                                        <h5 className="card-title fw-bold">{data.name}</h5>
                                     </div>
                                 </div>
                             </div>
