@@ -1,6 +1,7 @@
 import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
 import NavigationMenu from "./Components/NavigationBar/NavigationMenu";
-import Home from "./Components/HomePage/Home";
+import Home from "./Components/HomePage/Home/Home";
+import Course from './Components/CoursePage/Course'
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
       <Router>
         <NavigationMenu />
         <Routes>
-          <Route exact path="/can/home" Component={Home} />
+          <Route exact path="/" Component={Home} />
           <Route exact path="/can/course" Component={Course} />
         </Routes>
       </Router>

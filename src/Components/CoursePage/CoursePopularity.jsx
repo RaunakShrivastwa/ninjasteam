@@ -1,5 +1,3 @@
-// import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import CourseCard from './CourseCard';
 
