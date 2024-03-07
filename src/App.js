@@ -1,7 +1,9 @@
 import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
 import NavigationMenu from "./Components/NavigationBar/NavigationMenu";
-import Home from "./Components/HomePage/Home";
+
 import Course from "./Components/CoursePage/Course";
+import Home from "./Components/HomePage/Home/Home";
+import ViewAllCourse from "./Components/CoursePage/ViewAllCourse";
 
 function App() {
   return (
@@ -10,7 +12,8 @@ function App() {
         <NavigationMenu />
         <Routes>
           <Route exact path="/can/home" Component={Home} />
-          <Route exact path="/can/course" Component={Course} />
+          <Route exact path="/ourNinja/course" Component={Course} />
+          <Route exact path="/ourNinja/AllCourse" Component={ViewAllCourse} />          
         </Routes>
       </Router>
     </div>

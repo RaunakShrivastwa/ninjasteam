@@ -39,25 +39,24 @@ function NavigationMenu() {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
+                            <li className="item nav-item">
                                 <Link className="nav-link" to="/can/home" onClick={(e) => handleItemClick(e, "Home")} style={getActiveStyles("Home")}>
                                     Home
                                 </Link>
                             </li>
                             {/* for the All Jobs */}
-                            <li className="nav-item">
+                            <li className="item nav-item">
                                 <Link className="nav-link" to="#" onClick={(e) => handleItemClick(e, "All Jobs")} style={getActiveStyles("All Jobs")}>All Jobs</Link>
                             </li>
-
                             <li className="nav-item">
-                                <Link className="nav-link" to="/can/course" onClick={(e) => handleItemClick(e, "Courses")} style={getActiveStyles("Courses")}>Courses</Link>
+                                <Link className="nav-link" to="/ourNinja/course" onClick={(e) => handleItemClick(e, "Courses")} style={getActiveStyles("Courses")}>Courses</Link>
                             </li>
 
-                            <li className="nav-item">
+                            <li className="item nav-item">
                                 <Link className="nav-link" to="/can/about" onClick={(e) => handleItemClick(e, "About Us")} style={getActiveStyles("About Us")}>About Us</Link>
                             </li>
 
-                            <li className="nav-item">
+                            <li className="item nav-item">
                                 <Link className="nav-link" to="#" onClick={(e) => handleItemClick(e, "Blogs")} style={getActiveStyles("Blogs")}>Blogs</Link>
                             </li>
                         </ul>

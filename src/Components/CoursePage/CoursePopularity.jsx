@@ -29,8 +29,8 @@ const CoursePopularity = ({ heading }) => {
 
     return (
         <>
-            <h3 class='fw-bold mt-4 mb-3'>{heading}</h3>
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mb-5">
+            <h4 className='fw-bold mt-4 mb-3'>{heading}</h4>
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mb-5">
                 {
                     cardData.map((data) => (
                         <CourseCard courseData={data} />
