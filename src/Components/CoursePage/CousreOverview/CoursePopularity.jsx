@@ -1,5 +1,5 @@
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import CourseCard from './CourseCard';
+import CourseCard from '../CourseCommon/CourseCard';
 
 const CoursePopularity = ({ heading }) => {
     var cardData = [{

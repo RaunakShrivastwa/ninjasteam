@@ -49,6 +49,9 @@ function NavigationMenu() {
                                 <Link className="nav-link" to="#" onClick={(e) => handleItemClick(e, "All Jobs")} style={getActiveStyles("All Jobs")}>All Jobs</Link>
                             </li>
                             <li className="nav-item">
+                                <Link className="nav-link" to="/Ninja/course" onClick={(e) => handleItemClick(e, "Courses")} style={getActiveStyles("Courses")}>Courses</Link>
+                            </li> 
+                            <li>       
                                 <Link className="nav-link" to="/ourNinja/course" onClick={(e) => handleItemClick(e, "Courses")} style={getActiveStyles("Courses")}>Courses</Link>
                             </li>
 

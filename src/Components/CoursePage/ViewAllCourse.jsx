@@ -1,5 +1,5 @@
 import React from 'react'
-import CourseHeader from './CourseHeader';
+import CourseHeader from './CourseCommon/CourseHeader';
 const ViewAllCourse = () => {
   return (
     <>
