@@ -18,9 +18,9 @@ function Home() {
             </div>
 
             {/* form */}
-            <div class="col-sm-6 col-md-4 mt-3 rounded register end-0 position-fixed py-5">
-              <div class="card rounded">
-                <div class=" card-body d-none rounded d-md-block  bg-white shadow  ">
+            <div class="col-sm-6 col-md-4 mt-3 rounded register  end-0  py-5"  >
+              <div class="card rounded position-fixed" style={{zIndex:"10000"}}>
+                <div class=" card-body d-none rounded d-md-block bg-white shadow " >
                   <EnquirePage />
                 </div>
               </div>
