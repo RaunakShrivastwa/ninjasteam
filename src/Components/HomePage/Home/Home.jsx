@@ -8,6 +8,8 @@ import About from '../About/About'
 import Curriculum from '../Curriculum/Curriculum'
 import Certificate from '../Certificate/Certificate'
 import Course from '../Upcoming/Course'
+import MentorShip from '../Mentorship/MentorShip'
+import Footer from '../../MainFooter/Footer'
 
 function Home() {
   return (
@@ -25,12 +27,15 @@ function Home() {
                 <Curriculum />
                 <Certificate />
                 <Course />
+                <MentorShip />
               </div>
             </div>
-          </div>       
+          </div>         
         </div>
-      </div>
+      </div> 
+      <Footer />
       <Licence />
+     
     </>
   )
 }

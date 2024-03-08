@@ -11,8 +11,8 @@ function App() {
         <NavigationMenu />
         <Routes>
           <Route exact path="/" Component={Home} />
-          <Route exact path="/can/course" Component={Course} />
-          <Route exact path="/ourNinja/AllCourses" Component={ViewAllCourses}/>
+          <Route exact path="/ninjas/course" Component={Course} />
+          <Route exact path="/ninjas/AllCourses" Component={ViewAllCourses}/>
         </Routes>
       </Router>
     </div>

@@ -32,7 +32,7 @@ function NavigationMenu() {
             <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top mb-3">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="#">
-                        <img className='logos' width='30px' src="https://cdn-icons-png.flaticon.com/128/1828/1828231.png" alt="" srcset="" />
+                        <img className='logos' width='40px' src="/image/icon/ninja.png" alt="" srcset="" />
                     </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -49,11 +49,11 @@ function NavigationMenu() {
                                 <Link className="nav-link" to="#" onClick={(e) => handleItemClick(e, "All Jobs")} style={getActiveStyles("All Jobs")}>All Jobs</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/can/course" onClick={(e) => handleItemClick(e, "Courses")} style={getActiveStyles("Courses")}>Courses</Link>
+                                <Link className="nav-link" to="/ninjas/course" onClick={(e) => handleItemClick(e, "Courses")} style={getActiveStyles("Courses")}>Courses</Link>
                             </li>                          
 
                             <li className="item nav-item">
-                                <Link className="nav-link" to="/can/about" onClick={(e) => handleItemClick(e, "About Us")} style={getActiveStyles("About Us")}>About Us</Link>
+                                <Link className="nav-link" to="/ninjas/about" onClick={(e) => handleItemClick(e, "About Us")} style={getActiveStyles("About Us")}>About Us</Link>
                             </li>
 
                             <li className="item nav-item">
