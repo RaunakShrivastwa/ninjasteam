@@ -1,8 +1,8 @@
-import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavigationMenu from "./Components/NavigationBar/NavigationMenu";
 import Home from "./Components/HomePage/Home/Home";
 import Course from "./Components/CoursePage/Course";
-import ViewAllCourses from './Components/CoursePage/ViewAllCourse'
+import ViewAllCourses from "./Components/CoursePage/ViewAllCourse";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         </Routes>
       </Router>
     </div>
-  )
+  );
 }
 
 export default App;

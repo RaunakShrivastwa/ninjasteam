@@ -40,7 +40,7 @@ function NavigationMenu() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="item nav-item">
-                                <Link className="nav-link" to="/" onClick={(e) => handleItemClick(e, "Home")} style={getActiveStyles("Home")}>
+                                <Link className="nav-link" to="/can/home" onClick={(e) => handleItemClick(e, "Home")} style={getActiveStyles("Home")}>
                                     Home
                                 </Link>
                             </li>
@@ -49,11 +49,11 @@ function NavigationMenu() {
                                 <Link className="nav-link" to="#" onClick={(e) => handleItemClick(e, "All Jobs")} style={getActiveStyles("All Jobs")}>All Jobs</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/ninjas/course" onClick={(e) => handleItemClick(e, "Courses")} style={getActiveStyles("Courses")}>Courses</Link>
-                            </li>                          
+                                <Link className="nav-link" to="/ourNinja/course" onClick={(e) => handleItemClick(e, "Courses")} style={getActiveStyles("Courses")}>Courses</Link>
+                            </li>
 
                             <li className="item nav-item">
-                                <Link className="nav-link" to="/ninjas/about" onClick={(e) => handleItemClick(e, "About Us")} style={getActiveStyles("About Us")}>About Us</Link>
+                                <Link className="nav-link" to="/can/about" onClick={(e) => handleItemClick(e, "About Us")} style={getActiveStyles("About Us")}>About Us</Link>
                             </li>
 
                             <li className="item nav-item">
