@@ -63,7 +63,7 @@ function NavigationMenu() {
                         </ul>
                         <form className="d-flex">
                             <button className='btn  px-4 shadow-none rounded me-5' style={{backgroundColor:'#f0ed60'}}>Login</button>
-                            <img width='30px' style={{ borderRadius: '50%' }} src="https://res.cloudinary.com/dzhl7dmsp/image/upload/v1709408497/rqvcmfmiujmk8xs3iwkt.jpg" alt="" srcset="" />
+                            <img width='40px' style={{ borderRadius: '60%' }} src="https://res.cloudinary.com/dzhl7dmsp/image/upload/v1709408497/rqvcmfmiujmk8xs3iwkt.jpg" alt="" srcset="" />
                         </form>
                     </div>
                 </div>
