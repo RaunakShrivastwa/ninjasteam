@@ -20,8 +20,6 @@ function App() {
           <Route exact path="/Ninja/AllCourse" Component={ViewAllCourse} />
           <Route exact path="/Ninja/CourseDetail" Component={CourseDetails} />
           <Route exact path="/" Component={Home} />
-          <Route exact path="/ninja/course" Component={Course} />
-          <Route exact path="/ninjas/AllCourses" Component={ViewAllCourses}/>
         </Routes>
       </Router>
     </div>
