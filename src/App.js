@@ -8,7 +8,7 @@ import CourseDetails from "./Components/CoursePage/CourseDetails/CourseDetails";
 import ViewAllCourses from "./Components/CoursePage/ViewAllCourse";
 
 function App() {
-  const data=["jitendra", "apple", "boy"]
+  const data=["jitendra", "apple", "boy","shubham kumar"]
   return (
     <div>
      
@@ -16,12 +16,11 @@ function App() {
         <NavigationMenu />
         {data.map((item)=>(<b>{item}</b>))}
         <Routes>
-          <Route exact path="/can/home" Component={Home} />
-          <Route exact path="/Ninja/course" Component={Course} />
+          <Route exact path="/can/home" Component={Home} />       
           <Route exact path="/Ninja/AllCourse" Component={ViewAllCourse} />
           <Route exact path="/Ninja/CourseDetail" Component={CourseDetails} />
           <Route exact path="/" Component={Home} />
-          <Route exact path="/ninjas/course" Component={Course} />
+          <Route exact path="/ninja/course" Component={Course} />
           <Route exact path="/ninjas/AllCourses" Component={ViewAllCourses}/>
         </Routes>
       </Router>
