@@ -2,27 +2,27 @@ import React from 'react'
 
 const CourseCategory = ({ heading }) => {
     var caretogyData = [{
-        image: "/Image/algorithms.png",
+        image: "/Image/Category/algorithms.png",
         name: "DSA & Algorithms",
         color: "#F39893"
     },{
-        image: "/Image/data-science.png",
+        image: "/Image/Category/data-science.png",
         name: "Data Science",
         color: "#3079AC"
     },{
-        image: "/Image/hiring.png",
+        image: "/Image/Category/hiring.png",
         name: "Interview and prepration plan",
         color: "#F5A572"
     },{
-        image: "/Image/backend.png",
+        image: "/Image/Category/backend.png",
         name: "Backend Development",
         color: "#21898C"
     },{
-        image: "/Image/coding.png",
+        image: "/Image/Category/coding.png",
         name: "Fullstack Development",
         color: "#C9A8CE"
     },{
-        image: "/Image/code.png",
+        image: "/Image/Category/code.png",
         name: "Web Development",
         color: "#627A92"
     }]

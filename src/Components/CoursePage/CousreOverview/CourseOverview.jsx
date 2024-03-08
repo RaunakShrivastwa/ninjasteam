@@ -1,8 +1,8 @@
 import React from 'react'
-import CourseHeader from './CourseHeader';
-import CoursePopularity from './CoursePopularity';
+import CourseHeader from '../CourseCommon/CourseHeader';
 import CourseCategory from './CourseCategory';
 import CourseType from './CourseType';
+import CoursePopularity from './CoursePopularity';
 
 const CourseOverview = () => {
     return (
@@ -12,9 +12,9 @@ const CourseOverview = () => {
                 <div class='px-4'>
                     <CoursePopularity heading="Popular Now" />
                     <CourseCategory heading="Course Categories" />
-                    <CourseType heading="Live Courses" link="/ourNinja/AllCourse" />
-                    <CourseType heading="Self-Paced Courses" link="/ourNinja/AllCourse" />
-                    <CourseType heading="Build Your Foundations" link="/ourNinja/AllCourse" />
+                    <CourseType heading="Live Courses" />
+                    <CourseType heading="Self-Paced Courses" />
+                    <CourseType heading="Build Your Foundations" />
                 </div>
             </div>
         </>

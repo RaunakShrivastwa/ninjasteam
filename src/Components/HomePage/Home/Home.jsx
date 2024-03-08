@@ -5,12 +5,15 @@ import Licence from '../Licence/Licence'
 import AboutInstructor from '../AboutInstructor/AboutInstructor'
 import Freeclass from '../Freeclass/Freeclass'
 import About from '../About/About'
+import Curriculum from '../Curriculum/Curriculum'
+import Certificate from '../Certificate/Certificate'
+import Course from '../Upcoming/Course'
 
 function Home() {
   return (
     <>
       <Header />
-      <div className='container-fluid p-3 mb-3'>
+      <div className='container p-3 mb-3'>
         <div className="row">
           <div className="col-sm-6 col-md-8">
             <div className="card border-0">
@@ -19,6 +22,9 @@ function Home() {
                 <AboutInstructor />
                 <div className='mt-4 mb-4'><Freeclass /></div>
                 <About />
+                <Curriculum />
+                <Certificate />
+                <Course />
               </div>
             </div>
           </div>       

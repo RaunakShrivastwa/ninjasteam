@@ -23,7 +23,7 @@ const CourseCard = ({ courseData }) => {
                         <h5 className="card-title d-flex justify-content-between align-items-center m-0 p-0">
                             <span>₹{courseData.originalPrice}    <del className="text-muted"> ₹{courseData.discountedPrice}</del></span>
 
-                            <button type="button" className="btn btn-outline-success">Explore</button>
+                            <button type="button" className="btn btn-outline-success px-3 py-1">Explore</button>
                         </h5>
                     </div>
                 </div>

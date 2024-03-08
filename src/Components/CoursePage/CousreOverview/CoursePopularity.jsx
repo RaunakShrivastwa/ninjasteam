@@ -1,7 +1,5 @@
-// import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import CourseCard from './CourseCard';
+import CourseCard from '../CourseCommon/CourseCard';
 
 const CoursePopularity = ({ heading }) => {
     var cardData = [{

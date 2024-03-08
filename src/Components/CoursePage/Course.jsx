@@ -1,5 +1,5 @@
 import React from 'react';
-import CourseOverview from './CourseOverview';
+import CourseOverview from './CousreOverview/CourseOverview';
 
 const Course = () => {
     return (
