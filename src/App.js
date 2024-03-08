@@ -5,10 +5,13 @@ import Course from "./Components/CoursePage/Course";
 import ViewAllCourses from "./Components/CoursePage/ViewAllCourse";
 
 function App() {
+  const data=["jitendra", "apple", "boy"]
   return (
     <div>
+     
       <Router>
         <NavigationMenu />
+        {data.map((item)=>(<b>{item}</b>))}
         <Routes>
           <Route exact path="/" Component={Home} />
           <Route exact path="/ninjas/course" Component={Course} />
