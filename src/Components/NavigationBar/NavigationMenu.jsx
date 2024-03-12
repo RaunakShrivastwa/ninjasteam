@@ -62,7 +62,7 @@ function NavigationMenu() {
                             </li>
                         </ul>
                         <form className="d-flex">
-                            <button className='btn  px-4 shadow-none rounded me-5' style={{backgroundColor:'#f0ed60'}}>Login</button>
+                            <Link to='/ninja/auth/login'><button className='btn  px-4 shadow-none rounded me-5' style={{backgroundColor:'#f0ed60'}}>Login</button></Link>
                             <img width='30px' style={{ borderRadius: '50%' }} src="https://res.cloudinary.com/dzhl7dmsp/image/upload/v1709408497/rqvcmfmiujmk8xs3iwkt.jpg" alt="" srcset="" />
                         </form>
                     </div>

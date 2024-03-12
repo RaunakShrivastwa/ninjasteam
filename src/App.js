@@ -6,22 +6,26 @@ import ViewAllCourse from "./Components/CoursePage/ViewAllCourse";
 import Home from "./Components/HomePage/Home/Home";
 import CourseDetails from "./Components/CoursePage/CourseDetails/CourseDetails";
 import ViewAllCourses from "./Components/CoursePage/ViewAllCourse";
+import LoginPage from './Components/Auth/Login/LoginOrSignup';
+import Signup from './Components/Auth/Login/SignUp';
+import LandingDash from "./Components/Dashbord/LandingDash/LandingDash";
+
 
 function App() {
-  const data=["jitendra", "apple", "boy","shubham kumar"]
   return (
-    <div>
+    <div className="">
      
       <Router>
-        <NavigationMenu />
-        {data.map((item)=>(<b>{item}</b>))}
+        {/* <NavigationMenu /> */}
         <Routes>
           <Route exact path="/can/home" Component={Home} />       
-          <Route exact path="/Ninja/AllCourse" Component={ViewAllCourse} />
-          <Route exact path="/Ninja/CourseDetail" Component={CourseDetails} />
+          <Route exact path="/ninja/CourseDetail" Component={CourseDetails} />
           <Route exact path="/" Component={Home} />
           <Route exact path="/ninja/course" Component={Course} />
           <Route exact path="/ninjas/AllCourses" Component={ViewAllCourses}/>
+          <Route exact path="/ninja/auth/login" Component={LoginPage}/>
+          <Route exact path="/ninja/auth/signup" Component={Signup}/>
+          <Route exact path="/ninja/landing/dash" Component={LandingDash}/>
         </Routes>
       </Router>
     </div>

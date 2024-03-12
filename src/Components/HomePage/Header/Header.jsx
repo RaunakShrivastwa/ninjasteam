@@ -12,19 +12,19 @@ function Home() {
         <div className=' p-3'>
           <div class="row">
             {/* for transparent */}
-            <div class="card bg-transparent border-0 col-md-8 col-sm-12">
-              <div class="card-body">
+            <div class="card border-0 bg-transparent border-0 col-md-8 col-sm-12">
+              <div class="card-body border-0">
               </div>
             </div>
 
             {/* form */}
-            <div class="col-sm-6 col-md-4 mt-3 rounded register  end-0  py-5"  >
-              <div class="card rounded position-fixed" style={{zIndex:"10000"}}>
-                <div class=" card-body d-none rounded d-md-block bg-white shadow " >
+            <div class="col-sm-6 col-md-4 mt-3 rounded register position-fixed  end-0  py-5" style={{zIndex:'100000'}} >
+              <div class="card rounded border-0">
+                <div class="border-0 card-body d-none rounded d-md-block bg-white shadow " >
                   <EnquirePage />
                 </div>
               </div>
-            </div>
+            </div> 
           </div>
         </div>
       </div>
