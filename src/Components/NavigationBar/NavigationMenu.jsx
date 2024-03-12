@@ -48,10 +48,10 @@ function NavigationMenu() {
                             <li className="item nav-item">
                                 <Link className="nav-link" to="#" onClick={(e) => handleItemClick(e, "All Jobs")} style={getActiveStyles("All Jobs")}>All Jobs</Link>
                             </li>
+
                             <li className="nav-item">
-                                <Link className="nav-link" to="/Ninja/Course" onClick={(e) => handleItemClick(e, "Courses")} style={getActiveStyles("Courses")}>Courses</Link>
+                                <Link className="nav-link" to="/ninja/course" onClick={(e) => handleItemClick(e, "Courses")} style={getActiveStyles("Courses")}>Courses</Link>
                             </li> 
-                          
 
                             <li className="item nav-item">
                                 <Link className="nav-link" to="/can/about" onClick={(e) => handleItemClick(e, "About Us")} style={getActiveStyles("About Us")}>About Us</Link>
@@ -62,8 +62,8 @@ function NavigationMenu() {
                             </li>
                         </ul>
                         <form className="d-flex">
-                            <button className='btn  px-4 shadow-none rounded me-5' style={{backgroundColor:'#f0ed60'}}>Login</button>
-                            <img width='40px' style={{ borderRadius: '60%' }} src="https://res.cloudinary.com/dzhl7dmsp/image/upload/v1709408497/rqvcmfmiujmk8xs3iwkt.jpg" alt="" srcset="" />
+                            <Link to='/ninja/auth/login'><button className='btn  px-4 shadow-none rounded me-5' style={{backgroundColor:'#f0ed60'}}>Login</button></Link>
+                            <img width='30px' style={{ borderRadius: '50%' }} src="https://res.cloudinary.com/dzhl7dmsp/image/upload/v1709408497/rqvcmfmiujmk8xs3iwkt.jpg" alt="" srcset="" />
                         </form>
                     </div>
                 </div>

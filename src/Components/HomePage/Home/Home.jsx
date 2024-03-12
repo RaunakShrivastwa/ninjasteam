@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import Header from '../Header/Header'
 import Content from '../Content/Content'
 import Licence from '../Licence/Licence'
@@ -10,10 +9,12 @@ import Certificate from '../Certificate/Certificate'
 import Course from '../Upcoming/Course'
 import MentorShip from '../Mentorship/MentorShip'
 import Footer from '../../MainFooter/Footer'
+import NavigationMenu from '../../NavigationBar/NavigationMenu'
 
 function Home() {
   return (
     <>
+    <NavigationMenu />
       <Header />
       <div className='container p-3 mb-3'>
         <div className="row">

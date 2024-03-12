@@ -5,7 +5,7 @@ import React from 'react';
 const CourseDetailsBanner = () => {
     return (
         <>
-            <div className="row row-cols-1 row-cols-md-2 g-2 my-5 pt-5">
+            <div className="row row-cols-1 row-cols-md-2 g-2 my-5 pt-2">
                 <div className="col">
                     <div className="card h-100 border border-0">
                         <div className="card-body d-flex align-items-center border border-0">

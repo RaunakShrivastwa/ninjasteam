@@ -31,7 +31,7 @@ const CourseType = ({ heading }) => {
         <>
             <h3 className="card-title d-flex justify-content-between align-items-center mt-4 mb-2">
                 <span className="h4 fw-bold">{heading}</span>
-                <a href="/Ninja/AllCourse" className="btn btn-secondary btn btn-sm fw-bold bg-transparent text-dark border-0">View All <img src="/image/arrow.png" alt="arrow" srcset="" style={{ width: '20px' }} /> </a>
+                <a href="/ninjas/AllCourses" className="btn btn-secondary btn btn-sm fw-bold bg-transparent text-dark border-0">View All <img src="/image/arrow.png" alt="arrow" srcset="" style={{ width: '20px' }} /> </a>
             </h3>
 
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mb-5">
