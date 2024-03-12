@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
 import './Header.css'
 import EnquirePage from './EnquirePage';
 
 
 function Home() {
-  const [showToast, setShowToast] = useState(false);
-
   return (
     <>
       <div class='container-fluied mt-5 pt-2 Header-sec'>

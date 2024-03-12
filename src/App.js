@@ -1,8 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NavigationMenu from "./Components/NavigationBar/NavigationMenu";
-
 import Course from "./Components/CoursePage/Course";
-import ViewAllCourse from "./Components/CoursePage/ViewAllCourse";
 import Home from "./Components/HomePage/Home/Home";
 import CourseDetails from "./Components/CoursePage/CourseDetails/CourseDetails";
 import ViewAllCourses from "./Components/CoursePage/ViewAllCourse";
