@@ -10,6 +10,7 @@ import {
 import './login.css'
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 function LoginOrSignup() {
 
@@ -32,11 +33,11 @@ function LoginOrSignup() {
       password: password
     };
     try {
-      const user = await axios.post('http://localhost:8000/user/login', body);
-      console.log("Login User ", user);
+      const user = await axios.post('http://localhost:4000/user/login',body);
+      console.log("Login User ", user.data);
       if (user.status === 200) {
-        localStorage.setItem('Log', JSON.stringify(user.data));
-        history(`/start/${user.data._id}`);
+        Cookies.set('yourData', JSON.stringify(user.data), { expires: 3 }); // Expires in 1 day  
+        history("/");
       } else {
         console.log("Login failed");
       }
@@ -68,7 +69,7 @@ function LoginOrSignup() {
               <MDBInput wrapperClass='mb-4' value={email} onChange={(e) => { setEmail(e.target.value) }} label='Email address' id='form1' type='email' />
               <MDBInput wrapperClass='mb-3' value={password} onChange={(e) => { setPassword(e.target.value) }} label='Password' id='form2' type='password' />
               <div className="text-center pt-1 mb-3 pb-1">
-                <MDBBtn className="mb-4 w-100 gradient-custom-2">Sign in</MDBBtn>
+                <button className="mb-4 w-100 btn gradient-custom-2">Sign in</button>
                 <a className="text-muted" href="#!">Forgot password?</a>
               </div>
             </form>
@@ -94,9 +95,9 @@ function LoginOrSignup() {
               <p className="mb-0">Don't have an account?</p>
 
               <Link className='' to='/ninja/auth/signup'>
-                <MDBBtn outline className='mx-2' color='danger'>
+                <button outline className='mx-2 btn' color='danger'>
                   Sign Up
-                </MDBBtn>
+                </button>
               </Link>
 
             </div>
