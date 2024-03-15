@@ -6,10 +6,8 @@ import {
     MDBCol,
 } from 'mdb-react-ui-kit';
 import './login.css'
-import { Link, json, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import Cookies from 'js-cookie';
-
 function SignUp() {
     const [avtar, setAvtar] = useState('');
     const [name, setName] = useState('');
@@ -30,11 +28,10 @@ function SignUp() {
     const history = useNavigate();
 
     useEffect(() => {
-        if (otp.length == 6) {
-            console.log(otp);
+        if (otp.length === 6) {
             varify();
         }
-    }, [otp])
+    })
 
     const varify = async () => {
         const body = {
@@ -79,7 +76,7 @@ function SignUp() {
         document.getElementById('valide').classList.remove('d-none');
         document.getElementById('invalide').classList.add('d-none');
         try {
-            const resendOtp = await axios.post(`http://localhost:4000/user/resend`)
+            await axios.post(`http://localhost:4000/user/resend`)
         } catch (err) {
             return console.log("there is error ", err);
         }
