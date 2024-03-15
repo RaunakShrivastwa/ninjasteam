@@ -1,5 +1,35 @@
-.slick-slider .slick-track, .slick-slider .slick-list{
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-around !important;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.componayLogos {
+    background-color: black;
+    overflow: hidden;
+    padding: 30px 0;
+    white-space: nowrap;
+}
+
+.componayLogos:hover .loges-slide {
+    animation-play-state: paused;
+}
+
+.loges-slide {
+    display: flex;  /* Change display property to flex */
+    animation: 5s slide infinite linear;
+}
+
+.loges-slide .logoImg {
+    height: 45px;
+    margin: 0 20px;
 }

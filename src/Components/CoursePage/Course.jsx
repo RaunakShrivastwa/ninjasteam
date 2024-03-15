@@ -6,7 +6,7 @@ const Course = () => {
     return (
         <>
           <NavigationMenu />
-            <CourseOverview />
+          <CourseOverview />
         </>
     )
 }

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CourseCard = ({ courseData }) => {
     return (
@@ -21,9 +22,11 @@ const CourseCard = ({ courseData }) => {
 
                     <div className="card-footer bg-transparent border-0 mt-0 pt-0">
                         <h5 className="card-title d-flex justify-content-between align-items-center m-0 p-0">
-                            <span>₹{courseData.originalPrice}    <del className="text-muted"> ₹{courseData.discountedPrice}</del></span>
+                            <span>₹{courseData.originalPrice}
+                                <del className="text-muted"> ₹{courseData.discountedPrice}</del>
+                            </span>
 
-                            <button type="button" className="btn btn-outline-success px-3 py-1">Explore</button>
+                            <Link to="/ninja/CourseDetail" className="btn btn-outline-success px-3 py-1">Explore</Link>
                         </h5>
                     </div>
                 </div>
