@@ -23,7 +23,7 @@ function App() {
           <Route exact path="/ninja/auth/signup" Component={Signup}/>
           <Route exact path="/ninja/landing/dash" Component={LandingDash}/>
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </div>
   );

@@ -1,0 +1,25 @@
+/* Faculty.css */
+
+.faculty-container {
+    overflow: hidden;
+  }
+  
+  .moving-row {
+    display: flex;
+    animation: moveRow linear infinite;
+    animation-duration: 10s; /* Change this value to adjust the speed */
+  }
+  
+  .paused {
+    animation-play-state: paused;
+  }
+  
+  @keyframes moveRow {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  

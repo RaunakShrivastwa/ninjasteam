@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom'
 function Footer() {
     return (
         <div className=' containe-fluied' style={{ backgroundColor: '#202738' }}>
-            <div className='container '>
+            <div className='container p-4'>
                 <div className='col-md-12 col-sm-12 row '>
                     <div className='col-md-3 col-sm-12'>
                         <div class="card border-0 text-white border-0" style={{ backgroundColor: '#202738' }}>
                             <div class="card-header border-0">
-                                <img width='30px' src="/image/icon/ninja.png" alt="" /> <span>Our Ninjas</span>
+                                <img width='30px' src="https://res.cloudinary.com/dqarshyzz/image/upload/v1710520447/public/image/icon/mps96bl2hb2sjyxrgzyn.png" alt="" /> <span>Our Ninjas</span>
                             </div>
                             <div class="card-body border-0">
-                                <h5 class="card-title">Engineered with <img width='20px' src="/image/icon/heart.png" alt="" /> by</h5>
+                                <h5 class="card-title">Engineered with <img width='20px' src="https://res.cloudinary.com/dqarshyzz/image/upload/v1710520447/public/image/icon/c1fsarh3zu4fnikxgk0z.png" alt="" /> by</h5>
                                 <p class="card-text">Keep Coding</p>
-                                <img width='100px' src="/image/icon/qr.png" alt="" />
+                                <img width='100px' src="https://res.cloudinary.com/dqarshyzz/image/upload/v1710520448/public/image/icon/wzc9nqnqhx6spk4h1ehj.png" alt="" />
                                 <p>Download App</p>
                             </div>
                         </div>
@@ -66,10 +66,10 @@ function Footer() {
                             </div>
                             <div class="card border-0 text-white border-0" style={{ backgroundColor: '#202738' }}>
                                 <div class="card-body border-0 text-white">
-                                    <Link className='text-white text-decoration-none'><img width='30px' src="/image/social/Youtube.png" alt="" />&nbsp; <small>Youtube</small></Link> <br />
-                                    <Link className='text-white text-decoration-none'><img className='py-3' width='30px' src="/image/social/linkedin.png" alt="" />&nbsp; <small>Linkedin</small></Link> <br />
-                                    <Link className='text-white text-decoration-none'><img className='py-3' width='30px' src="/image/social/twitter.png" alt="" />&nbsp; <small>Twitter</small></Link> <br />
-                                    <Link className='text-white text-decoration-none'><img className='py-3' width='30px' src="/image/social/facebook.png" alt="" />&nbsp; <small>Facebook</small></Link> <br />
+                                    <Link className='text-white text-decoration-none'><img width='30px' src="https://res.cloudinary.com/dqarshyzz/image/upload/v1710520451/public/image/social/szrzs5nqchrfcv0n6eko.png" alt="" />&nbsp; <small>Youtube</small></Link> <br />
+                                    <Link className='text-white text-decoration-none'><img className='py-3' width='30px' src="https://res.cloudinary.com/dqarshyzz/image/upload/v1710520451/public/image/social/chr3c4qxdlld5cjew2vb.png" alt="" />&nbsp; <small>Linkedin</small></Link> <br />
+                                    <Link className='text-white text-decoration-none'><img className='py-3' width='30px' src="https://res.cloudinary.com/dqarshyzz/image/upload/v1710520451/public/image/social/s5upc3bfx6qelncax3eh.png" alt="" />&nbsp; <small>Twitter</small></Link> <br />
+                                    <Link className='text-white text-decoration-none'><img className='py-3' width='30px' src="https://res.cloudinary.com/dqarshyzz/image/upload/v1710520451/public/image/social/bmscletbecexn3wnayjl.png" alt="" />&nbsp; <small>Facebook</small></Link> <br />
 
                                 </div>
                             </div>

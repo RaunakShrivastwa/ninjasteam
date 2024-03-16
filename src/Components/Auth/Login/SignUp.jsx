@@ -128,7 +128,7 @@ function SignUp() {
                 <MDBCol className="mb-5 col-md-6 col-sm-12">
                     <div className="">
                         <div className="text-center">
-                            <img src="/image/icon/ninja.png" style={{ width: '100px' }} alt="logo" />
+                            <img src="https://res.cloudinary.com/dqarshyzz/image/upload/v1710520447/public/image/icon/mps96bl2hb2sjyxrgzyn.png" style={{ width: '100px' }} alt="logo" />
                             <h4 className="mt-1 mb-3 pb-1"><img width='20px' src="https://cdn-icons-png.flaticon.com/128/12503/12503107.png" alt="" /><span>Hello Ninja's Create Your Account and Join Us</span></h4>
                         </div>
                         <form onSubmit={handleSubmit}>
@@ -232,12 +232,6 @@ function SignUp() {
 
                             </div>
 
-                            {/*otp section   */}
-                            {/* <div className="input-group flex-nowrap d-none" id='otp'>
-                                <span className="input-group-text" id="addon-wrapping">OTP</span>
-                                <input id='otpBox' type="text" className="form-control" placeholder="OTP" aria-label="OTP" aria-describedby="addon-wrapping" value={otp} onChange={(e) => setOtp(e.target.value)} disabled={!fieldsDisabled} />
-                               
-                            </div> */}
                             {fieldsDisabled && (
                                 <div className="text-center pt-1 mb-3 pb-1 mt-4">
                                     <button type="button" className="btn text-white mb-1 w-100 gradient-custom-2" onClick={handleResend} disabled={!timerCompleted && timer === 0}>
@@ -256,9 +250,9 @@ function SignUp() {
                             <p className="mb-0">I have an account?</p>
 
                             <Link className='' to='/ninja/auth/login'>
-                                <MDBBtn outline className='mx-2' color='danger'>
+                                <button outline className='mx-2 btn btn-danger' color='danger'>
                                     Sign In
-                                </MDBBtn>
+                                </button>
                             </Link>
 
                         </div>
@@ -268,7 +262,7 @@ function SignUp() {
                 <MDBCol className="mb-5 col-sm-12 col-md-6 d-none d-sm-block">
                     <div className=" p-4 d-flex  justify-content-around align-items-center  h-100 rounded">
                         <div className='p-5 shadow rounded mb-4 '>
-                            <img src="/image/icon/register.png" alt="" />
+                            <img src="https://res.cloudinary.com/dqarshyzz/image/upload/v1710520448/public/image/icon/z9kyn1kc57s7ezf9sx5g.png" alt="" />
                         </div>
 
 

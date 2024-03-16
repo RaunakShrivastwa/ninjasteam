@@ -94,7 +94,7 @@ function LoginOrSignup() {
               <p className="mb-0">Don't have an account?</p>
 
               <Link className='' to='/ninja/auth/signup'>
-                <button outline className='mx-2 btn' color='danger'>
+                <button outline className='mx-2 btn btn-danger' color='danger'>
                   Sign Up
                 </button>
               </Link>

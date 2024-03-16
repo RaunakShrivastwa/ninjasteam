@@ -14,7 +14,7 @@ function NavigationMenu() {
         }
     })
 
-    const [activeItem, setActiveItem] = useState(null); // State to keep track of active item
+    const [activeItem, setActiveItem] = useState(''); // State to keep track of active item
 
     // Function to handle click event on nav items
     const handleItemClick = (event, itemName) => {
