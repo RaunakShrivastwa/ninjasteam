@@ -29,7 +29,7 @@ function NavigationMenu() {
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top mb-3">
+            <nav className="navbar navbar-expand-lg navbar-light bg-danger fixed-top mb-3">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="#">
                         <img className='logos' width='40px' src="/image/icon/ninja.png" alt="" srcset="" />
