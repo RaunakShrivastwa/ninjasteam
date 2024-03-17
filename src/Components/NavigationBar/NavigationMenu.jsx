@@ -14,7 +14,7 @@ function NavigationMenu() {
         }
     })
 
-    const [activeItem, setActiveItem] = useState(''); // State to keep track of active item
+    const [activeItem, setActiveItem] = useState(null); // State to keep track of active item
 
     // Function to handle click event on nav items
     const handleItemClick = (event, itemName) => {
@@ -55,7 +55,6 @@ function NavigationMenu() {
                                     Home
                                 </Link>
                             </li>
-                            {/* for the All Jobs */}
                             <li className="item nav-item">
                                 <Link className="nav-link" to="#" onClick={(e) => handleItemClick(e, "All Jobs")} style={getActiveStyles("All Jobs")}>All Jobs</Link>
                             </li>
@@ -73,6 +72,7 @@ function NavigationMenu() {
                                 <Link className="nav-link" to="#" onClick={(e) => handleItemClick(e, "Blogs")} style={getActiveStyles("Blogs")}>Blogs</Link>
                             </li>
                         </ul>
+                        
                         <form className="d-flex">
                             {user ? (
                                 // Render user image if user exists
