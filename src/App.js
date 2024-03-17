@@ -24,7 +24,7 @@ function App() {
           <Route exact path="/ninja/landing/dash" Component={LandingDash} />
           <Route exact path="/ninja/user/profile" Component={UserProfile} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </div>
   );

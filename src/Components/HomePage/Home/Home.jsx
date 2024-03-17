@@ -10,6 +10,7 @@ import Course from '../Upcoming/Course'
 import MentorShip from '../Mentorship/MentorShip'
 import Footer from '../../MainFooter/Footer'
 import NavigationMenu from '../../NavigationBar/NavigationMenu'
+import Faculty from '../../Faculty/Faculty'
 
 function Home() {
   return (
@@ -29,6 +30,7 @@ function Home() {
                 <Certificate />
                 <Course />
                 <MentorShip />
+                <Faculty />
               </div>
             </div>
           </div>         

@@ -1,9 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './style.css'; // Import your CSS file
 import { Link } from 'react-router-dom';
+import Cookies from 'js-cookie';
+
 
 function NavigationMenu() {
-    const [activeItem, setActiveItem] = useState(null); // State to keep track of active item
+    const [user, setUser] = useState('')
+    const userString = Cookies.get('yourData');
+
+    useEffect(() => {
+        if (userString) {
+            setUser(JSON.parse(userString))
+        }
+    })
+
+    const [activeItem, setActiveItem] = useState(''); // State to keep track of active item
 
     // Function to handle click event on nav items
     const handleItemClick = (event, itemName) => {
@@ -51,7 +62,8 @@ function NavigationMenu() {
 
                             <li className="nav-item">
                                 <Link className="nav-link" to="/ninja/course" onClick={(e) => handleItemClick(e, "Courses")} style={getActiveStyles("Courses")}>Courses</Link>
-                            </li> 
+                            </li>
+
 
                             <li className="item nav-item">
                                 <Link className="nav-link" to="/can/about" onClick={(e) => handleItemClick(e, "About Us")} style={getActiveStyles("About Us")}>About Us</Link>
@@ -62,8 +74,15 @@ function NavigationMenu() {
                             </li>
                         </ul>
                         <form className="d-flex">
-                            <Link to='/ninja/auth/login'><button className='btn  px-4 shadow-none rounded me-5' style={{backgroundColor:'#f0ed60'}}>Login</button></Link>
-                            <img width='30px' style={{ borderRadius: '50%' }} src="https://res.cloudinary.com/dzhl7dmsp/image/upload/v1709408497/rqvcmfmiujmk8xs3iwkt.jpg" alt="" srcset="" />
+                            {user ? (
+                                // Render user image if user exists
+                                <img width='50px' style={{ borderRadius: '50%' }} src={user.profile} alt="" />
+                            ) : (
+                                // Render login button if user does not exist
+                                <Link to='/ninja/auth/login'>
+                                    <button className='btn  px-4 shadow-none rounded me-5' style={{ backgroundColor: '#f0ed60' }}>Login</button>
+                                </Link>
+                            )}
                         </form>
                     </div>
                 </div>

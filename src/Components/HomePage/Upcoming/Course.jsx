@@ -3,9 +3,9 @@ import './Upcoming.css'
 
 function Course() {
     const course = [
-        { name: "Data Structure", date: '2 jun 2024', description: "Learn How To arrange Data", enrolled: "100+ Students", img: '/image/das.JPEG' },
-        { name: "Python", date: '12 jun 2024', description: "What is Data, AI", enrolled: "200+ Students", img: '/image/python.JPEG' },
-        { name: "Javascript", date: '20 jun 2024', description: "Handle With World , Talk with Code", enrolled: "100+ Students", img: "/image/js.JPEG" },
+        { name: "Data Structure", date: '2 jun 2024', description: "Learn How To arrange Data", enrolled: "100+ Students", img: 'https://res.cloudinary.com/dqarshyzz/image/upload/v1710520446/public/image/zhd7kpjudmuhzrdxiyix.jpg' },
+        { name: "Python", date: '12 jun 2024', description: "What is Data, AI", enrolled: "200+ Students", img: 'https://res.cloudinary.com/dqarshyzz/image/upload/v1710520451/public/image/pvxbtx9sphbkcxdsbept.jpg' },
+        { name: "Javascript", date: '20 jun 2024', description: "Handle With World , Talk with Code", enrolled: "100+ Students", img: "https://res.cloudinary.com/dqarshyzz/image/upload/v1710520448/public/image/wgtvssc7p6ku6x6ptx07.jpg" },
 
     ]
     return (
