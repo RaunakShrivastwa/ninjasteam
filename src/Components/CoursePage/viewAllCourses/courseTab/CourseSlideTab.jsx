@@ -36,16 +36,25 @@ const CourseSlideTab = () => {
             '&::-webkit-scrollbar': { display: 'none' },
             scrollbarWidth: 'none',
         }}>
-            <Tabs value={value} onChange={handleChange} variant="scrollable" scrollButtons={false} aria-label="scrollable prevent tabs example" class="border border-3 border-danger border-top-0 border-start-0 border-end-0 text-danger">
-                <Tab label="All" />
-                <Tab label="Data Structure and Algorithm" />
-                <Tab label="Placement and Test Series" />
-                <Tab label="Programming Language" />
-                <Tab label="Web Development" />
-                <Tab label="Machine Learning and Data Science" />
-                <Tab label="FullStack" />
-                <Tab label="Backend" />
-            </Tabs>
+            <div style={{ overflowX: 'auto' }}>
+                <Tabs
+                    value={value}
+                    onChange={handleChange}
+                    variant="scrollable"
+                    scrollButtons={false}
+                    aria-label="scrollable prevent tabs example"
+                    className="border border-3 border-danger border-top-0 border-start-0 border-end-0 text-danger"
+                >
+                    <Tab label="All" />
+                    <Tab label="Data Structure and Algorithm" />
+                    <Tab label="Placement and Test Series" />
+                    <Tab label="Programming Language" />
+                    <Tab label="Web Development" />
+                    <Tab label="Machine Learning and Data Science" />
+                    <Tab label="FullStack" />
+                    <Tab label="Backend" />
+                </Tabs>
+            </div>
             <TabPanel value={value} index={0}>
                 <CourseSlideContent content="All" datas='9' />
             </TabPanel>

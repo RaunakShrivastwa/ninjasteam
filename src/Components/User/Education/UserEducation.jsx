@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faTrash, faPencil } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import AddUserEducation from './AddUserEducation';
 
 const UserEducation = () => {
-    const [showAddForm, setShowAddForm] = useState(false); // State to track visibility of AddUserEducation form
+    const [showAddForm, setShowAddForm] = useState(false);
 
     const toggleAddForm = () => {
         setShowAddForm(!showAddForm);
     };
 
     const handleCancel = () => {
-        // Clear form data and hide the form
         setShowAddForm(false);
     };
 
@@ -53,7 +52,9 @@ const UserEducation = () => {
                             <div className="d-flex flex-column justify-content-center align-items-start5">
                                 <div class="d-flex justify-content-between">
                                     <div className="h5 fw-normal">{edu.collegeName}</div>
-                                    <button type="button" class="btn btn-transparent p-1"><FontAwesomeIcon icon={faTrash} /></button>
+                                    <button type="button" class="btn btn-transparent p-1">
+                                        <FontAwesomeIcon icon={faTrash} />
+                                    </button>
                                 </div>
                                 <p className="fs-5 my-0 py-0">
                                     <span>{edu.course}</span>

@@ -10,7 +10,6 @@ import LandingDash from './Components/Dashbord/LandingDash/LandingDash';
 import UserProfile from "./Components/User/UserProfile";
 
 function App() {
-  console.log("Abhijeet");
   return (
     <div>
       <Router>

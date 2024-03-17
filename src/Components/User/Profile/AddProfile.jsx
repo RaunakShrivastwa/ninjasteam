@@ -5,26 +5,11 @@ import { faGithub, faLinkedin, faHackerrank, faStackOverflow } from '@fortawesom
 import CodingProfileForm from './CodingProfileForm';
 
 const AddProfile = () => {
-    const [hoveredProfile, setHoveredProfile] = useState(null);
-    const [editModeProfile, setEditModeProfile] = useState(null); // Add state to track which profile's edit mode is active
+    const [editModeProfile, setEditModeProfile] = useState(null);
+    const [editable, setEditable] = useState(false);
+    const [inputStyle, setInputStyle] = useState({ border: 'none' }); // State to manage input field style
 
-    const handleMouseEnter = (id) => {
-        setHoveredProfile(id);
-    };
-
-    const handleMouseLeave = () => {
-        setHoveredProfile(null);
-    };
-
-    const handleClickEdit = (id) => {
-        setEditModeProfile(id); // Set edit mode for the clicked profile
-    };
-
-    const handleCancelEdit = () => {
-        setEditModeProfile(null); // Cancel edit mode for the active profile
-    };
-
-    const profileLink = [{
+    var initialProfileLink = [{
         id: 'updateCodingProfile',
         name: 'Coding Profile',
         noOfLinks: 4,
@@ -67,52 +52,88 @@ const AddProfile = () => {
             Name: 'Linkedin',
             Link: 'https://leetcode.com/abhijeetkumar2532002/'
         }]
-    }]
+    }];
+
+    const [profileLink, setProfileLink] = useState(initialProfileLink);
+
+    const handleLinkChange = (profileIndex, linkIndex, newLink) => {
+        const updatedLinks = [...profileLink];
+        updatedLinks[profileIndex].data[linkIndex].Link = newLink;
+        setProfileLink(updatedLinks);
+    };
+
+    const handleSubmit = () => {
+        // Here you can submit the updated links to your API
+        console.log('Updated links:', profileLink);
+        setEditModeProfile(null);
+        setEditable(false);
+    };
+
+    const handleFocus = () => {
+        setInputStyle({ border: 'none' }); // Update input style on focus
+    };
 
     return (
         <>
-            {profileLink.map((profile) => (
-                <div
-                    key={profile.id}
-                    onMouseEnter={() => handleMouseEnter(profile.id)}
-                    onMouseLeave={handleMouseLeave}
-                >
-                    <div className="profileDataArea">
-                        <p className="mt-3 fs-5 d-flex justify-content-between mx-1 mb-1">
-                            <span>{profile.name}</span>
-                            {hoveredProfile === profile.id && editModeProfile !== profile.id && (
-                                <button type="button" className="border border-0 bg-transparent" onClick={() => handleClickEdit(profile.id)}>
-                                    <FontAwesomeIcon icon={faPencil} className="fa-solid" />
-                                </button>
-                            )}
-                            {editModeProfile === profile.id && (
-                                <button type="button" className="border border-0 bg-transparent" onClick={handleCancelEdit}>
-                                    Cancel
-                                </button>
-                            )}
-                        </p>
-
-                        <div className="row row-cols-1 row-cols-md-2 g-2 border border-2 border-top-0 border-start-0 border-end-0 pb-1 mx-1">
-                            {profile.data.map((profileData, index) => (
-                                <div className="col" key={index}>
+            {profileLink.map((profile, profileIndex) => (
+                <div key={profile.id} class="border border-2 border-top-0 border-start-0 border-end-0">
+                    <p className="mt-3 fs-5 d-flex justify-content-between mx-1 mb-1">
+                        <span>{profile.name}</span>
+                        {editModeProfile !== profile.id && (
+                            <button type="button" className="border border-0 bg-transparent" onClick={() => setEditModeProfile(profile.id)}>
+                                <FontAwesomeIcon icon={faPencil} className="fa-solid" />
+                            </button>
+                        )}
+                    </p>
+                    <div className="row row-cols-1 row-cols-md-2 g-2 pb-1 mx-1">
+                        {
+                            profile.data.map((link, linkIndex) => (
+                                <div className="col" key={linkIndex}>
                                     <div className="card h-100 border border-0">
                                         <div className="row">
                                             <div className="col-2">
                                                 <div className="d-flex flex-row align-items-center justify-content-end h-100">
-                                                    <FontAwesomeIcon icon={profileData.Icon} className="fa-brands" style={{ width: '30px', height: '30px' }} />
+                                                    <FontAwesomeIcon icon={link.Icon} className="fa-brands" style={{ width: '30px', height: '30px' }} />
                                                 </div>
                                             </div>
                                             <div className="col-10 d-flex flex-column g-0">
-                                                <span className="text-muted fw-bold text-uppercase">{profileData.Name}</span>
-                                                {/* Removed readOnly attribute */}
-                                                <input className="text-danger border border-0 bg-transparent" type="text" value={profileData.Link} placeholder='Coding Link' />
+                                                <span className="text-muted fw-bold text-uppercase">{link.Name}</span>
+                                                {editModeProfile !== profile.id && (
+                                                    <input
+                                                        id={`${profile.id}-${linkIndex}`}
+                                                        className={'text-danger border border-0 bg-transparent outline-none shadow-none '}
+                                                        type="text"
+                                                        value={link.Link}
+                                                        readOnly={!editable}
+                                                        style={inputStyle} // Apply input style
+                                                        onFocus={handleFocus} // Handle focus event
+                                                    />
+                                                )}
+                                                {editModeProfile === profile.id && (
+                                                    <input
+                                                        id={`${profile.id}-${linkIndex}`}
+                                                        onChange={(e) => handleLinkChange(profileIndex, linkIndex, e.target.value)}
+                                                        className={'text-danger border border-0 bg-transparent outline-none shadow-none '}
+                                                        type="text"
+                                                        value={link.Link}
+                                                        placeholder='Coding Link'
+                                                        style={inputStyle} // Apply input style
+                                                        onFocus={handleFocus} // Handle focus event
+                                                    />
+                                                )}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            ))}
-                        </div>
+                            ))
+                        }
                     </div>
+                    {editModeProfile === profile.id && (
+                        <div class="my-2">
+                            <button type="button" className="btn border border-0 bg-success" onClick={handleSubmit}>Submit</button>
+                            <button type="button" className="btn border border-0 bg-danger ms-2" onClick={() => setEditModeProfile(null)}>Cancel</button>
+                        </div>
+                    )}
                 </div>
             ))}
         </>

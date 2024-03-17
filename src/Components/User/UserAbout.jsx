@@ -1,15 +1,13 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
-
-import WorkExperience from './WorkExperience';
+import UserProject from './Project/UserProject';
+import WorkExperience from './Experience/WorkExperience';
 import UserEducation from './Education/UserEducation';
-import UserProject from './UserProject';
 import UserCertificate from './UserCertificate';
 import UserSkillAcquire from './UserSkillAcquire';
 import UserProfileLink from './Profile/UserProfileLink';
-import Userresume from './Userresume';
-import UserJobPrefrence from './UserJobPrefrence';
+import UserResume from './Resume/UserResume';
 
 const UserAbout = () => {
     return (
@@ -55,8 +53,7 @@ const UserAbout = () => {
                     <UserCertificate />
                     <UserSkillAcquire />
                     <UserProfileLink />
-                    <Userresume />
-                    <UserJobPrefrence />
+                    <UserResume  />
                 </div>
             </div>
         </div>

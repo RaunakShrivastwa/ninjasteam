@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 
-const Userresume = () => {
+const UserResume = () => {
     return (
         <div>
             <div class="card border border-dark border-2 rounded rounded-lg my-3">
@@ -15,7 +15,8 @@ const Userresume = () => {
                         </button>
                     </div>
                     <div className="d-flex flex-column justify-content-center align-items-center mx-md-5 px-md-5 ">
-                        <img src="/Image/UserImage/WorkExperience.svg" alt="WorkExperience.svg" style={{ width: '300px' }} />
+                        <img src="/Image/UserImage/WorkExperience.svg"
+                            alt="WorkExperience.svg" style={{ width: '300px' }} />
                         <span class="fs-5">Write about your accomplishments at work</span>
                     </div>
                 </div>
@@ -24,4 +25,4 @@ const Userresume = () => {
     )
 }
 
-export default Userresume
+export default UserResume
