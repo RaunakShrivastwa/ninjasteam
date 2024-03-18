@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './style.css'; // Import your CSS file
 import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie';
+import Profile from '../HomePage/Profile/Profile';
 
 
 function NavigationMenu() {
@@ -72,11 +73,10 @@ function NavigationMenu() {
                                 <Link className="nav-link" to="#" onClick={(e) => handleItemClick(e, "Blogs")} style={getActiveStyles("Blogs")}>Blogs</Link>
                             </li>
                         </ul>
-                        
-                        <form className="d-flex">
+
+                        <form className="d-flex me-4">
                             {user ? (
-                                // Render user image if user exists
-                                <img width='50px' style={{ borderRadius: '50%' }} src={user.profile} alt="" />
+                                <Profile user={user}/>
                             ) : (
                                 // Render login button if user does not exist
                                 <Link to='/ninja/auth/login'>

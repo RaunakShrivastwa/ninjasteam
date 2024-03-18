@@ -15,7 +15,7 @@ function Home() {
             </div>
 
             {/* form */}
-            <div class="col-sm-6 col-md-4 mt-3 rounded register position-fixed  end-0  py-5" style={{zIndex:'100000'}} >
+            <div class="col-sm-6 col-md-4 mt-3 rounded register position-fixed  end-0  py-5" style={{zIndex:'100'}} >
               <div class="card rounded border-0">
                 <div class="border-0 card-body d-none rounded d-md-block bg-white shadow " >
                   <EnquirePage />
