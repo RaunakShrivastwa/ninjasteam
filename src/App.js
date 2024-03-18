@@ -8,13 +8,16 @@ import Signup from './Components/Auth/Login/SignUp';
 import LandingDash from './Components/Dashbord/LandingDash/LandingDash';
 import HomeNavigate from "./Components/Auth/AddNavigate/HomeNavigate";
 
+import ViewAllCourses from "./Components/CoursePage/viewAllCourses/ViewAllCourse";
+import LoginPage from './Components/Auth/Login/LoginOrSignup';
+import Signup from './Components/Auth/Login/SignUp';
+import LandingDash from './Components/Dashbord/LandingDash/LandingDash';
+import UserProfile from "./Components/User/UserProfile";
 
 function App() {
-  console.log("Abhijeet");
   return (
     <div>
       <Router>
-        {/* <NavigationMenu /> */}
         <Routes>
           <Route exact path="/" Component={Home} />
           <Route exact path="/can/home" Component={Home} />
