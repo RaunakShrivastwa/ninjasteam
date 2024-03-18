@@ -13,7 +13,7 @@ function NavigationMenu() {
         if (userString) {
             setUser(JSON.parse(userString))
         }
-    })
+    },[])
 
     const [activeItem, setActiveItem] = useState(null); // State to keep track of active item
 

@@ -1,29 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 
 const CourseCard = ({ courseData }) => {
     return (
         <>
             <div className="col">
                 <div className="card mb-3 h-100">
-                    <img src={courseData.imageLink} className="card-img-top" alt="..." />
-                    <div className="card-body pb-0 mb-0">
+                    <img src={courseData?.courseImage} className="card-img-top" alt="..." />
+                    <div className='px-3' style={{width:"100% !important"}}><h3>{courseData.name}</h3></div>
+                    <div className="card-body pb-0 mb-0" >
                         <h6 className="card-title d-flex justify-content-between align-items-center">
-                            <i className="bi bi-graph-up-arrow fw-bold"><span className="text-muted"> <span>{courseData.liked}</span> interested Geeks</span></i>
-
-                            <i className="bi bi-star-fill p-1 rounded rounded-lg text-warning"> {courseData.rating} </i>
+                            
+                            <span className="text-muted">{courseData?.description}</span>                         
                         </h6>
-                        <p className="card-text h6">{courseData.courseNaration}</p>
+                        <FontAwesomeIcon icon={faCalendar} />&nbsp;&nbsp;<span className="card-text h6">Duration {courseData.duration} months</span>
 
                         <h6 className="card-title d-flex align-items-center mb-0 pb-0">
-                            <i className="bi bi-bar-chart-line-fill pe-2"></i><span className="text-muted"> Beginner to Advance</span>
+                            <i className="bi bi-bar-chart-line-fill pe-2"></i><span className="text-muted text-center"> Beginner to Advance</span>
                         </h6>
                     </div>
 
                     <div className="card-footer bg-transparent border-0 mt-0 pt-0">
                         <h5 className="card-title d-flex justify-content-between align-items-center m-0 p-0">
-                            <span>₹{courseData.originalPrice}
-                                <del className="text-muted"> ₹{courseData.discountedPrice}</del>
+                            <span>₹{courseData.sellPrice} &nbsp;
+                                <del className="text-muted"> ₹{courseData.marketPrice}</del>
                             </span>
 
                             <Link to="/ninja/CourseDetail" className="btn btn-outline-success px-3 py-1">Explore</Link>
