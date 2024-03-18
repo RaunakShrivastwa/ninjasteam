@@ -2,16 +2,11 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Course from "./Components/CoursePage/Course";
 import Home from "./Components/HomePage/Home/Home";
 import CourseDetails from "./Components/CoursePage/CourseDetails/CourseDetails";
-import ViewAllCourses from "./Components/CoursePage/ViewAllCourse";
 import LoginPage from './Components/Auth/Login/LoginOrSignup';
 import Signup from './Components/Auth/Login/SignUp';
 import LandingDash from './Components/Dashbord/LandingDash/LandingDash';
 import HomeNavigate from "./Components/Auth/AddNavigate/HomeNavigate";
-
 import ViewAllCourses from "./Components/CoursePage/viewAllCourses/ViewAllCourse";
-import LoginPage from './Components/Auth/Login/LoginOrSignup';
-import Signup from './Components/Auth/Login/SignUp';
-import LandingDash from './Components/Dashbord/LandingDash/LandingDash';
 import UserProfile from "./Components/User/UserProfile";
 
 function App() {
