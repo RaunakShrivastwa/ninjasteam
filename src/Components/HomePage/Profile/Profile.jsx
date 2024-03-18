@@ -9,6 +9,10 @@ function Profile({ user }) {
         history('/ninja/auth/login')
     }
 
+    const visitors = (e)=>{
+        history(e.target.id)
+    }
+
     return (
         <>
             <div class="btn-group d-none d-md-block d-lg-block">
@@ -26,7 +30,7 @@ function Profile({ user }) {
                             {/* for the profiule */}
                             <div class="accordion-item border-0">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                                    <button class="accordion-button shadow-none border-none bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                    <button class="accordion-button shadow-none border-none bg-white" id='/ninja/user/profile' onClick={(e)=>{visitors(e)}} type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
                                         Your Profile
                                     </button>
                                 </h2>
@@ -36,7 +40,7 @@ function Profile({ user }) {
                             {/* my Account */}
                             <div class="accordion-item border-0 ">
                                 <h2 class="accordion-header border-none" id="panelsStayOpen-headingOne">
-                                    <button class="bg-white accordion-button border-none shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                    <button class="bg-white accordion-button border-none shadow-none" id='/ninja/user/account' onClick={(e)=>{visitors(e)}}  type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
                                         My Account
                                     </button>
                                 </h2>

@@ -22,6 +22,7 @@ function App() {
           <Route exact path="/ninja/auth/login" Component={LoginPage} />
           <Route exact path="/ninja/auth/signup" Component={Signup} />
           <Route exact path="/ninja/landing/dash" Component={LandingDash} />
+          <Route exact path="/ninja/user/profile" Component={UserProfile} />
           <Route
             exact
             path="/ninja/add/:email"
