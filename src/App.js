@@ -17,7 +17,7 @@ function App() {
           <Route exact path="/" Component={Home} />
           <Route exact path="/can/home" Component={Home} />
           <Route exact path="/ninjas/AllCourses" Component={ViewAllCourses} />
-          <Route exact path="/ninja/CourseDetail" Component={CourseDetails} />
+          <Route exact path="/ninja/CourseDetail/:id" Component={CourseDetails} />
           <Route exact path="/ninja/course" Component={Course} />
           <Route exact path="/ninja/auth/login" Component={LoginPage} />
           <Route exact path="/ninja/auth/signup" Component={Signup} />

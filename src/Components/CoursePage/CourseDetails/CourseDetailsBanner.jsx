@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faUsers, faUserTie } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 
-const CourseDetailsBanner = () => {
+const CourseDetailsBanner = ({course}) => {
     return (
         <>
             <div className="row row-cols-1 row-cols-md-2 g-2 my-5 pt-2">
@@ -10,7 +10,7 @@ const CourseDetailsBanner = () => {
                     <div className="card h-100 border border-0">
                         <div className="card-body d-flex align-items-center border border-0">
                             <div className="row">
-                                <h1 className="card-title fw-bolder display-6">DSA to Development: A Complete Guide</h1>
+                                <h1 className="card-title fw-bolder display-6"><span>{course?.name}</span> : A Complete Guide</h1>
                                 <p class="fw-bold">
                                     <span><FontAwesomeIcon icon={faUsers} className="rounded rounded-circle" size="lg" /> 1:1 Mock Interview</span> 
                                     <span class="ms-3"><FontAwesomeIcon icon={faUserTie} className="rounded rounded-circle" size="lg"/> Master Classes with Industry Experts</span>
@@ -33,7 +33,7 @@ const CourseDetailsBanner = () => {
                 <div className="col">
                     <div className="card h-100 border border-0">
                         <div className="card-body">
-                            <img src="/Image/DSA.png" alt="Course Image" />
+                            <img  style={{width:"100%"}} src={course?.courseImage} alt="Course Image" />
                         </div>
                     </div>
                 </div>

@@ -3,13 +3,13 @@ import ReactPlayer from 'react-player'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartLine } from '@fortawesome/free-solid-svg-icons';
 
-const CourseDescription = () => {
+const CourseDescription = ({course}) => {
     return (
         <>
             <div class="row">
                 <div class="col-sm-5 mb-3 mb-sm-0 d-none d-md-block">
                     <div class="card h-100 py-0 border border-0 ">
-                        <ReactPlayer url='/sample_video.mp4' width='100%' />
+                        <ReactPlayer url={course?.introVideo} width='100%' />
                     </div>
                 </div>
 
@@ -21,7 +21,7 @@ const CourseDescription = () => {
 
                             <ReactPlayer url='/sample_video.mp4' width='100%' className="d-block d-md-none" />
 
-                            <p class="card-text mt-3">This program is designed to take you on a transformative journey from mastering Data Structures and Algorithms (DSA) to becoming a proficient Developer or a Data Scientist. Whether you aspire to become a front-end developer, back-end developer, full-stack developer, data scientist or specialize in a specific tech-stack, this program provides the essential building blocks for your coding journey starting right from basic programming to building applications.</p>
+                            <p class="card-text mt-3">{course?.description}</p>
 
                             <div class="mb-2 pt-0">
                                 <FontAwesomeIcon icon={faChartLine} size='lg' className=''/>

@@ -8,7 +8,7 @@ const CourseCard = ({ courseData }) => {
         <>
             <div className="col">
                 <div className="card mb-3 h-100">
-                    <img src={courseData?.courseImage} className="card-img-top" alt="..." />
+                    <img src={courseData?.courseImage} className="card-img-top" style={{height:'30vh'}} alt="..." />
                     <div className='px-3' style={{width:"100% !important"}}><h3>{courseData.name}</h3></div>
                     <div className="card-body pb-0 mb-0" >
                         <h6 className="card-title d-flex justify-content-between align-items-center">
@@ -28,7 +28,7 @@ const CourseCard = ({ courseData }) => {
                                 <del className="text-muted"> ₹{courseData.marketPrice}</del>
                             </span>
 
-                            <Link to="/ninja/CourseDetail" className="btn btn-outline-success px-3 py-1">Explore</Link>
+                            <Link to={`/ninja/CourseDetail/${courseData.name}`} className="btn btn-outline-success px-3 py-1">Explore</Link>
                         </h5>
                     </div>
                 </div>

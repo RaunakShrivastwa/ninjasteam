@@ -10,7 +10,7 @@ const CourseOverview = () => {
     useEffect(() => {
         const loadUser = async () => {
             try {
-                const courseData = await axios.get(`http://localhost:4000/course`);
+                const courseData = await axios.get(`https://ourninjas.onrender.com/course`);
                 setCourse(courseData.data.course);
 
             } catch (err) {
@@ -34,11 +34,11 @@ const CourseOverview = () => {
             <div className='container'>
                 <CourseHeader pageHeading="Ninja's Courses" pageNarration="Interactive LIVE & Self-Paced Courses" />
                 <div class='px-4'>
-                    <CoursePopularity heading="Popular Course" pop={popularCourse1} />
-                    <CourseCategory heading="tag" />
+                    <CoursePopularity heading="Popular Now" pop={popularCourse1} />
+                    <CourseCategory heading="Course Categories" />
 
-                    <CoursePopularity heading="Basics Course" pop={fundamentalCourse1}/>
-                    <CoursePopularity heading="self" pop={selfCourse1}/>
+                    <CourseType heading="Build Your Foundations" pop={fundamentalCourse1} course={course}/>
+                    <CourseType heading="Self-Paced Courses" pop={selfCourse1}/>
 
 
                     {/* <CourseType heading="Live Courses" />    */}
