@@ -10,7 +10,7 @@ const CourseOverview = () => {
     useEffect(() => {
         const loadUser = async () => {
             try {
-                const courseData = await axios.get(`https://ourninjas.onrender.com/course`);
+                const courseData = await axios.get(`http://localhost:4000/course`);
                 setCourse(courseData.data.course);
 
             } catch (err) {

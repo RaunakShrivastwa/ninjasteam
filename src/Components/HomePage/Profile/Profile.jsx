@@ -24,7 +24,7 @@ function Profile({ user }) {
 
                             <div className='p-2'>
                                 <img width='30px' src={user?.profile} class="img-fluid rounded-start" alt="..." />
-                                <span className='px-3'>Shubham Shrivastwa</span>
+                                <span className='px-3'>{user?.userName}</span>
                             </div>
 
                             {/* for the profiule */}
