@@ -5,7 +5,7 @@ import Cookies from 'js-cookie';
 
 
 function NavigationMenu() {
-    const [user, setUser] = useState('')
+    const [user, setUser] = useState('');
     const userString = Cookies.get('yourData');
 
     useEffect(() => {

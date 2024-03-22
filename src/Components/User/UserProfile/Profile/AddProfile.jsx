@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencil } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin, faHackerrank, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
-import CodingProfileForm from './CodingProfileForm';
 
 const AddProfile = () => {
     const [editModeProfile, setEditModeProfile] = useState(null);

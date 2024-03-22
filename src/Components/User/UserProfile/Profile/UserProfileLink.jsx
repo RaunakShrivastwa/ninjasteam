@@ -1,6 +1,5 @@
 import React from 'react';
 import AddProfile from './AddProfile';
-import CodingProfileForm from './CodingProfileForm';
 
 const UserProfileLink = () => {
     return (

@@ -2,7 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileArrowDown } from '@fortawesome/free-solid-svg-icons';
 import UserAbout from './UserAbout';
-import NavigationMenu from '../NavigationBar/NavigationMenu';
+import NavigationMenu from '../../NavigationBar/NavigationMenu';
 
 const UserProfile = () => {
     return (
