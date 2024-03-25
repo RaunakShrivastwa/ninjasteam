@@ -57,8 +57,10 @@ function LoginOrSignup() {
           <div className="">
 
             <div className="text-center">
+              <Link to='/'>
               <img src="/image/icon/ninja.png"
                 style={{ width: '100px' }} alt="logo" />
+              </Link>
               <h4 className="mt-1 mb-5 pb-1"><img width='20px' src="https://cdn-icons-png.flaticon.com/128/12503/12503107.png" alt="" /><span>Keep coding</span></h4>
             </div>
 
@@ -74,7 +76,7 @@ function LoginOrSignup() {
             </form>
             <div className='d-flex justify-content-around align-items-center mb-4'>
               {/* for the google */}
-              <img className=''  id='http://localhost:8000/user/auth/google' onClick={(e) => { goLogin(e) }} width='30px' src="https://cdn-icons-png.flaticon.com/128/300/300221.png" alt="" />
+              <img className=''  id='http://localhost:4000/user/auth/google' onClick={(e) => { goLogin(e) }} width='30px' src="https://cdn-icons-png.flaticon.com/128/300/300221.png" alt="" />
 
               {/* for the github */}
 

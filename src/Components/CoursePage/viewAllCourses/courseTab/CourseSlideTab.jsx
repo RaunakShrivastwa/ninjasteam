@@ -43,16 +43,18 @@ const CourseSlideTab = () => {
                     variant="scrollable"
                     scrollButtons={false}
                     aria-label="scrollable prevent tabs example"
-                    className="border border-3 border-danger border-top-0 border-start-0 border-end-0 text-danger"
+                    className="border border-5 p-3 border-black border-top-0 border-start-0 border-end-0 text-danger"
                 >
                     <Tab label="All" />
-                    <Tab label="Data Structure and Algorithm" />
+                    <Tab label="Backend Development" />                 
+                    <Tab label="Frontend Development" />
+                    <Tab label="Fullstack Development" />
+                    <Tab label="Interview Prepration" />
+                    <Tab label="Basic Fundamental" />
+                    <Tab label="Self Content" />
                     <Tab label="Placement and Test Series" />
-                    <Tab label="Programming Language" />
-                    <Tab label="Web Development" />
-                    <Tab label="Machine Learning and Data Science" />
-                    <Tab label="FullStack" />
-                    <Tab label="Backend" />
+
+                    
                 </Tabs>
             </div>
             <TabPanel value={value} index={0}>
@@ -60,19 +62,19 @@ const CourseSlideTab = () => {
             </TabPanel>
 
             <TabPanel value={value} index={1}>
-                <CourseSlideContent content="Data Structure and Algorithm" datas="1" />
+                <CourseSlideContent content="Backend" datas="1" />
             </TabPanel>
 
             <TabPanel value={value} index={2}>
-                <CourseSlideContent content="Placement and Test Series" datas="2" />
+                <CourseSlideContent content="Frontend" datas="2" />
             </TabPanel>
 
             <TabPanel value={value} index={3}>
-                <CourseSlideContent content="Programming Language" datas="3" />
+                <CourseSlideContent content="Fullstack" datas="3" />
             </TabPanel>
 
             <TabPanel value={value} index={4}>
-                <CourseSlideContent content="Web Development" datas="4" />
+                <CourseSlideContent content="resume" datas="4" />
             </TabPanel>
 
             <TabPanel value={value} index={5}>
@@ -80,7 +82,7 @@ const CourseSlideTab = () => {
             </TabPanel>
 
             <TabPanel value={value} index={6}>
-                <CourseSlideContent content="Frontend" datas="6" />
+                <CourseSlideContent content="git" datas="6" />
             </TabPanel>
 
             <TabPanel value={value} index={7}>
