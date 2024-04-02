@@ -58,7 +58,7 @@ const UserGeneralSetting = () => {
                 <div class="col-md-6">
                     <div className="row border border-2 border-dark mt-2 rounded rounded-lg w-100" style={{ position: 'relative' }} key="phase.phaseNo">
                         <label className="d-inline" style={{ position: 'absolute', left: '50%', transform: 'translate(-50%, -50%)' }}>
-                            <span className="fs-5 px-2" style={{ background: '#fff' }}>OTP Verification</span>
+                            <span className="fs-5 px-2" style={{ background: '#fff' }}>OTP</span>
                         </label>
                         <div className="d-flex justify-content-center w-100">
                             <input type="text" class="form-control fw-bold mt-2 border border-0 shadow-none w-100" id="validationCustom03" placeholder='Enter your verify OTP' required />
@@ -73,7 +73,7 @@ const UserGeneralSetting = () => {
                 <div class="col-md-6">
                     <div className="row border border-2 border-dark mt-2 rounded rounded-lg w-100" style={{ position: 'relative' }} key="phase.phaseNo">
                         <label className="d-inline" style={{ position: 'absolute', left: '50%', transform: 'translate(-50%, -50%)' }}>
-                            <span className="fs-5 px-2" style={{ background: '#fff' }}>Number Verification</span>
+                            <span className="fs-5 px-2" style={{ background: '#fff' }}>Number</span>
                         </label>
                         <div className="d-flex justify-content-center w-100">
                             <input type="text" class="form-control fw-bold mt-2 border border-0 shadow-none w-100" id="validationCustom03" placeholder='Enter your Number' required />
@@ -96,9 +96,9 @@ const UserGeneralSetting = () => {
                         </div>
                     </div>
                 </div>
-
-                <div class="col-12">
-                    <button class="btn btn-primary" type="submit">Submit form</button>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-between">
+                    <button class="btn btn-outline-success me-md-2 fw-bold" type="Submit">Submit</button>
+                    <button class="btn btn-outline-warning fw-bold" type="button">Reset Password</button>
                 </div>
             </form>
         </>
