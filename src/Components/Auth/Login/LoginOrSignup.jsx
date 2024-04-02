@@ -39,7 +39,7 @@ function LoginOrSignup() {
         Cookies.set('yourData', JSON.stringify(user.data), { expires: 3 }); // Expires in 1 day  
         const path = Cookies.get('path') || '/';
 
-        history(JSON.parse(path));
+        history('/');
       } else {
         console.log("Login failed");
       }
