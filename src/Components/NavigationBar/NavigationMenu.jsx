@@ -3,6 +3,9 @@ import './style.css'; // Import your CSS file
 import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import Profile from '../HomePage/Profile/Profile';
+import axios from 'axios';
+import {urlFunction} from '../../App.js'
+import Room from '../MyClassRoom/Room.jsx';
 
 
 function NavigationMenu() {
@@ -10,10 +13,20 @@ function NavigationMenu() {
     const userString = Cookies.get('yourData');
 
     useEffect(() => {
-        if (userString) {
-            setUser(JSON.parse(userString))
-        }
-    },[])
+        const yourDataCookie = Cookies.get('yourData');
+        console.log("Cookies",yourDataCookie);
+         if(yourDataCookie){
+            proceed(yourDataCookie);
+         }
+    }, []);
+
+    const proceed = async (yourDataCookie) => {
+        const d = JSON.parse(yourDataCookie);
+        const userData =  await axios.get(urlFunction()+`user/fetchUser/${d.userEmail}`);
+        setUser(userData.data);
+    }
+
+    console.log(user);
 
     const [activeItem, setActiveItem] = useState(null); // State to keep track of active item
 
@@ -39,6 +52,10 @@ function NavigationMenu() {
         } : {};
     };
 
+    const classRoom = ()=>{
+       <Room user={user}/> 
+    }
+
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light fixed-top mb-3">
@@ -52,7 +69,7 @@ function NavigationMenu() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="item nav-item">
-                                <Link className="nav-link" to="/can/home" onClick={(e) => handleItemClick(e, "Home")} style={getActiveStyles("Home")}>
+                                <Link className="nav-link" to="/can/home"  onClick={(e) => handleItemClick(e, "Home")} style={getActiveStyles("Home")}>
                                     Home
                                 </Link>
                             </li>
@@ -75,8 +92,17 @@ function NavigationMenu() {
                         </ul>
 
                         <form className="d-flex me-4">
+                           <div className='d-flex justify-content-around align-items-center'>
+                           {
+                                user.courses?.length >0 ?(
+                                    <Link to={`/ninja/classRoom/${user._id}`}><button type='button' className='btn btn-outline-primary me-5 text-dark room'>My Classroom</button>
+                                    </Link>
+                                ):(<></>)
+                            }
+                           </div>
+                           
                             {user ? (
-                                <Profile user={user}/>
+                               <Profile user={user}/>
                             ) : (
                                 // Render login button if user does not exist
                                 <Link to='/ninja/auth/login'>

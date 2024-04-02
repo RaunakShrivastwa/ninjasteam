@@ -4,13 +4,14 @@ import CourseCategory from './CourseCategory';
 import CourseType from './CourseType';
 import CoursePopularity from './CoursePopularity';
 import axios from 'axios';
+import {urlFunction} from '../../../App.js'
 
 const CourseOverview = () => {
     const [course, setCourse] = useState([]);
     useEffect(() => {
         const loadUser = async () => {
             try {
-                const courseData = await axios.get(`http://localhost:4000/course`);
+                const courseData = await axios.get(urlFunction()+`course`);
                 setCourse(courseData.data.course);
 
             } catch (err) {

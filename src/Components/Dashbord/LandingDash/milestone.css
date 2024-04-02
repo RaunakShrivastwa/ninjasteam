@@ -1,5 +1,5 @@
 .b-dy {
-    height: 76vh;
+    height: 76.7vh;
     /* Set height to full viewport height */
     overflow-y: auto;
     /* Enable vertical scrolling */
@@ -91,4 +91,23 @@
     width: 66.8%;
     height: 86%;
   }
+
+  ::-webkit-scrollbar {
+    width: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
   

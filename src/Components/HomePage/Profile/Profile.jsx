@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
+import './profile.css';
 
 function Profile({ user }) {
     const history = useNavigate();
@@ -17,7 +18,7 @@ function Profile({ user }) {
         <>
             <div class="btn-group d-none d-md-block d-lg-block">
                 <div class="btn-group dropstart" role="group">
-                    <img className='' width='60px' style={{ borderRadius: '50%', cursor: 'pointer' }} src={user?.profile} class="img-fluid  dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" alt="..." />
+                    <img className='' width='70px' style={{ borderRadius: '50%', cursor: 'pointer' }} src={user?.profile} class="img-fluid  dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" alt="..." />
 
                     <ul class="dropdown-menu mt-5 col-sm-12" style={{ width: '300px', zIndex: '100000' }}>
                         <div class="accordion" id="accordionPanelsStayOpenExample">
@@ -30,7 +31,7 @@ function Profile({ user }) {
                             {/* for the profiule */}
                             <div class="accordion-item border-0">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                                    <button class="accordion-button shadow-none border-none bg-white" id='/ninja/user/profile' onClick={(e)=>{visitors(e)}} type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                    <button class="accordion-button shadow-none border-none bg-white p" id='/ninja/user/profile' onClick={(e)=>{visitors(e)}} type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
                                         Your Profile
                                     </button>
                                 </h2>
@@ -41,7 +42,7 @@ function Profile({ user }) {
                             <div class="accordion-item border-0 ">
                                 <h2 class="accordion-header border-none" id="panelsStayOpen-headingOne">
                                     <button class="bg-white accordion-button border-none shadow-none" id='/ninja/user/account' onClick={(e)=>{visitors(e)}}  type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                                        My Account
+                                        <span className='a'>My Account</span>
                                     </button>
                                 </h2>
 
@@ -51,7 +52,7 @@ function Profile({ user }) {
                             <div class="accordion-item border-0">
                                 <h2 class="accordion-header border-0" id="panelsStayOpen-headingTwo">
                                     <button class="accordion-button collapsed bg-white border-0" onClick={logoutUser} type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                                        Logout
+                                       <span className='l'> Logout</span>
                                     </button>
                                 </h2>
 

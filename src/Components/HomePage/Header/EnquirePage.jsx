@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import {urlFunction} from '../../../App.js'
 
 
 function EnquirePage() {
@@ -16,11 +17,12 @@ function EnquirePage() {
             phone:phone
         }
         try{
-                const enquire = await axios.post('http://localhost:4000/student/enquire/add',body)
+                console.log(urlFunction());
+                const enquire = await axios.post(urlFunction()+'student/enquire/add',body)
                 setName('');
                 setEmail('');
                 setPhone('');
-                document.getElementById('en1').style.border = '5px solid green';
+                document.getElementById('en1').style.border = '5px solid green !important';
                 setTimeout(()=>{
                     document.getElementById('en1').style.border = '0';
                 },1000)
