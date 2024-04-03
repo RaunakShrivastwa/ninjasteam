@@ -30,7 +30,7 @@ const UserAbout = () => {
     const loadUser = async () => {
         const { userEmail } = JSON.parse(Cookies.get('yourData'));
         try {
-            const userData = await axios.get(`http://localhost:4000/user/fetchUser/${userEmail}`);
+            const userData = await axios.get(urlFunction()+`user/fetchUser/${userEmail}`);
             setName(userData.data.userName)
             setLocation(userData.data?.userAddress || "Your LOcation");
             setRole(userData.data?.userRole || "What is Your Role");
@@ -83,7 +83,7 @@ const UserAbout = () => {
             userAddress: location
         }
         try {
-            const updatedUser = await axios.post(`http://localhost:4000/user/update/${user.userEmail}`, body)
+            const updatedUser = await axios.post(urlFunction()+`user/update/${user.userEmail}`, body)
             console.log(updatedUser);
             setUser(updatedUser.data);
             document.getElementById('b-1').classList.add('d-none')
@@ -103,7 +103,7 @@ const UserAbout = () => {
            
         }
         try {
-            const updatedUser = await axios.post(`http://localhost:4000/user/update/${user.userEmail}`, body)
+            const updatedUser = await axios.post(urlFunction()+`user/update/${user.userEmail}`, body)
             console.log(updatedUser);
             setUser(updatedUser.data);
             document.getElementById('a-1').classList.add('d-none')

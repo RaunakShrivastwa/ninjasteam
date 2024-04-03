@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import {urlFunction} from '../../../App'
 
 const AddUserWorkExperse = ({updateWorkExperience,user,onCancel }) => {
     const [name, setName] = useState();
@@ -19,7 +20,7 @@ const AddUserWorkExperse = ({updateWorkExperience,user,onCancel }) => {
             user:user?.userEmail
         }
         try{
-             const addExp = await axios.post(`http://localhost:4000/exprience/add/${user?.userEmail}`,body);
+             const addExp = await axios.post(urlFunction()+`exprience/add/${user?.userEmail}`,body);
              console.log(addExp.data);
              updateWorkExperience(addExp.data)
              setName('');
