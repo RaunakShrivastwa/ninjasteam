@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import Profile from '../HomePage/Profile/Profile';
 import axios from 'axios';
-import {urlFunction} from '../../App.js'
+import { urlFunction } from '../../App.js'
 import Room from '../MyClassRoom/Room.jsx';
 
 
@@ -14,15 +14,15 @@ function NavigationMenu() {
 
     useEffect(() => {
         const yourDataCookie = Cookies.get('yourData');
-        console.log("Cookies",yourDataCookie);
-         if(yourDataCookie){
+        console.log("Cookies", yourDataCookie);
+        if (yourDataCookie) {
             proceed(yourDataCookie);
-         }
+        }
     }, []);
 
     const proceed = async (yourDataCookie) => {
         const d = JSON.parse(yourDataCookie);
-        const userData =  await axios.get(urlFunction()+`user/fetchUser/${d.userEmail}`);
+        const userData = await axios.get(urlFunction() + `user/fetchUser/${d.userEmail}`);
         setUser(userData.data);
     }
 
@@ -52,8 +52,8 @@ function NavigationMenu() {
         } : {};
     };
 
-    const classRoom = ()=>{
-       <Room user={user}/> 
+    const classRoom = () => {
+        <Room user={user} />
     }
 
     return (
@@ -61,7 +61,7 @@ function NavigationMenu() {
             <nav className="navbar navbar-expand-lg navbar-light fixed-top mb-3">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="#">
-                        <img className='logos' width='40px' src="/image/icon/ninja.png" alt="" srcset="" />
+                        <img className='logos' width='40px' src="/image/icon/ninja.png" alt="" srcSet="" />
                     </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -69,40 +69,33 @@ function NavigationMenu() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="item nav-item">
-                                <Link className="nav-link" to="/can/home"  onClick={(e) => handleItemClick(e, "Home")} style={getActiveStyles("Home")}>
+                                <Link className="nav-link" to="/can/home" onClick={(e) => handleItemClick(e, "Home")} style={getActiveStyles("Home")}>
                                     Home
                                 </Link>
                             </li>
+
                             <li className="item nav-item">
                                 <Link className="nav-link" to="#" onClick={(e) => handleItemClick(e, "All Jobs")} style={getActiveStyles("All Jobs")}>All Jobs</Link>
                             </li>
 
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/ninja/course" onClick={(e) => handleItemClick(e, "Courses")} style={getActiveStyles("Courses")}>Courses</Link>
-                            </li>
-
-
                             <li className="item nav-item">
-                                <Link className="nav-link" to="/can/about" onClick={(e) => handleItemClick(e, "About Us")} style={getActiveStyles("About Us")}>About Us</Link>
+                                <Link className="nav-link" to="/ninja/course" onClick={(e) => handleItemClick(e, "Courses")} style={getActiveStyles("Courses")}>Courses</Link>
                             </li>
 
                             <li className="item nav-item">
                                 <Link className="nav-link" to="#" onClick={(e) => handleItemClick(e, "Blogs")} style={getActiveStyles("Blogs")}>Blogs</Link>
                             </li>
                         </ul>
-
-                        <form className="d-flex me-4">
-                           <div className='d-flex justify-content-around align-items-center'>
-                           {
-                                user.courses?.length >0 ?(
-                                    <Link to={`/ninja/classRoom/${user._id}`}><button type='button' className='btn btn-outline-primary me-5 text-dark room'>My Classroom</button>
+                        <form class="d-flex" role="search">
+                            {
+                                user.courses?.length > 0 ? (
+                                    <Link to={`/ninja/classRoom/${user._id}`}><button type='button' className='mt-2 btn btn-outline-primary me-5 text-dark room'>My Classroom</button>
                                     </Link>
-                                ):(<></>)
+                                ) : (<></>)
                             }
-                           </div>
-                           
+
                             {user ? (
-                               <Profile user={user}/>
+                                <Profile user={user} />
                             ) : (
                                 // Render login button if user does not exist
                                 <Link to='/ninja/auth/login'>
@@ -113,6 +106,7 @@ function NavigationMenu() {
                     </div>
                 </div>
             </nav>
+
         </>
     )
 }

@@ -16,7 +16,7 @@ function Profile({ user }) {
 
     return (
         <>
-            <div class="btn-group d-none d-md-block d-lg-block">
+            <div class="btn-group  d-lg-block">
                 <div class="btn-group dropstart" role="group">
                     <img className='' width='70px' style={{ borderRadius: '50%', cursor: 'pointer' }} src={user?.profile} class="img-fluid  dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" alt="..." />
 
@@ -63,32 +63,7 @@ function Profile({ user }) {
                 </div>
             </div>
             {/* small device */}
-            <div className='d-md-none pe-3 text-white' style={{backgroundColor:'#13503a' }}>
-                <div class="accordion " id="accordionPanelsStayOpenExample" style={{backgroundColor:'#13503a !important' }}>
-
-                    <div className='' style={{ width: '100% !important' }}>
-                        <span className='mb-3'>{user?.userName}</span>
-                        <img width='50px' src={user?.profile} style={{borderRadius:'50%'}} class="px-2 mb-3 img-fluid" alt="..." />
-                        {/* for the profile */}
-                        <p>
-                            <Link className='text-decoration-none text-white d-flex mb-3' to='/ninja/user/profile'>Your Profile</Link>
-                        </p>
-
-                        {/* for the Account */}
-                        <p>
-                            <Link className='text-decoration-none text-white' to='/'>Your Account</Link>
-                        </p>
-
-                        <hr className='text-white mb-4'/>
-
-                        {/* foer the logout */}
-                        <button className='btn' onClick={logoutUser} style={{backgroundColor:'#eaec65'}}>Logout</button>
-
-                    </div>
-
-                    
-                </div>
-            </div>
+            
         </>
     );
 }

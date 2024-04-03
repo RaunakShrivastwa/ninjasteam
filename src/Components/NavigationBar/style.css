@@ -50,6 +50,7 @@
 .room {
   animation: wave 0.8s ease-in-out !important;
   background: rgb(234, 236, 100);
+  /* background-color: #cdd2f1; */
   background: linear-gradient(90deg, rgba(234, 236, 100, 1) 0%, rgba(172, 230, 130, 1) 50%, rgba(126, 223, 152, 1) 100%);
 }
 
