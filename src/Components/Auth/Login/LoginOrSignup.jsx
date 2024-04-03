@@ -79,7 +79,7 @@ function LoginOrSignup() {
             </form>
             <div className='d-flex justify-content-around align-items-center mb-4'>
               {/* for the google */}
-              <img className=''  id='http://localhost:4000/user/auth/google' onClick={(e) => { goLogin(e) }} width='30px' src="https://cdn-icons-png.flaticon.com/128/300/300221.png" alt="" />
+              <img className=''  id={urlFunction()+`user/auth/google`} onClick={(e) => { goLogin(e) }} width='30px' src="https://cdn-icons-png.flaticon.com/128/300/300221.png" alt="" />
 
               {/* for the github */}
 
