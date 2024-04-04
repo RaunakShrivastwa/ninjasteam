@@ -41,7 +41,7 @@ function CourseHeading({ mods,course }) {
             <div class="d-none d-sm-block col-sm-6 col-md-3">
                 <div class="card border-0" style={{ background: '#2d3668' }}>
                     <div class="card-body border-0 text-center">
-                        <img src="/image/icon/ninja.png" class="p-3 img-fluid rounded-start" alt="..." />
+                        <img src="https://res.cloudinary.com/dqarshyzz/image/upload/v1710520447/public/image/icon/mps96bl2hb2sjyxrgzyn.png" class="p-3 img-fluid rounded-start" alt="..." />
                     </div>
                 </div>
             </div>
