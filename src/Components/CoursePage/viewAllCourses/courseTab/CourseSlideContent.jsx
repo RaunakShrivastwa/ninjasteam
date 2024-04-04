@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CourseCard from '../../CourseCommon/CourseCard';
 import axios from 'axios';
+import {urlFunction} from '../../../../App.js'
 
 const CourseSlideContent = ({ content }) => {
     const [course, setCourse] = useState([]);
@@ -9,7 +10,7 @@ const CourseSlideContent = ({ content }) => {
     useEffect(() => {
         const loadCourses = async () => {
             try {
-                const response = await axios.get(`http://localhost:4000/course`);
+                const response = await axios.get(urlFunction()+`course`);
                 setCourse(response.data.course);
             } catch (err) {
                 console.log("There is an error: ", err);

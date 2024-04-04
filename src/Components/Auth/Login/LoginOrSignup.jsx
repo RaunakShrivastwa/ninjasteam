@@ -10,6 +10,7 @@ import './login.css'
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import {urlFunction} from '../../../App.js';
 
 function LoginOrSignup() {
 
@@ -32,11 +33,13 @@ function LoginOrSignup() {
       password: password
     };
     try {
-      const user = await axios.post('http://localhost:4000/user/login',body);
+      const user = await axios.post(urlFunction()+'user/login',body);
       console.log("Login User ", user.data);
       if (user.status === 200) {
         Cookies.set('yourData', JSON.stringify(user.data), { expires: 3 }); // Expires in 1 day  
-        history("/");
+        const path = Cookies.get('path') || '/';
+
+        history(JSON.parse(path));
       } else {
         console.log("Login failed");
       }

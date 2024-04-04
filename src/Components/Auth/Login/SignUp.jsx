@@ -7,6 +7,7 @@ import {
 import './login.css'
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import {urlFunction} from '../../../App.js';
 function SignUp() {
     const [avtar, setAvtar] = useState('');
     const [name, setName] = useState('');
@@ -24,6 +25,7 @@ function SignUp() {
     const [img,setImg] = useState('');
 
 
+
     const history = useNavigate();
 
     useEffect(() => {
@@ -37,7 +39,7 @@ function SignUp() {
             OTP: otp
         }
         try {
-            const res = await axios.post(`http://localhost:4000/user/varify`, body)
+            const res = await axios.post(urlFunction()+`user/varify`, body)
             // this code for invalide 
             if (res.data.flag) {
                 document.getElementById('valide').classList.add('d-none');
@@ -75,7 +77,7 @@ function SignUp() {
         document.getElementById('valide').classList.remove('d-none');
         document.getElementById('invalide').classList.add('d-none');
         try {
-            await axios.post(`http://localhost:4000/user/resend`)
+            await axios.post(urlFunction()+`user/resend`)
         } catch (err) {
             return console.log("there is error ", err);
         }
@@ -114,7 +116,7 @@ function SignUp() {
         document.getElementById('floatingAdress').classList.add('d-none');
         setFieldsDisabled(true)
         try {
-            const saveData = await axios.post(`http://localhost:4000/user/add`, body);
+            const saveData = await axios.post(urlFunction()+`user/add`, body);
             console.log(saveData);
         } catch (error) {
             return console.log("There is errro post data", error);

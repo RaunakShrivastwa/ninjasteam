@@ -7,7 +7,8 @@ import CourseJourney from './CourseJourney'
 import CourseFAQ from './CourseFAQ'
 import NavigationMenu from '../../NavigationBar/NavigationMenu'
 import { useParams } from 'react-router'
-import axios from 'axios'
+import axios from 'axios';
+import {urlFunction} from '../../../App.js';
 
 const CourseDetails = () => {
     const [course,setCourse] = useState('');
@@ -16,7 +17,7 @@ const CourseDetails = () => {
     useEffect(() => {
         const loadUser = async () => {
             try {
-                const courseData = await axios.get(`http://localhost:4000/course/courseName/${id}`);
+                const courseData = await axios.get(urlFunction()+`course/courseName/${id}`);
                 setCourse(courseData.data.courseInfo);
 
             } catch (err) {

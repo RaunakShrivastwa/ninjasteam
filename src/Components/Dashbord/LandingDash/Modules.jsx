@@ -1,143 +1,43 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import './milestone.css';
 
-function Modules({ course, log }) {
-    console.log(course);
+function Modules({ module, course }) {
+    const [courseD, setCourseD] = useState();
     return (
-        <div className='cp' style={{height:'60vh',overflow:'auto'}}>
+        <div className='cp' style={{ height: '60vh', overflow: 'auto' }}>
+            {
+                module?.chapter.length > 0 ? (
+                    module?.chapter.map((c) => (
+                        <Link to={`/ninja/learning/${c?.name}`} className='text-decoration-none'>
+                            <div class="card mb-3 w-100 border border-0 p-1">
+                                <div class="card-body w-100 shadow-lg " style={{ border: '10px solid #2d3668', borderTop: 0, borderRight: 0, borderBottom: 0, }}>
+                                    <div class="d-flex justify-content-between">
+                                        <img src={course?.courseImage} alt="courseImage" className='me-3' width={'50px'} />
+                                        <span class="card-title h5">{c?.name}</span>
+                                        <img src={course?.courseImage} alt="courseImage" className='me-3' width={'50px'} />
+                                    </div>
+                                </div>
+                            </div>
+                        </Link>
+                    ))
+                ) :
+                    (
+                        course?.modules?.map((data, index) => (
+                            <div class="card mt-2 shadow-lg">
+                                <div class="card-header border-0">
+                                    <span className='fw-2 text-primary'>Milestone</span>  {index + 1}
+                                </div>
+                                <div class="card-body">
+                                    <blockquote class="blockquote mb-0">
+                                        <p className='h5'>{data?.name}</p>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        ))
 
-            <div className='p-1 table-div'>
-                <Link title='Click To Start Learning' className='chapter-title' to={`/chapter/Dashboard`}>
-                    <table className="table chapter-body">
-                        <tbody>
-                            <tr className='heart' style={{ borderLeft: 0, borderRight: 0, borderBottom: 0 }}>
-                                <td className='bo p-3 d-none d-sm-block'>
-                                    <span className="tt1 rr"><img width='40px' src="https://cdn-icons-png.flaticon.com/128/919/919825.png" alt="" /></span>
-                                    <br />
-                                </td>
-                                <td className='bo'></td>
-                                <td className='bo p-4'>
-                                    <span className=""><strong className=''>Spring boot</strong></span>
-                                </td>
-                                <td className="tt1 bo p-4">
-                                    <span className="text-danger">Deadline: 2 Dec 2022</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </Link>
-            </div>
-
-            <div className='p-1 table-div'>
-                <Link title='Click To Start Learning' className='chapter-title' to={`/chapter/Dashboard`}>
-                    <table className="table chapter-body">
-                        <tbody>
-                            <tr className='heart' style={{ borderLeft: 0, borderRight: 0, borderBottom: 0 }}>
-                                <td className='bo p-3 d-none d-sm-block'>
-                                    <span className="tt1 rr"><img width='40px' src="https://cdn-icons-png.flaticon.com/128/919/919825.png" alt="" /></span>
-                                    <br />
-                                </td>
-                                <td className='bo'></td>
-                                <td className='bo p-4'>
-                                    <span className=""><strong className=''>Spring boot</strong></span>
-                                </td>
-                                <td className="tt1 bo p-4">
-                                    <span className="text-danger">Deadline: 2 Dec 2022</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </Link>
-            </div>
-
-            <div className='p-1 table-div'>
-                <Link title='Click To Start Learning' className='chapter-title' to={`/chapter/Dashboard`}>
-                    <table className="table chapter-body">
-                        <tbody>
-                            <tr className='heart' style={{ borderLeft: 0, borderRight: 0, borderBottom: 0 }}>
-                                <td className='bo p-3 d-none d-sm-block'>
-                                    <span className="tt1 rr"><img width='40px' src="https://cdn-icons-png.flaticon.com/128/919/919825.png" alt="" /></span>
-                                    <br />
-                                </td>
-                                <td className='bo'></td>
-                                <td className='bo p-4'>
-                                    <span className=""><strong className=''>Spring boot</strong></span>
-                                </td>
-                                <td className="tt1 bo p-4">
-                                    <span className="text-danger">Deadline: 2 Dec 2022</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </Link>
-            </div>
-
-            <div className='p-1 table-div'>
-                <Link title='Click To Start Learning' className='chapter-title' to={`/chapter/Dashboard`}>
-                    <table className="table chapter-body">
-                        <tbody>
-                            <tr className='heart' style={{ borderLeft: 0, borderRight: 0, borderBottom: 0 }}>
-                                <td className='bo p-3 d-none d-sm-block'>
-                                    <span className="tt1 rr"><img width='40px' src="https://cdn-icons-png.flaticon.com/128/919/919825.png" alt="" /></span>
-                                    <br />
-                                </td>
-                                <td className='bo'></td>
-                                <td className='bo p-4'>
-                                    <span className=""><strong className=''>Spring boot</strong></span>
-                                </td>
-                                <td className="tt1 bo p-4">
-                                    <span className="text-danger">Deadline: 2 Dec 2022</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </Link>
-            </div>
-
-            <div className='p-1 table-div'>
-                <Link title='Click To Start Learning' className='chapter-title' to={`/chapter/Dashboard`}>
-                    <table className="table chapter-body">
-                        <tbody>
-                            <tr className='heart' style={{ borderLeft: 0, borderRight: 0, borderBottom: 0 }}>
-                                <td className='bo p-3 d-none d-sm-block'>
-                                    <span className="tt1 rr"><img width='40px' src="https://cdn-icons-png.flaticon.com/128/919/919825.png" alt="" /></span>
-                                    <br />
-                                </td>
-                                <td className='bo'></td>
-                                <td className='bo p-4'>
-                                    <span className=""><strong className=''>Spring boot</strong></span>
-                                </td>
-                                <td className="tt1 bo p-4">
-                                    <span className="text-danger">Deadline: 2 Dec 2022</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </Link>
-            </div>
-
-            <div className='p-1 table-div'>
-                <Link title='Click To Start Learning' className='chapter-title' to={`/chapter/Dashboard`}>
-                    <table className="table chapter-body">
-                        <tbody>
-                            <tr className='heart' style={{ borderLeft: 0, borderRight: 0, borderBottom: 0 }}>
-                                <td className='bo p-3 d-none d-sm-block'>
-                                    <span className="tt1 rr"><img width='40px' src="https://cdn-icons-png.flaticon.com/128/919/919825.png" alt="" /></span>
-                                    <br />
-                                </td>
-                                <td className='bo'></td>
-                                <td className='bo p-4'>
-                                    <span className=""><strong className=''>Spring boot</strong></span>
-                                </td>
-                                <td className="tt1 bo p-4">
-                                    <span className="text-danger">Deadline: 2 Dec 2022</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </Link>
-            </div>
+                    )
+            }
 
         </div>
 

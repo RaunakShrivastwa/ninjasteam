@@ -1,25 +1,17 @@
-/* Faculty.css */
+.faculty-container .row {
+  display: flex;
+  overflow: hidden; /* Ensure cards don't overflow outside the row */
+}
 
-.faculty-container {
-    overflow: hidden;
+.faculty-container .col {
+  animation: moveRow 5s linear infinite; /* Animation for moving the row */
+}
+
+@keyframes moveRow {
+  0% {
+    transform: translateX(0); /* Starting position */
   }
-  
-  .moving-row {
-    display: flex;
-    animation: moveRow linear infinite;
-    animation-duration: 10s; /* Change this value to adjust the speed */
+  100% {
+    transform: translateX(-100%); /* Move the row completely outside the view */
   }
-  
-  .paused {
-    animation-play-state: paused;
-  }
-  
-  @keyframes moveRow {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-  
+}

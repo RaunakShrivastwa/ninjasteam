@@ -5,8 +5,11 @@ import AdminSidebar from './AdminSidebar';
 import AdminSummarizeCard from './AdminSummarizeCard';
 import AdminGraph from './AdminGraph';
 import AdminStudent from '../Student/AdminStudent';
+import AdminTeacher from '../Teacher/AdminTeacher';
+import TeacherProfile from '../Teacher/TeacherProfile';
 
 const AdminHome = () => {
+    
     return (
         <>
             <div class="wrapper">
@@ -22,9 +25,14 @@ const AdminHome = () => {
                             </div> */}
 
 
-                            <div class="mb-3 ">
+                            {/* <div class="mb-3 ">
                                 <SmallScreeSidebar heading="Student" />
-                                <AdminStudent />
+                                <AdminStudent studentData={studentData} />
+                            </div> */}
+
+                            <div class="mb-3 ">
+                                <SmallScreeSidebar heading="Facuilty" />
+                                <AdminTeacher />
                             </div>
                         </div>
                     </main>
