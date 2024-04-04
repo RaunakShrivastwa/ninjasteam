@@ -67,8 +67,8 @@ function LandingDash() {
                                 <div className='banner' style={{ background: '#0a2541' }}>
                                     <Banner name={course?.name} />
                                 </div>
-                                <div className='dashboard' style={{ background: '#0a2541' }}>
-                                    <DashBord />
+                                <div className='dashboard'  style={{ background: '#0a2541' }}>
+                                    <DashBord setStone={setStone} />
                                 </div>
                                 <div className='listOfStone' style={{ background: '#0a2541' }}>
                                     <ListofStone stone={course?.milestone} setStone={setStone} />

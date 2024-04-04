@@ -2,7 +2,7 @@ import Cookies from 'js-cookie';
 import React, { useEffect, useState } from 'react';
 
 
-function CourseHeading({ mods,course }) {
+function CourseHeading({ mods, course }) {
     const [user, setUser] = useState("");
     const loadUser = () => {
         const userInfo = Cookies.get('yourData')
@@ -22,7 +22,7 @@ function CourseHeading({ mods,course }) {
                         <div class="card" style={{ maxHeight: '540px', border: '0' }}>
                             <div class="row g-0">
                                 <div className="col-md-2 d-flex justify-content-around align-items-center" style={{ background: '#2d3668', border: '0' }}>
-                                 <img style={{ borderRadius: '50%', cursor: 'pointer', width:'130px', height:'120px'}} title={user?.userName} src={user?.profile} class=" img-fluid"  alt="..." />
+                                    <img style={{ borderRadius: '50%', cursor: 'pointer', width: '130px', height: '120px' }} title={user?.userName} src={user?.profile} class=" img-fluid" alt="..." />
                                 </div>
                                 <div class="col-md-10">
                                     <div class="card-body" style={{ background: '#2d3668' }}>
@@ -41,7 +41,7 @@ function CourseHeading({ mods,course }) {
             <div class="d-none d-sm-block col-sm-6 col-md-3">
                 <div class="card border-0" style={{ background: '#2d3668' }}>
                     <div class="card-body border-0 text-center">
-                        <img src="/image/icon/ninja.png" class="p-3 img-fluid rounded-start" alt="..." />
+                        <img src="https://res.cloudinary.com/dqarshyzz/image/upload/v1710520447/public/image/icon/mps96bl2hb2sjyxrgzyn.png" class="p-3 img-fluid rounded-start" alt="..." />
                     </div>
                 </div>
             </div>
