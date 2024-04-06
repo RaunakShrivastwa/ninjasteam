@@ -39,7 +39,7 @@ function LandingDash() {
             milestone: stone
         }
         try {
-            const res = await axios.post('http://localhost:4000/module/single', body);
+            const res = await axios.post(urlFunction()+'module/single', body);
             setModule(res.data)
         } catch (err) {
             console.log("There is Error ", err);
