@@ -61,7 +61,7 @@ function LoginOrSignup() {
 
             <div className="text-center">
               <Link to='/'>
-              <img src="/image/icon/ninja.png"
+              <img src="https://res.cloudinary.com/dqarshyzz/image/upload/v1710520447/public/image/icon/mps96bl2hb2sjyxrgzyn.png"
                 style={{ width: '100px' }} alt="logo" />
               </Link>
               <h4 className="mt-1 mb-5 pb-1"><img width='20px' src="https://cdn-icons-png.flaticon.com/128/12503/12503107.png" alt="" /><span>Keep coding</span></h4>

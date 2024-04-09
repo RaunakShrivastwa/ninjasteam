@@ -11,9 +11,9 @@ function Modules({ module, course,setStone }) {
                     module?.chapter.map((c) => (
                         <Link to={`/ninja/learning/${c?.name}`} className='text-decoration-none'>
                             <div class="card mb-3 w-100 mb-4 border border-0 p-1">
-                                <div class="card-body w-100 shadow-lg shadow-sm" style={{ border: '10px solid #2d3668', borderTop: 0, borderRight: 0, borderBottom: 0, }}>
+                                <div class="card-body rounded w-100 shadow-lg shadow-sm" style={{ border: '10px solid #2d3668', borderTop: 0, borderRight: 0, borderBottom: 0, }}>
                                     <div class="d-flex justify-content-between">
-                                        <img src={course?.courseImage} alt="courseImage" className='me-3' width={'50px'} />
+                                        <img src={course?.courseImage} alt="courseImage" className='me-3 rounded-circle' width={'50px'} />
                                         <span class="card-title h5">{c?.name}</span>
                                         <img src={course?.courseImage} alt="courseImage" className='me-3' width={'50px'} />
                                     </div>
