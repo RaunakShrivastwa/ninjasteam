@@ -18,6 +18,7 @@ export function urlFunction() {
 }
 
 function App() {
+  console.log("jkjk");
   return (
     <>
       <Router>
