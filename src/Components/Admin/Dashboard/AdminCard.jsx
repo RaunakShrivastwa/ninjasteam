@@ -9,8 +9,8 @@ const AdminCard = ({ icon, title, number, color }) => {
                     <div class="d-flex justify-content-start align-items-center ps-3 my-o">
                         <i class={`${icon} fs-4`}></i>
                         <div class="card-body m-0">
-                            <h5 class="card-title fw-bold my-0">{title}</h5>
-                            <p class="my-0">{number}</p>
+                            <h5 class="card-title fw-bold my-0 text-break">{title}</h5>
+                            <p class="my-0 text-break">{number}</p>
                         </div>
                     </div>
                 </div>

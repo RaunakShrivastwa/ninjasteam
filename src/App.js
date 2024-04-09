@@ -10,9 +10,8 @@ import HomeNavigate from './Components/Auth/AddNavigate/HomeNavigate';
 import ViewAllCourses from './Components/CoursePage/viewAllCourses/ViewAllCourse';
 import Room from './Components/MyClassRoom/Room';
 import LearningBody from './Components/Dashbord/StartLearning/LearningBody';
-import AdminHome from './Components/AdminDashboard/Dashboard/AdminHome';
 import UserProfile from './Components/User/UserProfile/UserProfile';
-import AdminTeacher from './Components/AdminDashboard/Teacher/AdminTeacher';
+import DashboardPanel from './Components/Admin/Common/DashboardPanel';
 
 export function urlFunction() {
   return 'https://ourninjas.onrender.com/';
@@ -36,8 +35,12 @@ const App = () => {
           <Route exact path="/ninja/add/:email" element={<HomeNavigate />} />
           <Route exact path="/ninja/classRoom/:id" element={<Room />} />
           <Route exact path="/ninja/learning/:name" element={<LearningBody />} />
-          <Route exact path="/ninja/Admin/dashboard" element={<AdminHome />} />
-          <Route exact path='/ninja/Admin/teacher' element={<AdminTeacher />} />
+
+          <Route exact path="/ninja/Admin/dashboard" element={<DashboardPanel pageName={"Dashboard"} />} />
+          <Route exact path="/ninja/Admin/student" element={<DashboardPanel pageName={"Student"} />} />
+          <Route exact path="/ninja/Admin/teacher" element={<DashboardPanel pageName={"Teacher"} />} />
+          <Route exact path="/ninja/Admin/course" element={<DashboardPanel pageName={"Course"} />} />
+
         </Routes>
       </Router>
     </>

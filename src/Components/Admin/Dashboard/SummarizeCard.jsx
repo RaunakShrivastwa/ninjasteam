@@ -1,7 +1,7 @@
 import React from 'react'
 import AdminCard from './AdminCard'
 
-const AdminSummarizeCard = () => {
+const SummarizeCard = () => {
     const cardData = [{
         icon: 'fa-solid fa-graduation-cap',
         title: 'Student',
@@ -26,7 +26,7 @@ const AdminSummarizeCard = () => {
 
     return (
         <>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-2 my-3">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 my-3">
                 {
                     cardData.map((cardValue) => {
                         return <AdminCard icon={cardValue.icon} title={cardValue.title} number={cardValue.number} color={cardValue.color} />
@@ -37,4 +37,4 @@ const AdminSummarizeCard = () => {
     )
 }
 
-export default AdminSummarizeCard
+export default SummarizeCard
