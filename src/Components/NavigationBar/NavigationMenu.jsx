@@ -61,7 +61,7 @@ function NavigationMenu() {
             <nav className="navbar navbar-expand-lg navbar-light fixed-top mb-3">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="#">
-                        <img className='logos' width='40px' src="/image/icon/ninja.png" alt="" srcSet="" />
+                        <img className='logos' width='40px' src="https://res.cloudinary.com/dqarshyzz/image/upload/v1710520447/public/image/icon/mps96bl2hb2sjyxrgzyn.png" alt="ninjas" srcSet="" />
                     </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -89,8 +89,21 @@ function NavigationMenu() {
                         <form class="d-flex" role="search">
                             {
                                 user.courses?.length > 0 ? (
-                                    <Link to={`/ninja/classRoom/${user._id}`}><button type='button' className='mt-2 btn btn-outline-primary me-5 text-dark room'>My Classroom</button>
+                                    <Link to={`/ninja/classRoom/${user._id}`}>
+                                        {/* <button type='button' className='mt-2 btn btn-outline-primary me-5 text-dark room'>
+                                            My Classroom
+                                            <span className='rounded-circle bg-danger' style={{ fontSize: `20px`, marginTop: '-20px !important' }}>{user?.courses.length}</span>
+                                        </button> */}
+
+                                        <button type="button" class="mt-2 btn position-relative room  btn-outline-primary text-dark me-5">
+                                        My Classroom
+                                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                                {user?.courses.length}
+                                               
+                                            </span>
+                                        </button>
                                     </Link>
+
                                 ) : (<></>)
                             }
 

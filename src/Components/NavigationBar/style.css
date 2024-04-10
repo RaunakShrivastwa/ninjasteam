@@ -54,6 +54,12 @@
   background: linear-gradient(90deg, rgba(234, 236, 100, 1) 0%, rgba(172, 230, 130, 1) 50%, rgba(126, 223, 152, 1) 100%);
 }
 
+ .nameTopic{
+  animation: wave 0.8s ease-in-out !important;
+    color: linear-gradient(90deg, rgba(234, 236, 100, 1) 0%, rgba(172, 230, 130, 1) 50%, rgba(126, 223, 152, 1) 100%) !important;
+ }
+
+
 @keyframes wave {
   10% {
       transform: scale(1);

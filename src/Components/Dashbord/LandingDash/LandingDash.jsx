@@ -8,6 +8,7 @@ import axios from 'axios'
 import Modules from './Modules'
 import { Link, useParams } from 'react-router-dom';
 import { urlFunction } from '../../../App.js';
+import Cookie from 'js-cookie'
 
 function LandingDash() {
     const [stone, setStone] = useState();
@@ -39,14 +40,22 @@ function LandingDash() {
             milestone: stone
         }
         try {
-            const res = await axios.post('http://localhost:4000/module/single', body);
+            const res = await axios.post(urlFunction()+'module/single', body);
             setModule(res.data)
         } catch (err) {
             console.log("There is Error ", err);
         }
 
     }
-    console.log("Modules ", module);
+    const cM = Cookie.get('cM');
+            if(cM){
+                console.log("exist");
+                Cookie.remove('cM');
+                Cookie.set('cM', JSON.stringify(module), { expires: 3 });
+            }else{
+                console.log("not exist");
+                Cookie.set('cM', JSON.stringify(module), { expires: 3 });
+            }
     return (
         <>
             <nav class="navbar d-md-none d-sm-block navbar-expand-lg bg-body-tertiary">

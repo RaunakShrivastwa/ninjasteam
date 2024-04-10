@@ -4,12 +4,30 @@ import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { urlFunction } from '../../../App.js';
 import Nav from './Nav.jsx';
+import Cookie from 'js-cookie'
 
 function LearningBody() {
 
     const [subtopic, setSubTopics] = useState([]);
+    const [mentor,setMentor]= useState()
     const { name } = useParams();
     const [selectedSubitem, setSelectedSubitem] = useState(0);
+    const [user,setUser] = useState();
+    
+    const cM = JSON.parse(Cookie.get('cM'))
+    useEffect(()=>{
+        loadUser();
+    },[]);
+
+    const loadUser= async ()=>{
+        const user = JSON.parse(await Cookie.get('yourData'))
+        try{
+             const userData = await axios.get(urlFunction()+`user/fetchUser/${user.userEmail}`);
+             setUser(userData.data)
+        }catch(err){
+            return console.log("There is Error ",err);
+        }
+    }
 
     useEffect(() => {
         loadTopics();
@@ -18,7 +36,8 @@ function LearningBody() {
     const loadTopics = async () => {
         try {
             const topic = await axios.get(urlFunction() + `subtopic/getSingle/${name}`);
-            setSubTopics(topic.data);
+            setSubTopics(topic.data.subTopic);
+            setMentor(topic.data.Mentor)
         } catch (err) {
             console.log("There is Error ", err);
         }
@@ -28,23 +47,33 @@ function LearningBody() {
         setSelectedSubitem(index);
     }
 
+    const isSubtopicWatched = () => {
+        if (user && user.subtopic) {
+            return user.subtopic.includes(subtopic[selectedSubitem]?._id);
+        }
+        return false;
+    }
+
+    const setStatus  = async ()=>{
+          const body = {
+              userId: user._id,
+              subTopic: subtopic[selectedSubitem]._id
+          };
+          console.log("set Body ",body);
+          try{
+             const setItem = await axios.post(urlFunction()+'user/set/topic/status',body);
+             loadUser()
+          }catch(err){
+            return console.log("There is Error ",err);
+          }
+    }
+
     return (
         <>
-            <Nav />
+            <Nav name={subtopic[0]?.Chapter} mentor={mentor} subTopic={subtopic} setSelectedSubitem={setSelectedSubitem} cM={cM?.enrollCourse}/>
             <div class="row p-0 m-0">
                 {/* for the Subtopics */}
-                <div className='col-md-4 p-2 g-0 col-sm-12 overflow-auto'>
-                    {/* for the small device */}
-                    <button style={{zIndex:'1000'}} class="btn btn-primary d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button>
-                    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <p>Try scrolling the rest of the page to see this option in action.</p>
-                        </div>
-                    </div>
+                <div className='col-md-4 p-2 g-0 col-sm-12 overflow-auto'>                                   
 
                      {/* for the large device */}
                      <div  className='d-none d-md-block'>
@@ -79,7 +108,7 @@ function LearningBody() {
 
 
             {/* for the footer */}
-            <div className='d-flex justify-content-end align-items-end d-none d-sm-block' style={{ position: 'absolute', bottom: '0', right: '0', width: '100%' }}>
+            <div className='d-flex justify-content-end align-items-end d-none d-md-block' style={{ position: 'absolute', bottom: '0', right: '0', width: '100%' }}>
                 {/* NavBar at the bottom right corner */}
                 <ul className="nav ng nav-pills nav-fill mt-1 shadow d-flex justify-content-around align-items-center" style={{ background: 'white !important', width: '100%' }}>
                     <li className="nav-item" title='View Documentation'>
@@ -90,15 +119,13 @@ function LearningBody() {
                         <Link className="nav-link" href="#"><img width='30px' title='Add Favorite' src="https://cdn-icons-png.flaticon.com/128/833/833472.png" alt="" /></Link>
                     </li>
                     <li className="nav-item" title='Previous Lecture'>
-                        <Link className="nav-link  shadow" aria-disabled="true"><strong className='text-white'>Prev</strong></Link>
+                        <button className='btn btn-outline-warning'><strong className='text-white' style={{cursor:'pointer'}} onClick={()=>{if(selectedSubitem!=0){setSelectedSubitem(selectedSubitem-1)}}}>Prev</strong></button>
                     </li>
-                    <li className="nav-item" title='Skip'>
-                        <Link className="nav-link " aria-disabled="true">
-                            <button className='btn btn-danger'>Mark As Read</button>
-                        </Link>
+                    <li className="nav-item" title='Mark as Read'>
+                        {isSubtopicWatched() ? <button className='btn btn-success'><strong className='text-white'>Watched</strong></button> : <button onClick={setStatus} className='btn btn-danger'><strong className='text-white'>Mark As Read</strong></button>}
                     </li>
                     <li className="nav-item" title='Next Lecture'>
-                        <Link className="nav-link  shadow" aria-disabled="true"><strong title='Next Lecture' className='text-white'>Next</strong></Link>
+                       <button className='btn btn-outline-warning'><strong title='Next Lecture' className='text-white' style={{cursor:'pointer'}} onClick={()=>setSelectedSubitem(selectedSubitem+1)}>Next</strong></button>
                     </li>
                 </ul>
             </div>
