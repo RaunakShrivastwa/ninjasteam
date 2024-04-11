@@ -93,7 +93,9 @@ function LearningBody() {
                 {/* for the video */}
                 <div className="col-md-8 p-0 col-sm-12 bg-success " style={{ height: '85vh' }}>
                     {/* Content of Video Section */}
-                    <div className="video-container">
+                    {
+                    subtopic.length > 0 ? (
+                        <div className="video-container">
                         <iframe
                             className="video-content"
                             src={subtopic[selectedSubitem]?.video_URL + '?enablejsapi=1'}
@@ -103,6 +105,10 @@ function LearningBody() {
                             style={{ width: '100%', height: '100%' }}
                         ></iframe>
                     </div>
+                    ):(
+                        <span>LOading...</span>
+                    )
+                }
 
                 </div>
             </div>

@@ -81,22 +81,29 @@ function Nav({ name, mentor, subTopic, setSelectedSubitem, cM }) {
                         </div>
 
                         {/* navbar for the small device */}
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0  d-sm-block d-md-none">
-                            <div className='col-md-4 p-2 g-0 col-sm-12 overflow-auto'>
-                                <Support />
-                                <div className=''>
-                                    {
-                                        subTopic?.map((data, index) => (
-                                            <div className={`card mb-3 shadow-lg form-control  ${item === index ? 'text-success border-3 border-primary' : ''}`} style={{ cursor: 'pointer' }} onClick={() => handleSubitemClick(index)} key={index}>
-                                                <div className="card-body h5">
-                                                    {data?.TopicName}
+                         {
+                            subTopic.length > 0 ? (
+                                <ul className="navbar-nav me-auto mb-2 mb-lg-0  d-sm-block d-md-none">
+                                <div className='col-md-4 p-2 g-0 col-sm-12 overflow-auto'>
+                                    <Support />
+                                    <div className=''>
+                                        {
+                                            subTopic?.map((data, index) => (
+                                                <div className={`card mb-3 shadow-lg form-control  ${item === index ? 'text-success border-3 border-primary' : ''}`} style={{ cursor: 'pointer' }} onClick={() => handleSubitemClick(index)} key={index}>
+                                                    <div className="card-body h5">
+                                                        {data?.TopicName}
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        ))
-                                    }
+                                            ))
+                                        }
+                                    </div>
                                 </div>
-                            </div>
-                        </ul>
+                            </ul>
+                            ):
+                            (
+                                <span>loading</span>
+                            )
+                         }
 
                     </div>
                 </div>
