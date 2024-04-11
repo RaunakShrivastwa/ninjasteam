@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie';
-import '../../NavigationBar/style.css'
+import '../../NavigationBar/style.css';
 import Feedback from './Feedback';
 import Support from './Support';
 import { ToastContainer, toast } from 'react-toastify';
@@ -11,15 +11,17 @@ import SupportForm from './SupportForm';
 function Nav({ name, mentor, subTopic, setSelectedSubitem, cM }) {
     const [user, setUser] = useState();
     const [item, setItem] = useState(0);
+    const [navbarOpen, setNavbarOpen] = useState(false); // State to control navbar collapse
 
     useEffect(() => {
-        setUser(JSON.parse(Cookies.get('yourData')))
+        setUser(JSON.parse(Cookies.get('yourData')));
     }, []);
 
     const handleSubitemClick = (index) => {
-        setItem(index)
+        setItem(index);
         setSelectedSubitem(index);
-    }
+        setNavbarOpen(false); // Close navbar on item click
+    };
 
     const notify = () => toast.success(<SupportForm />, {
         position: "top-center",
@@ -31,25 +33,27 @@ function Nav({ name, mentor, subTopic, setSelectedSubitem, cM }) {
         icon: <img width='30px' src="" alt="" />,
         closeButton: false,
         style: { width: '400px' }
-
     });
-    
 
     return (
         <>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                    <Link class="navbar-brand" to={`/ninja/landing/dash/${cM}`}>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <div className="container-fluid">
+                    <Link className="navbar-brand" to={`/ninja/landing/dash/${cM}`}>
                         <img width="50px" className='rounded-circle' src={user?.profile} alt="" />
                     </Link>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                    <button
+                        className="navbar-toggler"
+                        type="button"
+                        onClick={() => setNavbarOpen(!navbarOpen)} // Toggle navbar collapse
+                    >
+                        <span className="navbar-toggler-icon"></span>
                     </button>
 
                     {/* for the subtopic */}
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+                    <div className={`collapse navbar-collapse ${navbarOpen ? 'show' : ''}`} id="navbarSupportedContent1">
 
-                        {/* for the large seceen */}
+                        {/* for the large screen */}
                         <div className='d-flex justify-content-end align-items-end d-none d-md-block d-sm-none' style={{ bottom: '0', right: '0', width: '100%' }}>
 
                             <ul className="nav ng nav-pills nav-fill rounded  shadow d-flex justify-content-around align-items-center" style={{ background: 'white !important', width: '100%' }}>
@@ -70,16 +74,14 @@ function Nav({ name, mentor, subTopic, setSelectedSubitem, cM }) {
                                 </li>
                                 <li className="nav-item" title='Rate Lecture'>
                                     <Link className="nav-link" aria-disabled="true">
-                                        <button class="btn room" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Feedback</button>
-
+                                        <button className="btn room" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Feedback</button>
                                     </Link>
                                 </li>
-
                             </ul>
                         </div>
 
                         {/* navbar for the small device */}
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0  d-sm-block d-md-none">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0  d-sm-block d-md-none">
                             <div className='col-md-4 p-2 g-0 col-sm-12 overflow-auto'>
                                 <Support />
                                 <div className=''>
@@ -97,27 +99,20 @@ function Nav({ name, mentor, subTopic, setSelectedSubitem, cM }) {
                         </ul>
 
                     </div>
-
-
-
-
                 </div>
-
-
             </nav>
 
             {/* for the feedback */}
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                <div class="offcanvas-header">
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div className="offcanvas-header">
+                    <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-                <div class="offcanvas-body">
-                    < Feedback mentor={mentor} />
+                <div className="offcanvas-body">
+                    <Feedback mentor={mentor} />
                 </div>
             </div>
         </>
-
-    )
+    );
 }
 
-export default Nav
+export default Nav;

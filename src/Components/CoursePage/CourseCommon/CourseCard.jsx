@@ -4,11 +4,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 
 const CourseCard = ({ courseData }) => {
+     console.log("course Data ",courseData);
     return (
         <>
             <div className="col">
                 <div className="card mb-3 h-100">
                     <img src={courseData?.courseImage} className="card-img-top" style={{height:'30vh'}} alt="..." />
+                    <div className='text-center'>
+                        {
+                            courseData?.status =='pending' || courseData?.status =='comming' ? <span className='text-danger h4 mb-2'>Comming Soon</span> : <span></span>
+                        }
+                    </div>
                     <div className='px-3' style={{width:"100% !important"}}><h3>{courseData.name}</h3></div>
                     <div className="card-body pb-0 mb-0" >
                         <h6 className="card-title d-flex justify-content-between align-items-center">

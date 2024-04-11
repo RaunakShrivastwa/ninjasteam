@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import './milestone.css';
+import DashBord from './DashBord';
 
 function Modules({ module, course, setStone }) {
     const [courseD, setCourseD] = useState();
     return (
         <div className='container cp pb-5 mb-4' style={{ height: '60vh', overflow: 'auto' }}>
+            <div onClick={()=>setStone(0)}>
+            <DashBord />
+            </div>
             {
                 module?.chapter.length > 0 ? (
                     module?.chapter.map((c) => (
@@ -24,7 +28,7 @@ function Modules({ module, course, setStone }) {
                 ) :
                     (
                         course?.modules?.map((data, index) => (
-                            <div class="card mt-2 pb-4 mb-4 shadow-lg shadow-sm" style={{ cursor: 'pointer' }} key={index} onClick={() => setStone(index + 1)}>
+                            <div class="card mt-2 pb-4 mb-4 shadow-lg shadow-sm" style={{ cursor: 'pointer' }} key={index} onClick={() => setStone(index+1)}>
                                 <div class="card-header border-0" style={{ backgroundColor: '#cdd2f1' }}>
                                     <span className='fw-2 text-primary'>Milestone</span>  {index + 1}
                                 </div>

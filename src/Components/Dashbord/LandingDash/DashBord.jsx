@@ -2,7 +2,7 @@ import React from 'react'
 
 function DashBord(){
   return (
-    <div className='text-center' >
+    <div className='' style={{cursor:'pointer'}} >
         <div className='p-3'>
             <img width='30px' src="https://cdn-icons-png.flaticon.com/128/610/610106.png" alt="" />
             &nbsp;

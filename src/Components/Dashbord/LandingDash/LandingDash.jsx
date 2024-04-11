@@ -13,7 +13,16 @@ import Cookie from 'js-cookie'
 function LandingDash() {
     const [stone, setStone] = useState();
     const [course, setCourse] = useState([]);
-    const [module, setModule] = useState()
+    const [module, setModule] = useState();
+    const [collapsed, setCollapsed] = useState(true);
+
+    const toggleNavbar = () => {
+        setCollapsed(!collapsed);
+    };
+
+    const closeNavbar = () => {
+        setCollapsed(true);
+    };
     const { st } = useParams();
     useEffect(() => {
         loadCourse();
@@ -40,7 +49,7 @@ function LandingDash() {
             milestone: stone
         }
         try {
-            const res = await axios.post(urlFunction()+'module/single', body);
+            const res = await axios.post(urlFunction() + 'module/single', body);
             setModule(res.data)
         } catch (err) {
             console.log("There is Error ", err);
@@ -48,27 +57,26 @@ function LandingDash() {
 
     }
     const cM = Cookie.get('cM');
-            if(cM){
-                console.log("exist");
-                Cookie.remove('cM');
-                Cookie.set('cM', JSON.stringify(module), { expires: 3 });
-            }else{
-                console.log("not exist");
-                Cookie.set('cM', JSON.stringify(module), { expires: 3 });
-            }
+    if (cM) {
+        console.log("exist");
+        Cookie.remove('cM');
+        Cookie.set('cM', JSON.stringify(module), { expires: 3 });
+    } else {
+        console.log("not exist");
+        Cookie.set('cM', JSON.stringify(module), { expires: 3 });
+    }
     return (
         <>
-            <nav class="navbar d-md-none d-sm-block navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
+            <nav className="navbar d-md-none d-sm-block navbar-expand-lg bg-body-tertiary">
+                <div className="container-fluid">
                     <Link className="navbar-brand" to="#">
-                        <img className='logos' width='40px' src="/image/icon/ninja.png" alt="" srcSet="" />
+                        <img className='logos' width='40px' src="/image/icon/ninja.png" alt="" />
                     </Link>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                    <button className="navbar-toggler" type="button" onClick={toggleNavbar}>
+                        <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
+                    <div className={"collapse navbar-collapse" + (collapsed ? "" : " show")} id="navbarSupportedContent">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0" onClick={closeNavbar}>
                             <div className="card border-0">
                                 <div className="card-body  sidebarmilestones" style={{ background: '#0a2541' }}>
                                     <SideBarMileStone />
@@ -76,7 +84,7 @@ function LandingDash() {
                                 <div className='banner' style={{ background: '#0a2541' }}>
                                     <Banner name={course?.name} />
                                 </div>
-                                <div className='dashboard'  style={{ background: '#0a2541' }}>
+                                <div className='dashboard' style={{ background: '#0a2541' }}>
                                     <DashBord setStone={setStone} />
                                 </div>
                                 <div className='listOfStone' style={{ background: '#0a2541' }}>
@@ -98,9 +106,6 @@ function LandingDash() {
                             </div>
                             <div className='banner' style={{ background: '#0a2541' }}>
                                 <Banner name={course?.name} />
-                            </div>
-                            <div className='dashboard' style={{ background: '#0a2541' }}>
-                                <DashBord />
                             </div>
                             <div className='listOfStone' style={{ background: '#0a2541' }}>
                                 <ListofStone stone={course?.milestone} setStone={setStone} />

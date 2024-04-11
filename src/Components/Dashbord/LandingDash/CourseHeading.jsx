@@ -1,5 +1,6 @@
 import Cookies from 'js-cookie';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 function CourseHeading({ mods, course }) {
@@ -30,7 +31,9 @@ function CourseHeading({ mods, course }) {
                                         <h4 class="card-text text-white d-none d-sm-block">You try to read, we will leave you after learning, <span className='text-danger'>keep coding</span></h4>
                                         <p className='text-white d-none d-sm-block'>Yet to Score: <span>0</span></p>
                                         <p className='d-none d-sm-block'><img width='30px' src="https://cdn-icons-png.flaticon.com/128/615/615075.png" alt="" /><span className='text-white'>Total Course mates:</span> <span className='text-white'>{course?.student?.length}</span></p>
+                                        <a href={course?.syllabus}>
                                         <button className='btn room me-5'>Download Browchers</button>
+                                        </a>
                                         <button className='btn room'>Live Classes</button>
                                     </div>
                                 </div>

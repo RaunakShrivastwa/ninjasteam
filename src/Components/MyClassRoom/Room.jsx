@@ -26,15 +26,15 @@ function Room() {
     return (
         <>
             <NavigationMenu />
-            <div className='p-5 mt-5 ClassRoom' style={{ height: '100vh' }}>
+            <div className='p-5 mt-5 mb-3' style={{ height: '100vh' }}>
                 <strong>Enrolled Courses</strong>
-                <div class="row row-cols-1 row-cols-md-4 g-4">
+                <div class="row row-cols-1 row-cols-md-4 g-4 mt-2">
                     {
                         course.map((data) => (
                             <div class="col">
                                 <div class="card h-100">
                                     <img src={data?.courseImage} class="" style={{height:'30vh'}} alt="..." />
-                                    <div class="card-body">
+                                    <div class="card-body shadow-lg">
                                         <h5 class="card-title">{data?.name}</h5>
                                         <p class="card-text">{data?.description}</p>
                                         <Link to={`/ninja/landing/dash/${data?.name}`}><button type='button' className='btn btn-primary ClassRoom text-dark'>Classroom</button></Link>

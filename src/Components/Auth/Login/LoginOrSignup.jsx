@@ -10,7 +10,7 @@ import './login.css'
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Cookies from 'js-cookie';
-import {urlFunction} from '../../../App.js';
+import { urlFunction } from '../../../App.js';
 
 function LoginOrSignup() {
 
@@ -33,7 +33,7 @@ function LoginOrSignup() {
       password: password
     };
     try {
-      const user = await axios.post(urlFunction()+'user/login',body);
+      const user = await axios.post(urlFunction() + 'user/login', body);
       console.log("Login User ", user.data);
       if (user.status === 200) {
         Cookies.set('yourData', JSON.stringify(user.data), { expires: 3 }); // Expires in 1 day  
@@ -49,8 +49,8 @@ function LoginOrSignup() {
       console.log("there is an error ", err);
     }
   };
-  
-  
+
+
   return (
     <MDBContainer className=" my-5 gradient-form ">
 
@@ -61,15 +61,15 @@ function LoginOrSignup() {
 
             <div className="text-center">
               <Link to='/'>
-              <img src="https://res.cloudinary.com/dqarshyzz/image/upload/v1710520447/public/image/icon/mps96bl2hb2sjyxrgzyn.png"
-                style={{ width: '100px' }} alt="logo" />
+                <img src="https://res.cloudinary.com/dqarshyzz/image/upload/v1710520447/public/image/icon/mps96bl2hb2sjyxrgzyn.png"
+                  style={{ width: '100px' }} alt="logo" />
               </Link>
               <h4 className="mt-1 mb-5 pb-1"><img width='20px' src="https://cdn-icons-png.flaticon.com/128/12503/12503107.png" alt="" /><span>Keep coding</span></h4>
             </div>
 
             <p>Please login to your account</p>
             <form onSubmit={(e) => { handleLogin(e) }}>
-              <p id='info' style={{width:'100%',display:'none'}} className='text-center text-danger'><strong>Invalide Credential</strong></p>
+              <p id='info' style={{ width: '100%', display: 'none' }} className='text-center text-danger'><strong>Invalide Credential</strong></p>
               <MDBInput wrapperClass='mb-4' value={email} onChange={(e) => { setEmail(e.target.value) }} label='Email address' id='form1' type='email' />
               <MDBInput wrapperClass='mb-3' value={password} onChange={(e) => { setPassword(e.target.value) }} label='Password' id='form2' type='password' />
               <div className="text-center pt-1 mb-3 pb-1">
@@ -79,7 +79,7 @@ function LoginOrSignup() {
             </form>
             <div className='d-flex justify-content-around align-items-center mb-4'>
               {/* for the google */}
-              <img className=''  id={urlFunction()+`user/auth/google`} onClick={(e) => { goLogin(e) }} width='30px' src="https://cdn-icons-png.flaticon.com/128/300/300221.png" alt="" />
+              <img className='' id={urlFunction() + `user/auth/google`} onClick={(e) => { goLogin(e) }} width='30px' src="https://cdn-icons-png.flaticon.com/128/300/300221.png" alt="" />
 
               {/* for the github */}
 
@@ -114,11 +114,14 @@ function LoginOrSignup() {
           <div className="d-flex flex-column  justify-content-center gradient-custom-2 h-100 mb-4 rounded">
 
             <div className="text-white px-3 py-4 p-md-5 mx-md-4">
-              <h4 class="mb-4">We are more than just a company</h4>
-              <p class="small mb-0">Course HUB is your one-stop platform for mastering web development skills and securing a rewarding career in IT. Our
-                diverse range of courses, from foundational HTML/CSS to advanced frameworks, ensures a holistic learning experience. With affordable and free
-                options available, we prioritize accessibility without compromising quality. Join us to kickstart your journey towards becoming a proficient web
-                developer and seizing lucrative job opportunities in the tech industry. Don't just learn; launch your IT career with Course HUB today
+              <h4 class="mb-4">Keep Coding</h4>
+              <p class="small mb-0">
+                At OurNinjas, we're revolutionizing the way programming education is delivered. With our extensive selection of
+                 programming languages available at incredibly low prices, we're making quality education accessible to everyone.
+                  Our platform goes beyond traditional learning methods by offering interactive tutorials, real-time coding 
+                  challenges, and personalized mentorship from industry experts. Whether you're a beginner or an experienced 
+                  coder looking to expand your skills, OurNinjas is your ultimate destination for unlocking the world of 
+                  programming. Join us today and embark on a transformative learning experience!
 
               </p>
 

@@ -3,4 +3,10 @@
     background: rgb(234, 236, 100);
     background: linear-gradient(90deg, rgba(234, 236, 100, 1) 0%, rgba(172, 230, 130, 1) 50%, rgba(126, 223, 152, 1) 100%);
   }
+
+  @media screen and (max-width: 740px) {
+    .ClassRoom{
+      width: auto !important;
+    }
+  }
   

@@ -192,6 +192,8 @@ function SignUp() {
                                         <label for="floatingemail">Conform Password</label>
                                     </div>
                                 </div>
+                                <small className='text-danger'>Password must be at least 8 charcter, 1 letter, 1 number, 1 special character from  (@ $ ! % * ? &)</small>
+
                             </div>
 
                             {/* for the address */}
@@ -235,14 +237,14 @@ function SignUp() {
                             </div>
 
                             {fieldsDisabled && (
-                                <div className="text-center pt-1 mb-3 pb-1 mt-4">
+                                <div className="text-center pt-1 mb-2 pb-1 mt-4">
                                     <button type="button" className="btn text-white mb-1 w-100 gradient-custom-2" onClick={handleResend} disabled={!timerCompleted && timer === 0}>
                                         {timerCompleted ? 'Resend OTP' : `Resend OTP (${timer}s)`}
                                     </button>
                                 </div>
                             )}
                             {!fieldsDisabled && (
-                                <div className="text-center pt-1 mb-3 pb-1 mt-4">
+                                <div className="text-center pt-1 mb-2 pb-1 mt-4">
                                     <button type="submit" className="btn text-white mb-1 w-100 gradient-custom-2">Sign in</button>
                                 </div>
                             )}
