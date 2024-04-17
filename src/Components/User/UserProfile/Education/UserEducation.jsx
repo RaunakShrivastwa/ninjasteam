@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import AddUserEducation from './AddUserEducation';
-import {urlFunction} from '../../../App.js'
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import {urlFunction} from '../../../../App'
 
 const UserEducation = () => {
     const [showAddForm, setShowAddForm] = useState(false);

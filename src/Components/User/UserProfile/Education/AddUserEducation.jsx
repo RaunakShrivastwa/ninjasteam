@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Dropdown } from 'react-bootstrap';
-import {urlFunction} from '../../../App.js'
 import axios from 'axios';
+import {urlFunction} from '../../../../App'
 
 const AddUserEducation = ({user,updateWorkExperience,onCancel }) => {
     
@@ -20,7 +19,6 @@ const AddUserEducation = ({user,updateWorkExperience,onCancel }) => {
        const res = await axios.post(urlFunction()+`education/add/${user?.userEmail}`,body)
        updateWorkExperience(res.data)
     }
-
     return (
         <div class="mb-3 border border-2 border-dark p-2">
             <h4>Add Eduaction</h4>
