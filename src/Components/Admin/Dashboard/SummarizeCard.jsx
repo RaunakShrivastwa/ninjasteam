@@ -26,7 +26,7 @@ const SummarizeCard = () => {
 
     return (
         <>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 my-3">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 my-3">
                 {
                     cardData.map((cardValue) => {
                         return <AdminCard icon={cardValue.icon} title={cardValue.title} number={cardValue.number} color={cardValue.color} />

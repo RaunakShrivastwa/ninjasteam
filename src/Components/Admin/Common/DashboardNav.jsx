@@ -3,7 +3,7 @@ import React from 'react'
 const DashboardNav = ({title}) => {
     return (
         <>
-            <nav class="navbar navbar-light bg-light">
+            <nav class="navbar navbar-light bg-transparent shadow shadow">
                 <div class="container-fluid">
                     <a class="navbar-brand">{title}</a>
                     <form class="d-flex">

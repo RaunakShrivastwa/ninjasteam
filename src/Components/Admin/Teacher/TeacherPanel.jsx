@@ -235,7 +235,7 @@ const TeacherPanel = () => {
     ]
 
     const [currentPage, setCurrentPage] = useState(1);
-    const [rowsPerPage] = useState(8);
+    const [rowsPerPage] = useState(10);
 
     // Pagination Logic
     const indexOfLastRow = currentPage * rowsPerPage;
@@ -267,11 +267,6 @@ const TeacherPanel = () => {
                                             <th scope="col">Joining Data</th>
                                             <th scope="col">Corse Duration</th>
                                             <th scope="col">Registration Fee</th>
-                                            <th scope='col'>
-                                                <button type="button" class="btn btn-outline-info py-1 px-2 fw-bold">
-                                                    Option
-                                                </button>
-                                            </th>
                                         </tr>
                                     </thead>
 
@@ -284,14 +279,6 @@ const TeacherPanel = () => {
                                                     <td>{tableData.Joining_Data}</td>
                                                     <td>{tableData.Corse_Duration}</td>
                                                     <td>{tableData.Registration_Fee}</td>
-                                                    <td>
-                                                        <button type="button" class="btn btn-outline-danger py-1 px-2 me-2">
-                                                            <i class="fa-solid fa-trash"></i>
-                                                        </button>
-                                                        <button type="button" class="btn btn-outline-success py-1 px-2">
-                                                            <i class="fa-solid fa-pencil"></i>
-                                                        </button>
-                                                    </td>
                                                 </tr>
                                             );
                                         })}

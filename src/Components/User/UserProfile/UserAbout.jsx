@@ -41,7 +41,6 @@ const UserAbout = () => {
         }
     }
 
-
     const cancel = () => {
         document.getElementById('b-1').classList.add('d-none')
         document.getElementById('i1').style.border ='2px solid white';
@@ -82,11 +81,12 @@ const UserAbout = () => {
             userRole: role,
             userAddress: location
         }
+        
         try {
             const updatedUser = await axios.post(`http://localhost:4000/user/update/${user.userEmail}`, body)
             console.log(updatedUser);
             setUser(updatedUser.data);
-            document.getElementById('b-1').classList.add('d-none')
+            document.getElementById('b-1').classList.add('d-none');
             setVisible(true);
 
         } catch (err) {
@@ -183,7 +183,6 @@ const UserAbout = () => {
                                     </div>
                                 </div>
                             </form>
-                            {/* <p>Hello, I am a fullstack developer and my biggest dream is to get a good position in an IT company and earn well on the basis of my knowledge and develop the company a lot. And I always want to learn new technology and always try to do something different. And want to take myself far ahead and fulfill all my dreams. Keep Coding.... Never give up on yourself.</p> */}
                         </div>
                     </div>
 

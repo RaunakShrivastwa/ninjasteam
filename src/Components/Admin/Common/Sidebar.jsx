@@ -29,25 +29,25 @@ const Sidebar = ({menu}) => {
                         </Link>
                     </li>
 
-                    <li className={`sidebar-item ${menu === 'Course' ? 'border border-4 border-top-0 border-end-0 border-bottom-0 border-danger': ''}`} data-bs-toggle="tooltip" data-bs-placement="right" title="Course">
+                    <li className={`sidebar-item ${menu === 'Course' ? 'border border-2 border-top-0 border-end-0 border-bottom-0 border-danger': ''}`} data-bs-toggle="tooltip" data-bs-placement="right" title="Course">
                         <Link to="/ninja/Admin/course" className="sidebar-link">
                             <i className="lni lni-book"></i>
                         </Link>
                     </li>
 
-                    <li className={`sidebar-item ${menu === '' ? 'border border-4 border-top-0 border-end-0 border-bottom-0 border-danger': ''}`} data-bs-toggle="tooltip" data-bs-placement="right" title="Income">
+                    <li className={`sidebar-item ${menu === '' ? 'border border-2 border-top-0 border-end-0 border-bottom-0 border-danger': ''}`} data-bs-toggle="tooltip" data-bs-placement="right" title="Income">
                         <Link to="/income" className="sidebar-link">
                             <i className="lni lni-wallet"></i>
                         </Link>
                     </li>
 
-                    <li className={`sidebar-item ${menu === '' ? 'border border-4 border-top-0 border-danger border-end-0 border-bottom-0': ''}`} data-bs-toggle="tooltip" data-bs-placement="right" title="Notification">
+                    <li className={`sidebar-item ${menu === '' ? 'border border-2 border-top-0 border-danger border-end-0 border-bottom-0': ''}`} data-bs-toggle="tooltip" data-bs-placement="right" title="Notification">
                         <Link to="/notifications" className="sidebar-link">
                             <i className="lni lni-popup"></i>
                         </Link>
                     </li>
 
-                    <li className={`sidebar-item ${menu === '' ? 'border border-4 border-top-0 border-danger border-end-0 border-bottom-0': ''}`} data-bs-toggle="tooltip" data-bs-placement="right" title="Setting">
+                    <li className={`sidebar-item ${menu === '' ? 'border border-2 border-top-0 border-danger border-end-0 border-bottom-0': ''}`} data-bs-toggle="tooltip" data-bs-placement="right" title="Setting">
                         <Link to="/settings" className="sidebar-link">
                             <i className="lni lni-cog"></i>
                         </Link>

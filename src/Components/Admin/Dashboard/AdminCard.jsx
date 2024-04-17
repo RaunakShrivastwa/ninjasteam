@@ -4,7 +4,7 @@ const AdminCard = ({ icon, title, number, color }) => {
     return (
         <>
             <div class="col">
-                <div class="card h-100 py-0 rounded rounded-0 rounded-end"
+                <div class="card h-100 py-0 rounded rounded-0 rounded-end shadow shadow"
                     style={{ borderLeft: `7px solid ${color}` }}>
                     <div class="d-flex justify-content-start align-items-center ps-3 my-o">
                         <i class={`${icon} fs-4`}></i>
