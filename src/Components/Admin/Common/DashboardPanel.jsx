@@ -8,12 +8,13 @@ import StudentPanel from '../Student/StudentPanel';
 import TeacherPanel from '../Teacher/TeacherPanel';
 import CoursePanel from '../Course/CoursePanel';
 import DashboardNav from './DashboardNav';
-import AddCoursePanel from '../Course/AddCoursePanel';
+// import AddCoursePanel from '../Course/AddCoursePanel';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import UpdateModule from '../Course/Module/UpdateModule';
-import AddCourseMilestone from '../Course/Module/AddCourseMilestone';
 import Cookies from 'js-cookie';
+import AddCoursePanel from '../Course/Course/AddCoursePanel';
+import ViewAllCourse from '../../CoursePage/viewAllCourses/ViewAllCourse';
 
 
 
@@ -39,7 +40,7 @@ const DashboardPanel = ({ pageName }) => {
 
     return (
         <>
-            <div class="wrapper">
+            <div className="wrapper">
                 <Sidebar menu={pageName} />
 
                 <div class="main">
@@ -48,7 +49,7 @@ const DashboardPanel = ({ pageName }) => {
 
                             <div class={`${pageName === 'Dashboard' ? '' : 'd-none'}`}>
                                 <DashboardNav title={'Dashboard'} />
-                                <div class={`mb-3 px-3 py-0`}>
+                                <div className={`mb-3 px-3 py-0`}>
                                     <SummarizeCard />
                                     <AdminGraph />
                                 </div>
@@ -58,7 +59,7 @@ const DashboardPanel = ({ pageName }) => {
                             {/* for the Student */}
                             <div class={`${pageName === 'Student' ? '' : 'd-none'}`}>
                                 <DashboardNav title={'Student'} />
-                                <div class={`mb-3  px-3 py-0`}>
+                                <div className={`mb-3  px-3 py-0`}>
                                     <StudentPanel />
                                 </div>
                             </div>
@@ -66,7 +67,7 @@ const DashboardPanel = ({ pageName }) => {
                             {/* for thr teacher */}
                             <div class={`${pageName === 'Teacher' ? '' : 'd-none'}`}>
                                 <DashboardNav title={'Facuilty'} />
-                                <div class={`mb-3  px-3 py-0`}>
+                                <div className={`mb-3  px-3 py-0`}>
                                     <TeacherPanel />
                                 </div>
                             </div>
@@ -74,7 +75,7 @@ const DashboardPanel = ({ pageName }) => {
                             {/* for the Course */}
                             <div class={`${pageName === 'Course' ? '' : 'd-none'}`}>
                                 <DashboardNav title={'Course'} />
-                                <div class={`mb-3  px-3 py-0`}>
+                                <div className={`mb-3  px-3 py-0`}>
                                     <CoursePanel />
                                 </div>
                             </div>
@@ -82,7 +83,7 @@ const DashboardPanel = ({ pageName }) => {
                             {/* for the Add Course */}
                             <div class={`${pageName === 'AddCourse' ? '' : 'd-none'}`}>
                                 <DashboardNav title={'Course'} />
-                                <div class={`mb-3  px-3 py-0`}>
+                                <div className={`mb-3  px-3 py-0`}>
                                     <AddCoursePanel />
                                 </div>
                             </div>
@@ -90,8 +91,8 @@ const DashboardPanel = ({ pageName }) => {
                             {/* add Course Modules */}
                             <div class={`${pageName === 'AddModule' ? '' : 'd-none'}`}>
                                 <DashboardNav title={'Course'} />
-                                <div class={`mb-3  px-3 py-0`}>
-                                    <AddCourseMilestone />
+                                <div className={`mb-3  px-3 py-0`}>
+                                    <ViewAllCourse />
                                 </div>
                             </div>
 
@@ -115,22 +116,22 @@ const DashboardPanel = ({ pageName }) => {
 
                             {/* <div class={`${pageName === 'chapterCourseModule' ? '' : 'd-none'}`}>
                                 <DashboardNav title={'Course'} />
-                                <div class={`mb-3  px-3 py-0`}>
-                                    <CourseChapter id={id} />
+                                <div className={`mb-3  px-3 py-0`}>
+                                    <AddModule />
                                 </div>
                             </div> */}
 
                             {/* <div class={`${pageName === 'updateChapterCourseModule' ? '' : 'd-none'}`}>
                                 <DashboardNav title={'Course'} />
-                                <div class={`mb-3  px-3 py-0`}>
-                                    <UpdateChapter id={id} course={course} />
+                                <div className={`mb-3  px-3 py-0`}>
+                                    <UpdateModule />
                                 </div>
                             </div> */}
 
                             {/* <div class={`${pageName === 'addChapterCourseModule' ? '' : 'd-none'}`}>
                                 <DashboardNav title={'Course'} />
-                                <div class={`mb-3  px-3 py-0`}>
-                                    <AddChapter id={id} course={course} />
+                                <div className={`mb-3  px-3 py-0`}>
+                                    <ViewModule />
                                 </div>
                             </div> */}
 
