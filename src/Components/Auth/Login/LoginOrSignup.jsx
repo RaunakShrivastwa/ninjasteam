@@ -38,8 +38,13 @@ function LoginOrSignup() {
       if (user.status === 200) {
         Cookies.set('yourData', JSON.stringify(user.data), { expires: 3 }); // Expires in 1 day  
         const path = Cookies.get('path') || '/';
-
-        history('/');
+        
+        if(user.data.status=='admin'){
+          history('/ninja/Admin/dashboard')
+        }
+        else{
+          history('/');
+        }
       } else {
         console.log("Login failed");
       }

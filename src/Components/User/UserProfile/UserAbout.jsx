@@ -12,7 +12,7 @@ import Cookies from 'js-cookie';
 import axios from 'axios';
 import {urlFunction} from '../../../App'
 
-const UserAbout = () => {
+const UserAbout = ({userEmail}) => {
 
     const [user, setUser] = useState();
     const [role, setRole] = useState();
@@ -20,7 +20,6 @@ const UserAbout = () => {
     const [visible, setVisible] = useState(true);
     const [name, setName] = useState();
     const [about, setAbout] = useState();
-
     useEffect(() => {
         loadUser();
     }, [])
@@ -28,7 +27,6 @@ const UserAbout = () => {
     console.log("url = "+urlFunction());
 
     const loadUser = async () => {
-        const { userEmail } = JSON.parse(Cookies.get('yourData'));
         try {
             const userData = await axios.get(urlFunction()+`user/fetchUser/${userEmail}`);
             setName(userData.data.userName)
@@ -186,8 +184,8 @@ const UserAbout = () => {
                         </div>
                     </div>
 
-                    <WorkExperience user={user}/>
-                    <UserEducation user={user}/>
+                    <WorkExperience email={userEmail}/>
+                    <UserEducation email={userEmail}/>
                     <UserProject />
                     <UserCertificate />
                     <UserSkillAcquire />

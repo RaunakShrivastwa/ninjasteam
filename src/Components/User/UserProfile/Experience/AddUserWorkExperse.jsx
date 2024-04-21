@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import {urlFunction} from '../../../App'
+import {urlFunction} from '../../../../App'
 
-const AddUserWorkExperse = ({updateWorkExperience,user,onCancel }) => {
+const AddUserWorkExperse = ({updateWorkExperience,email,onCancel }) => {
     const [name, setName] = useState();
     const [start, SetStart] = useState();
     const [end, setEnd] = useState();
@@ -17,10 +17,10 @@ const AddUserWorkExperse = ({updateWorkExperience,user,onCancel }) => {
             join_year:start,
             end_year:end,
             summry:desc,
-            user:user?.userEmail
+            user:email
         }
         try{
-             const addExp = await axios.post(urlFunction()+`exprience/add/${user?.userEmail}`,body);
+             const addExp = await axios.post(urlFunction()+`exprience/add/${email}`,body);
              console.log(addExp.data);
              updateWorkExperience(addExp.data)
              setName('');

@@ -14,18 +14,14 @@ import UserProfile from './Components/User/UserProfile/UserProfile';
 import DashboardPanel from './Components/Admin/Common/DashboardPanel';
 import CoursePanel from './Components/Admin/Course/CoursePanel';
 import AddCoursePanel from './Components/Admin/Course/AddCoursePanel';
+import ErrorPages from './Components/ErrorPage/ErrorPages';
 
 export function urlFunction() {
   // return 'https://ourninjas.onrender.com/';
   return 'http://localhost:4000/'
 }
 
-<<<<<<< HEAD
-function App() {
-  console.log("jkjk");
-=======
 const App = () => {
->>>>>>> 691e54c9448c0736946c58166b04a9702f173bcf
   return (
     <>
       <Router>
@@ -39,7 +35,7 @@ const App = () => {
           <Route exact path="/ninja/auth/login" element={<LoginPage />} />
           <Route exact path="/ninja/auth/signup" element={<Signup />} />
           <Route exact path="/ninja/landing/dash/:st" element={<LandingDash />} />
-          <Route exact path="/ninja/user/profile" element={<UserProfile />} />
+          <Route exact path="/ninja/user/profile/:email" element={<UserProfile />} />
           <Route exact path="/ninja/add/:email" element={<HomeNavigate />} />
           <Route exact path="/ninja/classRoom/:id" element={<Room />} />
           <Route exact path="/ninja/learning/:name" element={<LearningBody />} />
@@ -61,6 +57,8 @@ const App = () => {
           <Route exact path="ninja/Admin/course/module/updateChapter/:id" element={<DashboardPanel pageName={"updateChapterCourseModule"} />} />
           <Route exact path="/ninja/Admin/course/module/addChapter/:id" element={<DashboardPanel pageName={"addChapterCourseModule"} />} />
           <Route exact path="/ninja/Admin/course/module/viewChapter/:id" element={<DashboardPanel pageName={"chapterCourse"} />} />
+          <Route exact path="/ninja/unauthorized/page"  element={<ErrorPages />} />
+        
         </Routes>
       </Router>
     </>

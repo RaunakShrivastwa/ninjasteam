@@ -1,7 +1,37 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import AdminTeacher from './TeacherPanel';
+import {urlFunction} from '../../../App'
+import axios from 'axios';
 
 const TeacherProfile = ({ data, identity }) => {
+    const [user,setUser] = useState();
+    const [module,setModule] = useState([])
+
+    useEffect(()=>{
+        loadUser();
+    },[identity]);
+
+    const loadUser = async ()=>{
+        try{
+            const use = await axios.get(urlFunction()+`user/fetchUser/${identity}`);
+            setUser(use.data);
+        }catch(err){
+            return console.log("there is Error while getting user");
+        }
+    }
+
+    useEffect(()=>{
+        loadCourse();
+    },[user]);
+
+    const loadCourse = async ()=>{
+        const module = await axios.get(urlFunction()+`module/getByTeacherId/${user?._id}`);
+        setModule(module.data)
+    }
+
+     console.log("Teacher course ",module);
+
+
     const skillDetails = [{
         title: "HTML",
         percentage: 90,
@@ -42,18 +72,36 @@ const TeacherProfile = ({ data, identity }) => {
                                             <img src="https://cdn3.iconfinder.com/data/icons/web-design-and-development-2-6/512/87-1024.png" class="img-fluid" alt="profile_img" style={{ width: '75px' }} />
 
                                             <div class="card-body m-0">
-                                                <h5 class="card-title fw-bold mb-0 p-0">{identity}</h5>
+                                                <h5 class="card-title fw-bold mb-0 p-0">{user?.userName}</h5>
                                                 <p class="fs-6 my-0 p-0">
-                                                    <i class="fa-solid fa-location-dot me-2"></i>New Ashok Nagar, Delhi
+                                                    <i class="fa-solid fa-location-dot me-2"></i>{user?.userAddress}
                                                 </p>
 
                                                 <p class="fs-6 my-0 p-0">
                                                     <span class="fw-bold">Role - </span>
-                                                    <span>Instructor</span>
+                                                    <span>{user?.userRole}</span>
                                                 </p>
                                                 <p class="fs-6 my-0 p-0">
-                                                    <span class="fw-bold">Course - </span>
-                                                    <span>JavaScript</span>
+                                                    <span class="fw-bold">Assign Course - </span>
+                                                    <div className="row mt-3 mb-1 fs-5 fw-bolder">
+                                                    <li class="nav-item dropdown form-control border-0 shadow-none">
+                                                        <a class="nav-link dropdown-toggle form-control border-0 shadow-none" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            {module[0]?.name || 'Not Assign Course'}
+                                                        </a>
+                                                        <ul class="dropdown-menu form-control p-2 shadow-lg shadow-none">
+                                                            {
+                                                                module?.map((data, index) => (
+
+                                                                    <>
+                                                                        <li className='p-2'>{index + 1}&nbsp; &nbsp;{data?.name}</li>
+                                                                    </>
+
+
+                                                                ))
+                                                            }
+                                                        </ul>
+                                                    </li>
+                                                </div>
                                                 </p>
                                             </div>
                                         </div>

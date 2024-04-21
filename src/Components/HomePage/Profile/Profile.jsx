@@ -4,6 +4,8 @@ import Cookies from 'js-cookie';
 import './profile.css';
 
 function Profile({ user }) {
+    
+    // var  {userEmail} = JSON.parse(Cookies.get('yourData'));
     const history = useNavigate();
     const logoutUser = ()=>{
         Cookies.remove('yourData');
@@ -31,7 +33,7 @@ function Profile({ user }) {
                             {/* for the profiule */}
                             <div class="accordion-item border-0">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                                    <button class="accordion-button shadow-none border-none bg-white p" id='/ninja/user/profile' onClick={(e)=>{visitors(e)}} type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                    <button class="accordion-button shadow-none border-none bg-white p" id={`/ninja/user/profile/${user?.userEmail}`} onClick={(e)=>{visitors(e)}} type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
                                         Your Profile
                                     </button>
                                 </h2>
