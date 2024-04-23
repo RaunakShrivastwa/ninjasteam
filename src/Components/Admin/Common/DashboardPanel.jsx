@@ -15,6 +15,7 @@ import UpdateModule from '../Course/Module/UpdateModule';
 import Cookies from 'js-cookie';
 import AddCoursePanel from '../Course/Course/AddCoursePanel';
 import ViewAllCourse from '../../CoursePage/viewAllCourses/ViewAllCourse';
+import UpdateCourse from '../Course/Course/UpdateCourse'
 
 
 
@@ -79,6 +80,16 @@ const DashboardPanel = ({ pageName }) => {
                                     <CoursePanel />
                                 </div>
                             </div>
+                            
+                            {/* updateCourseModule */}
+                            <div class={`${pageName === 'UpdateCourse' ? '' : 'd-none'}`}>
+                                <DashboardNav title={'Course'} />
+                                <div className={`mb-3  px-3 py-0`}>
+                                    <UpdateCourse />
+                                </div>
+                            </div>
+
+
 
                             {/* for the Add Course */}
                             <div class={`${pageName === 'AddCourse' ? '' : 'd-none'}`}>

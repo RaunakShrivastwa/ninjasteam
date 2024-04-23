@@ -21,7 +21,7 @@ const UpdateCourse = () => {
     // Function to fetch course data based on the 'name' parameter
     useEffect(() => {
         loadCourse();
-    }, [name]);
+    }, []);
 
     const loadCourse = async () => {
         try {
@@ -76,6 +76,7 @@ const UpdateCourse = () => {
     const handleResetBtn = () => {
         loadCourse();
     }
+    console.log("courseName= ",courseName);
 
     return (
         <div className="mx-0 mx-md-5 my-4 shadow-lg rounded rounded-lg">
