@@ -9,7 +9,7 @@ import Room from '../MyClassRoom/Room.jsx';
 
 
 function NavigationMenu() {
-    const [user, setUser] = useState('')
+    const [user, setUser] = useState('');
     const userString = Cookies.get('yourData');
 
     useEffect(() => {

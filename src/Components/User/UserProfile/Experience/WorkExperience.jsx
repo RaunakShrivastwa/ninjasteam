@@ -3,12 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import AddUserWorkExperse from './AddUserWorkExperse';
 import axios from 'axios';
-import Cookies from 'js-cookie';
 
-const WorkExperience = () => {
+const WorkExperience = ({email}) => {
     const [showAddForm, setShowAddForm] = useState(false);
     const [workExprense, setExp] = useState([]);
-    const [user, setUser] = useState();
     
     const toggleAddForm = () => {
         setShowAddForm(!showAddForm);
@@ -23,10 +21,8 @@ const WorkExperience = () => {
     }, [])
 
     const loadUser = async () => {
-        const u = JSON.parse(Cookies.get('yourData'))
-        setUser(u)
         try {
-            const res = await axios.get(`http://localhost:4000/exprience/getAll/${u?.userEmail}`);
+            const res = await axios.get(`http://localhost:4000/exprience/getAll/${email}`);
             console.log("Exprience ", res.data);
             setExp(res.data)
         } catch (err) {
@@ -58,7 +54,7 @@ const WorkExperience = () => {
                     </button>
                 </div>
 
-                {showAddForm && <AddUserWorkExperse updateWorkExperience={updateWorkExperience} user={user} onCancel={handleCancel} />}
+                {showAddForm && <AddUserWorkExperse updateWorkExperience={updateWorkExperience} email={email} onCancel={handleCancel} />}
                 {workExprense.length === 0 ? (
                     <div className="d-flex flex-column justify-content-center align-items-center mx-md-5 px-md-5 ">
                         <img src="/Image/UserImage/WorkExperience.svg" alt="WorkExperience.svg" style={{ width: '300px' }} />

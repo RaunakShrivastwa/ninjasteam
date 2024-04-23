@@ -10,9 +10,9 @@ import UserProfileLink from './Profile/UserProfileLink';
 import UserResume from './Resume/UserResume';
 import Cookies from 'js-cookie';
 import axios from 'axios';
-import {urlFunction} from '../../App';
+import {urlFunction} from '../../../App'
 
-const UserAbout = () => {
+const UserAbout = ({userEmail}) => {
 
     const [user, setUser] = useState();
     const [role, setRole] = useState();
@@ -20,7 +20,6 @@ const UserAbout = () => {
     const [visible, setVisible] = useState(true);
     const [name, setName] = useState();
     const [about, setAbout] = useState();
-
     useEffect(() => {
         loadUser();
     }, [])
@@ -28,7 +27,6 @@ const UserAbout = () => {
     console.log("url = "+urlFunction());
 
     const loadUser = async () => {
-        const { userEmail } = JSON.parse(Cookies.get('yourData'));
         try {
             const userData = await axios.get(urlFunction()+`user/fetchUser/${userEmail}`);
             setName(userData.data.userName)
@@ -40,7 +38,6 @@ const UserAbout = () => {
             return console.log("THere is Error ", err);
         }
     }
-
 
     const cancel = () => {
         document.getElementById('b-1').classList.add('d-none')
@@ -82,11 +79,12 @@ const UserAbout = () => {
             userRole: role,
             userAddress: location
         }
+        
         try {
             const updatedUser = await axios.post(urlFunction()+`user/update/${user.userEmail}`, body)
             console.log(updatedUser);
             setUser(updatedUser.data);
-            document.getElementById('b-1').classList.add('d-none')
+            document.getElementById('b-1').classList.add('d-none');
             setVisible(true);
 
         } catch (err) {
@@ -183,12 +181,11 @@ const UserAbout = () => {
                                     </div>
                                 </div>
                             </form>
-                            {/* <p>Hello, I am a fullstack developer and my biggest dream is to get a good position in an IT company and earn well on the basis of my knowledge and develop the company a lot. And I always want to learn new technology and always try to do something different. And want to take myself far ahead and fulfill all my dreams. Keep Coding.... Never give up on yourself.</p> */}
                         </div>
                     </div>
 
-                    <WorkExperience user={user}/>
-                    <UserEducation user={user}/>
+                    <WorkExperience email={userEmail}/>
+                    <UserEducation email={userEmail}/>
                     <UserProject />
                     <UserCertificate />
                     <UserSkillAcquire />

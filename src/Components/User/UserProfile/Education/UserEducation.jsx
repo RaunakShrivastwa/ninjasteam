@@ -2,14 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import AddUserEducation from './AddUserEducation';
-import {urlFunction} from '../../../App.js'
 import axios from 'axios';
-import Cookies from 'js-cookie';
+import {urlFunction} from '../../../../App'
 
-const UserEducation = () => {
+const UserEducation = ({email}) => {
     const [showAddForm, setShowAddForm] = useState(false);
     const [education,setEducation] = useState([]);
-    const [user,setUser] = useState()
 
     const toggleAddForm = () => {
         setShowAddForm(!showAddForm);
@@ -24,10 +22,8 @@ const UserEducation = () => {
     },[]);
 
     const loadEducation = async ()=>{
-        try{
-            const u = JSON.parse(Cookies.get('yourData'))
-            setUser(u)
-            const res = await axios.get(urlFunction()+`education/getAll/${u?.userEmail}`);
+        try{       
+            const res = await axios.get(urlFunction()+`education/getAll/${email}`);
             console.log("education ",res.data);
             setEducation(res.data)
         }catch(err){
@@ -74,7 +70,7 @@ const UserEducation = () => {
                     </button>
                 </div>
 
-                {showAddForm && <AddUserEducation  user={user} updateWorkExperience={updateWorkExperience} onCancel={handleCancel} />}
+                {showAddForm && <AddUserEducation  email={email} updateWorkExperience={updateWorkExperience} onCancel={handleCancel} />}
                 {education?.length === 0 ? (
                     <div className="d-flex flex-column justify-content-center align-items-center mx-md-5 px-md-5 ">
                         <img src="/Image/UserImage/WorkExperience.svg" alt="WorkExperience.svg" style={{ width: '300px' }} />

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Dropdown } from 'react-bootstrap';
-import {urlFunction} from '../../../App.js'
 import axios from 'axios';
+import {urlFunction} from '../../../../App'
 
-const AddUserEducation = ({user,updateWorkExperience,onCancel }) => {
+const AddUserEducation = ({email,updateWorkExperience,onCancel }) => {
     
     const [collegeName,setCollegeName] = useState('');
     const [course,setCourse] = useState('');
@@ -14,13 +13,12 @@ const AddUserEducation = ({user,updateWorkExperience,onCancel }) => {
     const handleSubmit = async (e)=>{
         e.preventDefault();
         const body = {
-            collegeName,course,grade,startYear,endYear,user:user?.userEmail
+            collegeName,course,grade,startYear,endYear,user:email
         };
         console.log("education ",body);
-       const res = await axios.post(urlFunction()+`education/add/${user?.userEmail}`,body)
+       const res = await axios.post(urlFunction()+`education/add/${email}`,body)
        updateWorkExperience(res.data)
     }
-
     return (
         <div class="mb-3 border border-2 border-dark p-2">
             <h4>Add Eduaction</h4>
