@@ -12,9 +12,7 @@ import Room from './Components/MyClassRoom/Room';
 import LearningBody from './Components/Dashbord/StartLearning/LearningBody';
 import UserProfile from './Components/User/UserProfile/UserProfile';
 import DashboardPanel from './Components/Admin/Common/DashboardPanel';
-import CoursePanel from './Components/Admin/Course/CoursePanel';
 import ErrorPages from './Components/ErrorPage/ErrorPages';
-import AddCoursePanel from './Components/Admin/Course/Course/AddCoursePanel';
 
 export function urlFunction() {
    return 'https://ourninjas.onrender.com/';
