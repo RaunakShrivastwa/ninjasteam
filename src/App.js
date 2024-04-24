@@ -13,6 +13,7 @@ import LearningBody from './Components/Dashbord/StartLearning/LearningBody';
 import UserProfile from './Components/User/UserProfile/UserProfile';
 import DashboardPanel from './Components/Admin/Common/DashboardPanel';
 import ErrorPages from './Components/ErrorPage/ErrorPages';
+import AddCoursePanel from './Components/Admin/Course/Course/AddCoursePanel';
 
 export function urlFunction() {
    return 'https://ourninjas.onrender.com/';
@@ -44,7 +45,7 @@ const App = () => {
 
           {/* Admin course  */}
           <Route exact path="/ninja/Admin/course" element={<DashboardPanel pageName={"Course"} />} />
-          <Route exact path="/ninja/Admin/course/addCourse" element={<DashboardPanel pageName={"AddCourse"} />} />
+          <Route exact path="/ninja/Admin/course/addCourse" element={<AddCoursePanel />} />
           <Route exact path="/ninja/Admin/course/viewCourse/:name" element={<DashboardPanel pageName={"ViewCourse"} />} />
           <Route exact path="/ninja/Admin/course/updateCourse/:name" element={<DashboardPanel pageName={"UpdateCourse"} />} />
 

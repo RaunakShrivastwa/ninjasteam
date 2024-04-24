@@ -16,6 +16,10 @@ const AddCoursePanel = () => {
     const [imageLink, setImageLink] = useState("");
     const [courseSyllabusLink, setCourseSyllabusLink] = useState("");
     const [introCourseVideoLink, setIntroCourseVideoLink] = useState("");
+    const [standred,setStandred] = useState('');
+    const [tag,setTag] = useState('');
+    const [status,setStatus] = useState('');
+    const [startDate,setStartDate] = useState('');
 
     // Function to handle form submission
     const handleAboutSubmit = async (e) => {
@@ -90,7 +94,7 @@ const AddCoursePanel = () => {
                             <div className="col-lg">
                                 <div className="form-floating mb-3">
                                     <input type="text" className="form-control shadow-none border border-2 border-dark border-top-0 border-end-0 border-start-0 rounded rounded-0" id="floatingInput" placeholder="Enrollment Fee" value={enrollmentFee} onChange={(e) => setEnrollmentFee(e.target.value)} required />
-                                    <label htmlFor="floatingInput">Enrollment Fee</label>
+                                    <label htmlFor="floatingInput">Enrollment Fees</label>
                                 </div>
                             </div>
                             <div className="col-lg">
@@ -126,12 +130,23 @@ const AddCoursePanel = () => {
                             <div className="col-lg">
                                 <div className="form-floating mb-3">
                                     <input type="text" className="form-control shadow-none border border-2 border-dark border-top-0 border-end-0 border-start-0 rounded rounded-0" id="floatingInput" placeholder="Market Fee" value={marketFee} onChange={(e) => setMarketFee(e.target.value)} required />
-                                    <label htmlFor="floatingInput">Market Fee</label>
+                                    <label htmlFor="floatingInput">Market Fees</label>
                                 </div>
                             </div>
                         </div>
 
+                        {/* standred and tag */}
+                        
+
                         {/* About Us (Course Description) */}
+                        <div className="row my-2">
+                            <div className="col-lg">
+                                <div className="form-floating mb-3">
+                                    <textarea type="text" className="form-control shadow-none border border-2 border-dark border-top-0 border-end-0 border-start-0 rounded rounded-0" id="floatingInput" placeholder="About Us" value={aboutUs} onChange={(e) => setAboutUs(e.target.value)} required />
+                                    <label htmlFor="floatingInput">About Us</label>
+                                </div>
+                            </div>
+                        </div>
                         <div className="row my-2">
                             <div className="col-lg">
                                 <div className="form-floating mb-3">
