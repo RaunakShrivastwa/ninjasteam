@@ -13,9 +13,16 @@ function LearningBody() {
     const { name } = useParams();
     const [selectedSubitem, setSelectedSubitem] = useState(0);
     const [user, setUser] = useState();
+    const [cM,setCm] = useState("");
 
 
-    const cM = JSON.parse(Cookie.get('cM'))
+   useEffect(()=>{
+    const d = Cookie.get('cM');
+    if(d){
+       setCm(JSON.parse(d));
+    }
+   },[])
+    
     useEffect(() => {
         loadUser();
     }, []);

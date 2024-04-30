@@ -12,17 +12,17 @@ import Footer from '../../MainFooter/Footer'
 import NavigationMenu from '../../NavigationBar/NavigationMenu'
 import Faculty from '../../Faculty/Faculty';
 import Cookies from 'js-cookie';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 
 function Home() {
   const user = Cookies.get('yourData');
+  const {name} = useParams();
   const history = useNavigate();
   useEffect(() => {
     if (user) {
       const u = JSON.parse(user);
-      console.log("u for", u);
-      if (u.status == 'admin') {
+      if (u.status == 'admin' && !name) {
         console.log("u for admin", u.status);
         history('/ninja/Admin/dashboard')
       }

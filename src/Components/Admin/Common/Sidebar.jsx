@@ -55,8 +55,8 @@ const Sidebar = ({menu}) => {
                 </ul>
 
                 <div className="sidebar-footer">
-                    <Link to="/logout" className="sidebar-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Logout">
-                        <i className="lni lni-exit"></i>
+                    <Link to={`/ninjas/Admin/view/StudentPage/${'visit'}`} className="sidebar-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Logout">
+                        <i className="lni lni-home text-warning"></i>
                     </Link>
                 </div>
             </aside>

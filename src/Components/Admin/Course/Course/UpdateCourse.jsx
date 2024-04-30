@@ -17,26 +17,36 @@ const UpdateCourse = () => {
     const [imageLink, setImageLink] = useState("");
     const [courseSyllabusLink, setCourseSyllabusLink] = useState("");
     const [introCourseVideoLink, setIntroCourseVideoLink] = useState("");
+    const [standred, setStandred] = useState('');
+    const [tag, setTag] = useState('');
+    const [status, setStatus] = useState('');
+    const [startDate, setStartDate] = useState('');
 
     // Function to fetch course data based on the 'name' parameter
     useEffect(() => {
         loadCourse();
-    }, []);
+    }, [name]);
 
     const loadCourse = async () => {
         try {
             // Fetch course data by name
             const courseData = await axios.get(urlFunction() + `course/courseName/${name}`);
-            // Update state variables with fetched course data
-            setCourseName(courseData?.data?.name);
-            setCourseDuration(courseData?.data?.duration);
-            setEnrollmentFee(courseData?.data?.sellPrice);
-            setMilestone(courseData?.data?.milestone);
-            setMarketFee(courseData?.data?.marketPrice);
-            setAboutUs(courseData?.data?.description);
-            setImageLink(courseData?.data?.courseImage);
-            setCourseSyllabusLink(courseData?.data?.syllabus);
-            setIntroCourseVideoLink(courseData?.data?.introVideo);
+            console.log("course updated "+courseData.data.courseInfo);
+            setCourseName(courseData?.data?.courseInfo?.name);
+            setCourseDuration(courseData?.data?.courseInfo?.duration);
+            setEnrollmentFee(courseData?.data?.courseInfo?.sellPrice);
+            setMilestone(courseData?.data?.courseInfo?.milestone);
+            setMarketFee(courseData?.data?.courseInfo?.marketPrice);
+            setAboutUs(courseData?.data?.courseInfo?.description);
+            setImageLink(courseData?.data?.courseInfo?.courseImage);
+            setCourseSyllabusLink(courseData?.data?.courseInfo?.syllabus);
+            setIntroCourseVideoLink(courseData?.data?.courseInfo?.introVideo);
+            setStandred(courseData?.data?.courseInfo?.standred);
+            setTag(courseData?.data?.courseInfo?.tag);
+            setStatus(courseData?.data?.courseInfo?.status);
+            setStartDate(courseData?.data?.courseInfo?.startDate);
+
+
         } catch (error) {
             console.log(`Error fetching course data: ${error}`);
         }
@@ -56,19 +66,23 @@ const UpdateCourse = () => {
             marketPrice: marketFee,
             courseImage: imageLink,
             introVideo: introCourseVideoLink,
-            syllabus: courseSyllabusLink
-        }
-
+            syllabus: courseSyllabusLink,
+            standred:standred,
+            status:status,
+            startDate:startDate,
+            tag:tag
+        } 
+        console.log("body hai ",body);  
         try {
             // Send POST request to update course data
             await axios.post(urlFunction() + `course/updateCourse/${name}`, body);
-            // Navigate back to previous page upon successful update
             navigate(-1);
         } catch (err) {
             console.log("Error updating course:", err);
         }
 
         // Reset form fields after submission
+        loadCourse();
         handleResetBtn();
     }
 
@@ -76,7 +90,7 @@ const UpdateCourse = () => {
     const handleResetBtn = () => {
         loadCourse();
     }
-    console.log("courseName= ",courseName);
+    console.log("courseName= ", courseName);
 
     return (
         <div className="mx-0 mx-md-5 my-4 shadow-lg rounded rounded-lg">
@@ -115,6 +129,55 @@ const UpdateCourse = () => {
                                 <div className="form-floating mb-3">
                                     <input type="text" className="form-control shadow-none border border-2 border-dark border-top-0 border-end-0 border-start-0 rounded rounded-0" id="floatingInput" placeholder="No of Milestone" value={milestone} onChange={(e) => setMilestone(e.target.value)} required />
                                     <label htmlFor="floatingInput">No of Milestone</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* standred and tag */}
+                        <div className="row my-2">
+                            <div className="col-lg">
+                                <select className='col-lg form-control room form-floating mb-3 p-3 ' onChange={(e) => setStandred(e.target.value)} style={{ cursor: 'pointer' }}>
+                                    <option value={standred}>{standred}</option>
+                                    <option value="popular">popular</option>
+                                    <option value="livecourse">livecourse</option>
+                                    <option value="self">self</option>
+                                    <option value="fundamental">fundamental</option>
+                                </select>
+                            </div>
+                            <div className="col-lg">
+                                <div className="form-floating mb-3">
+                                    <select className='col-lg form-control room form-floating mb-3 p-3 ' onChange={(e) => setTag(e.target.value)} style={{ cursor: 'pointer' }}>
+                                        <option value={tag}>{tag}</option>
+                                        <option value="Fullstack">Fullstack</option>
+                                        <option value="Backend">Backend</option>
+                                        <option value="Frontend">Frontend</option>
+                                        <option value="git">git</option>
+                                        <option value="resume">resume</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* for the date and status */}
+                        <div className="row my-2">
+                            <div className="col-lg">
+                                <select className='col-lg form-control room form-floating mb-3 p-3 ' onChange={(e) => setStatus(e.target.value)} style={{ cursor: 'pointer' }}>
+                                    <option value={status}>{status}</option>
+                                    <option value="comming">pending/Comming</option>
+                                    <option value="done">done</option>
+                                </select>
+                            </div>
+                            <div className="col-lg">
+                                <div className="form-floating mb-3">
+                                    <input
+                                        type="date"
+                                        value={startDate}
+                                        onChange={(e) => setStartDate(e.target.value)}
+                                        className="form-control shadow-none border border-2 border-dark border-top-0 border-end-0 border-start-0 rounded rounded-0"
+                                        id="floatingInput"
+                                        placeholder="StartDate"                                      
+                                    />
+                                    <label htmlFor="floatingInput">StartDate, {startDate}</label>
                                 </div>
                             </div>
                         </div>

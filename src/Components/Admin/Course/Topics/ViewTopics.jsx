@@ -12,6 +12,9 @@ const ViewTopics = () => {
   const courseName = searchParams.get('course');
   const moduleName = searchParams.get('moduleName');
   const description = searchParams.get('description');
+  const topicNames = searchParams.get('topicName');
+
+  console.log("topicName hai ",topicNames);
 
   // State variables to hold topic details
   const [chapterName, setChapterName] = useState('');
@@ -22,12 +25,12 @@ const ViewTopics = () => {
   // useEffect to load topic details on component mount
   useEffect(() => {
     loadTopic();
-  }, []);
+  }, [topicNames]);
 
   // Function to fetch topic details using axios
   const loadTopic = async () => {
     try {
-      const topicData = await axios.get(urlFunction() + `subtopic/getSingleById/${id}`);
+      const topicData = await axios.get(urlFunction() + `subtopic/getSingleById/${topicNames}`);
       console.log("topics data : - ", topicData?.data);
 
       // Setting state with retrieved topic details

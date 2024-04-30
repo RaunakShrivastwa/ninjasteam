@@ -16,10 +16,10 @@ const AddCoursePanel = () => {
     const [imageLink, setImageLink] = useState("");
     const [courseSyllabusLink, setCourseSyllabusLink] = useState("");
     const [introCourseVideoLink, setIntroCourseVideoLink] = useState("");
-    const [standred,setStandred] = useState('');
-    const [tag,setTag] = useState('');
-    const [status,setStatus] = useState('');
-    const [startDate,setStartDate] = useState('');
+    const [standred, setStandred] = useState('');
+    const [tag, setTag] = useState('');
+    const [status, setStatus] = useState('');
+    const [startDate, setStartDate] = useState('');
 
     // Function to handle form submission
     const handleAboutSubmit = async (e) => {
@@ -35,19 +35,30 @@ const AddCoursePanel = () => {
             marketPrice: marketFee,
             courseImage: imageLink,
             introVideo: introCourseVideoLink,
-            syllabus: courseSyllabusLink
+            syllabus: courseSyllabusLink,
+            startDate: startDate,
+            standred: standred,
+            status: status,
+            tag: tag
         }
 
+        console.log("added Course", body);
+        const main = document.getElementById('cc');
         try {
             // Send POST request to create a new course
             const createCourse = await axios.post(urlFunction() + `course/create`, body);
-            // Navigate back to the previous page upon successful course creation
+            setInterval(()=>{
+                main.style.border='2px solid green'
+            },2000)
+            main.style.border='none'
             navigate(-1);
         } catch (err) {
-            console.log("Error creating course:", err);
+            console.log("Error creating course:", err);   
+            setInterval(()=>{
+                main.style.border='2px solid red'
+            },2000);
+            main.style.border='none'
         }
-
-        // Reset form fields after submission
         handleResetBtn();
     }
 
@@ -62,13 +73,16 @@ const AddCoursePanel = () => {
         setImageLink("");
         setIntroCourseVideoLink("");
         setCourseSyllabusLink("");
+        setStatus("");
+        setStandred("");
+        setStartDate("")
     }
 
     return (
-        <div className="mx-0 mx-md-5 my-4 shadow-lg rounded rounded-lg">
+        <div className="mx-0 mx-md-5 my-4 shadow-lg rounded rounded-lg" id='cc'>
             <div className="card">
                 <div className="card-header text-center fs-3 fw-bold border border-0 bg-transparent">
-                    <u> Add Course </u>
+                    <u> Add Courses </u>
                 </div>
 
                 {/* Course Creation Form */}
@@ -136,25 +150,66 @@ const AddCoursePanel = () => {
                         </div>
 
                         {/* standred and tag */}
-                        
+                        <div className="row my-2">
+                            <div className="col-lg">
+                                <select className='col-lg form-control room form-floating mb-3 p-3 ' onChange={(e) => setStandred(e.target.value)} style={{ cursor: 'pointer' }}>
+                                    <option value="Choose Course Standred">Click here to, Choose Course Standred</option>
+                                    <option value="popular">popular</option>
+                                    <option value="livecourse">livecourse</option>
+                                    <option value="self">self</option>
+                                    <option value="fundamental">fundamental</option>
+                                </select>
+                            </div>
+                            <div className="col-lg">
+                                <div className="form-floating mb-3">
+                                    <select className='col-lg form-control room form-floating mb-3 p-3 ' onChange={(e) => setTag(e.target.value)} style={{ cursor: 'pointer' }}>
+                                        <option value="Choose Course Standred">Click here to, Choose Course Tag</option>
+                                        <option value="Fullstack">Fullstack</option>
+                                        <option value="Backend">Backend</option>
+                                        <option value="Frontend">Frontend</option>
+                                        <option value="git">git</option>
+                                        <option value="resume">resume</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* for the date and status */}
+                        <div className="row my-2">
+                            <div className="col-lg">
+                                <select className='col-lg form-control room form-floating mb-3 p-3 ' onChange={(e) => setStatus(e.target.value)} style={{ cursor: 'pointer' }}>
+                                    <option value="Choose Course Standred">Click here to, Choose Course Status</option>
+                                    <option value="comming">pending/Comming</option>
+                                    <option value="done">done</option>
+                                </select>
+                            </div>
+                            <div className="col-lg">
+                                <div className="form-floating mb-3">
+                                    <input
+                                        type="date"
+                                        value={startDate}
+                                        onChange={(e) => setStartDate(e.target.value)}
+                                        className="form-control shadow-none border border-2 border-dark border-top-0 border-end-0 border-start-0 rounded rounded-0"
+                                        id="floatingInput"
+                                        placeholder="StartDate"
+                                        required
+                                    />
+                                    <label htmlFor="floatingInput">StartDate</label>
+                                </div>
+                            </div>
+                        </div>
+
 
                         {/* About Us (Course Description) */}
                         <div className="row my-2">
                             <div className="col-lg">
                                 <div className="form-floating mb-3">
                                     <textarea type="text" className="form-control shadow-none border border-2 border-dark border-top-0 border-end-0 border-start-0 rounded rounded-0" id="floatingInput" placeholder="About Us" value={aboutUs} onChange={(e) => setAboutUs(e.target.value)} required />
-                                    <label htmlFor="floatingInput">About Us</label>
+                                    <label htmlFor="floatingInput">Course Description</label>
                                 </div>
                             </div>
                         </div>
-                        <div className="row my-2">
-                            <div className="col-lg">
-                                <div className="form-floating mb-3">
-                                    <textarea type="text" className="form-control shadow-none border border-2 border-dark border-top-0 border-end-0 border-start-0 rounded rounded-0" id="floatingInput" placeholder="About Us" value={aboutUs} onChange={(e) => setAboutUs(e.target.value)} required />
-                                    <label htmlFor="floatingInput">About Us</label>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
 
                     {/* Form Actions (Submit and Reset) */}

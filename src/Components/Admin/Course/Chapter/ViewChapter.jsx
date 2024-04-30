@@ -111,6 +111,7 @@ const ViewChapter = () => {
 
                         {/* Table of Topics */}
                         <div className="row shadow shadow m-3">
+                            <p>SubTopics</p>
                             <div className="col">
                                 <div className="table-responsive">
                                     <table className="table table-hover">
@@ -129,7 +130,7 @@ const ViewChapter = () => {
                                                     <td>{tableData?.TopicName}</td>
                                                     <td>
                                                         {/* Update Topic Button */}
-                                                        <Link to={`/ninja/Admin/course/module/Chapter/updateTopics/${tableData?._id}?course=${course}&moduleName=${moduleName}`} className="rounded rounded-lg border border-2 border-success btn btn-outline-success p-1 pb-0 fw-bold me-1">
+                                                        <Link to={`/ninja/Admin/course/module/Chapter/updateTopics/${tableData?._id}?course=${course}&moduleName=${moduleName}&chapterName=${tableData?.Chapter}&topicName=${tableData?.TopicName}`} className="rounded rounded-lg border border-2 border-success btn btn-outline-success p-1 pb-0 fw-bold me-1">
                                                             <i className="lni lni-pencil"></i>
                                                         </Link>
 

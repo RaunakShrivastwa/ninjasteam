@@ -10,13 +10,13 @@ const ViewCourse = () => {
     const [course, setCourse] = useState(); // State to hold course data
     useEffect(() => {
         loadCourse(); // Load course data when component mounts
-    }, []);
+    }, [name]);
 
     // Function to fetch course data
     const loadCourse = async () => {
         try {
             const courseInfo = await axios.get(urlFunction() + `course/courseName/${name}`); // Fetch course details by name
-            setCourse(courseInfo?.data); // Set course state with fetched data
+            setCourse(courseInfo?.data?.courseInfo); // Set course state with fetched data
         } catch (err) {
             console.log("error in fetching course info", err); // Log error if course data retrieval fails
         }
@@ -47,7 +47,7 @@ const ViewCourse = () => {
 
                     {/* Action Button to Add Module */}
                     <div className="d-flex">
-                        <Link to={`/ninja/Admin/course/addModule?courseName=${course?.name}&noOfMilestone=${course?.milestone}`} className="btn d-flex align-items-center border border-2 border-success me-2 my-1 mb-md-0">
+                        <Link to={`/ninja/Admin/addModule?courseName=${course?.name}&noOfMilestone=${course?.milestone}`} className="btn d-flex align-items-center border border-2 border-success me-2 my-1 mb-md-0">
                             <i className="lni lni-plus"></i>
                             <span className="ms-1"> Add</span>
                         </Link>
@@ -106,6 +106,7 @@ const ViewCourse = () => {
 
                         {/* Table of Modules */}
                         <div className="row shadow shadow-lg m-3">
+                            <p>Modules</p>
                             <div className="col">
                                 <div className="table-responsive">
                                     <table className="table table-hover">

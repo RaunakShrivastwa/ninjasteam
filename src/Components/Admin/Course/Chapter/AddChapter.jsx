@@ -15,6 +15,7 @@ const AddChapter = () => {
     const [chapterDesc, setChapterDesc] = useState('');
     const [courseName, setCourseName] = useState('');
     const [moduleName, setModuleName] = useState('');
+    const [syllabus,setSyllabus]= useState('');
 
     // Load module details when 'id' prop changes
     useEffect(() => {
@@ -46,11 +47,13 @@ const AddChapter = () => {
         const body = {
             name: chapterName,
             desc: chapterDesc,
-            moduleName: moduleName
+            moduleName: moduleName,
+            video_url:syllabus
         };
 
         try {
             await axios.post(urlFunction() + `chapter/create`, body);
+            handleReset();
             navigate(-1); // Navigate back
         } catch (error) {
             console.log("Error during adding the chapter: ", error);
@@ -102,6 +105,13 @@ const AddChapter = () => {
                                     <input type="text" className="form-control shadow-none border border-2 border-dark border-top-0 border-end-0 border-start-0 rounded rounded-0" id="milestonesCount" placeholder="Chapter Description" value={chapterDesc} onChange={(e) => { setChapterDesc(e.target.value) }} required />
                                     <label htmlFor="milestonesCount">Chapter Description</label>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div className="col-lg">
+                            <div className="form-floating mb-1 fw-bold">
+                                <input type="text" className="form-control shadow-none border border-2 border-dark border-top-0 border-end-0 border-start-0 rounded rounded-0" id="enrollmentFee" placeholder="Chapter Syllabus" value={syllabus} onChange={(e) => { setSyllabus(e.target.value) }} required />
+                                <label htmlFor="enrollmentFee">Chapter Syllabus</label>
                             </div>
                         </div>
 

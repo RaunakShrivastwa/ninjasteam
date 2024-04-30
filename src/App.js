@@ -14,10 +14,12 @@ import UserProfile from './Components/User/UserProfile/UserProfile';
 import DashboardPanel from './Components/Admin/Common/DashboardPanel';
 import ErrorPages from './Components/ErrorPage/ErrorPages';
 import AddCoursePanel from './Components/Admin/Course/Course/AddCoursePanel';
+import AddModule from './Components/Admin/Course/Module/AddModule';
+import { ViewModule } from '@mui/icons-material';
 
 export function urlFunction() {
-   return 'https://ourninjas.onrender.com/';
- // return 'http://localhost:4000/'
+  //  return 'https://ourninjas.onrender.com/';
+ return 'http://localhost:4000/'
 }
 
 const App = () => {
@@ -27,6 +29,7 @@ const App = () => {
         <ScrollToTop />
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/ninjas/Admin/view/StudentPage/:name" element={<Home />} />
           <Route exact path="/can/home" element={<Home />} />
           <Route exact path="/ninjas/AllCourses" element={<ViewAllCourses />} />
           <Route exact path="/ninja/CourseDetail/:id" element={<CourseDetails />} />
@@ -50,14 +53,16 @@ const App = () => {
           <Route exact path="/ninja/Admin/course/updateCourse/:name" element={<DashboardPanel pageName={"UpdateCourse"} />} />
 
           {/* Admin Course / module */}
-          <Route exact path="/ninja/Admin/course/addModule" element={<DashboardPanel pageName={"AddModule"} />} />
+          <Route exact path="/ninja/Admin/addModule" element={<AddModule />} />
           <Route exact path="/ninja/Admin/course/updateModule/:id" element={<DashboardPanel pageName={"updateCourseModule"} />} />
           <Route exact path="/ninja/Admin/course/view/module/:id" element={<DashboardPanel pageName={"chapterCourseModule"} />} />
 
           {/* Admin Course / module / chapter */}
           <Route exact path="ninja/Admin/course/module/updateChapter/:id" element={<DashboardPanel pageName={"updateChapterCourseModule"} />} />
           <Route exact path="/ninja/Admin/course/module/addChapter/:id" element={<DashboardPanel pageName={"addChapterCourseModule"} />} />
-          <Route exact path="/ninja/Admin/course/module/viewChapter/:id" element={<DashboardPanel pageName={"chapterCourse"} />} />
+          <Route exact path="/ninja/Admin/course/module/viewChapter/:id" element={<DashboardPanel pageName={"viewChapter"} />} />
+         
+         
           <Route exact path="/ninja/unauthorized/page"  element={<ErrorPages />} />
         
 

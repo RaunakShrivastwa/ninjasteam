@@ -89,6 +89,7 @@ const ViewModule = () => {
 
                         {/* Module Chapters Table */}
                         <div className="row shadow shadow m-3">
+                            <p>Chapters</p>
                             <div className="col">
                                 <div className="table-responsive">
                                     <table className="table table-hover">

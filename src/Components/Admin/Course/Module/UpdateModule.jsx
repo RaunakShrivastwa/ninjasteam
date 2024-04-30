@@ -16,6 +16,10 @@ const UpdateModule = () => {
     const [description, setDescription] = useState('');
     const [mentorName, setMentorName] = useState('');
     const [moduleDetails, setModuleDetails] = useState('');
+    const [user, setUser] = useState([]);
+    const [techer, setTeacher] = useState('');
+    const [t,setT] = useState('');
+    const [syllabus,setSyllabus] = useState('')
 
     // Load module details from the server when the component mounts or when ID changes
     useEffect(() => {
@@ -34,12 +38,27 @@ const UpdateModule = () => {
             setModuleName(moduleData?.name);
             setDescription(moduleData?.desc);
             setMentorName(moduleData?.mentor?.userName);
-
+            setT(moduleData?.mentor?.userName);
+            setSyllabus(moduleData?.pdf)
             console.log(getModule);
         } catch (error) {
             console.log(`Error loading module: ${error}`);
         }
     };
+
+    useEffect(() => {
+        loadUser();
+    }, [courseName]);
+
+    const loadUser = async () => {
+        try {
+            const userData = await axios.get(urlFunction() + 'user/getAll');
+            setUser(userData.data.filter((data) => data.status == 'teacher'))
+        } catch (err) {
+            return console.log("There is Error ", err);
+
+        }
+    }
 
     // Reset form fields
     const handleReset = () => {
@@ -54,7 +73,11 @@ const UpdateModule = () => {
         const body = {
             name: moduleName,
             desc: description,
+            mentor:techer,
+            pdf:syllabus
         };
+
+        console.log("modules ",body);
 
         try {
             // Send updated module data to the server for update
@@ -107,8 +130,21 @@ const UpdateModule = () => {
                                 </div>
 
                                 <div className="form-floating">
-                                    <input type="text" className="form-control shadow-none border border-2 border-top-0 border-end-0 border-start-0 border-dark rounded rounded-0" placeholder="Mentor" value={mentorName} readOnly />
+                                    <select className="fw-bold form-select border border-2 border-dark border-top-0 border-end-0 border-start-0 rounded rounded-0 shadow shadow-none" id="inputGroupSelect01" onChange={(e) => setTeacher(e.target.value)}>
+                                        <option disabled selected>{t}</option>
+                                        {
+                                            user?.map((dd) => (
+                                                <option value={dd?._id}>{dd?.userName}
+                                                </option>
+                                            ))
+                                        }
+                                    </select>
                                     <label htmlFor="floatingInput">Mentor</label>
+                                </div>
+
+                                <div className="form-floating mt-3">
+                                    <input type="text" className="form-control shadow-none border border-2 border-top-0 border-end-0 border-start-0 border-dark rounded rounded-0" placeholder="Syllabus" value={syllabus} onChange={(e) => setSyllabus(e.target.value)} required />
+                                    <label htmlFor="milestoneDescription">Syllabus</label>
                                 </div>
                             </div>
                         </div>

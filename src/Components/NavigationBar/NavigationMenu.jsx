@@ -107,6 +107,16 @@ function NavigationMenu() {
                                 ) : (<></>)
                             }
 
+                            {
+                                user ? (
+                                    user?.status=='admin' ? (
+                                       <Link to='/ninja/Admin/dashboard' className='text-decoration-none p-2'>
+                                            <button className='btn room me-3'>Admin View</button>
+                                       </Link>
+                                    ):(<></>)
+                                ):(<></>)
+                            }
+
                             {user ? (
                                 <Profile user={user} />
                             ) : (

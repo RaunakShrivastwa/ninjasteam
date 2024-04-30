@@ -12,12 +12,14 @@ const UpdateTopics = () => {
   const searchParams = new URLSearchParams(location.search);
   const courseName = searchParams.get('course');
   const moduleName = searchParams.get('moduleName');
-
+  const chapterNames = searchParams.get('chapterName');
+  const nameTopic = searchParams.get('topicName');
   // State variables to hold topic details
   const [chapterName, setChapterName] = useState('');
   const [topicDesc, setTopicDesc] = useState('');
   const [topicName, setTopicName] = useState('');
   const [topicVideoUrl, setTopicVideoUrl] = useState('');
+  const [tId,setTid]= useState('');
 
   // useEffect to load topic details on component mount
   useEffect(() => {
@@ -27,14 +29,12 @@ const UpdateTopics = () => {
   // Function to fetch topic details using axios
   const loadTopic = async () => {
     try {
-      const topicData = await axios.get(urlFunction() + `subtopic/getSingleById/${id}`);
-      console.log("topics data : - ", topicData?.data);
-
-      // Setting state with retrieved topic details
+      const topicData = await axios.get(urlFunction() + `subtopic/get/topic/${nameTopic}`);
       setChapterName(topicData?.data?.Chapter);
-      setTopicDesc(topicData?.data?.desc);
-      setTopicName(topicData?.data?.TopicName);
-      setTopicVideoUrl(topicData?.data?.video_URL);
+      setTopicDesc(topicData?.data[0]?.desc);
+      setTopicName(topicData?.data[0]?.TopicName);
+      setTopicVideoUrl(topicData?.data[0]?.video_URL);
+      setTid(topicData?.data[0]?._id);
 
     } catch (error) {
       console.log("Error loading topic data by id", error);
@@ -54,12 +54,15 @@ const UpdateTopics = () => {
     const body = {
       TopicName: topicName,
       video_URL: topicVideoUrl,
-      desc: topicDesc
+      desc: topicDesc,
+      chapter:chapterNames,
+
     }
 
     try {
       // Send update request using axios
-      await axios.post(urlFunction() + `subtopic/updateSuptopicById/${id}`, body);
+      await axios.post(urlFunction() + `subtopic/update/${tId}`, body);
+      resetFunction();
       navigate(-1); // Navigate back to previous page
     } catch (error) {
       console.log(`Error during update of topic details: ${error}`);
@@ -99,7 +102,7 @@ const UpdateTopics = () => {
               <div className="col-lg my-2">
                 {/* Display Chapter Name */}
                 <label htmlFor="chapterName" className="ms-2 my-0 py-0 fw-bold text-muted">Chapter Name</label>
-                <input type="text" className="form-control shadow-none border border-2 border-dark border-top-0 border-end-0 border-start-0 rounded rounded-0" id="chapterName" placeholder="Enter Chapter Name" value={chapterName} readOnly />
+                <input type="text" className="form-control shadow-none border border-2 border-dark border-top-0 border-end-0 border-start-0 rounded rounded-0" id="chapterName" placeholder="Enter Chapter Name" value={chapterNames} readOnly />
               </div>
 
               <div className="col-lg my-2">

@@ -37,9 +37,12 @@ const AddTopics = () => {
       Chapter: chapterName
     }
 
+    console.log("body data ",body);
+
     try {
       // Send POST request to create a new topic
       await axios.post(urlFunction() + `subtopic/create`, body);
+      resetFunction();
       navigate(-1); // Navigate back to previous page
     } catch (error) {
       console.log(`Error during topic creation: ${error}`);
@@ -93,7 +96,7 @@ const AddTopics = () => {
               <div className="col-lg my-2">
                 {/* Input field for entering Topic Video URL */}
                 <label htmlFor="TopicVideoUrl" className="ms-2 my-0 py-0 fw-bold text-muted">Topic Video URL</label>
-                <input type="text" className="form-control shadow-none border border-2 border-dark border-top-0 border-end-0 border-start-0 rounded rounded-0" id="TopicVideoUrl" placeholder="Enter Topic Video URL" value={topicVideoUrl} onChange={(e) => { setTopicVideoUrl(e.target.value) }} required />
+                <input type="text" className="form-control shadow-none border border-2 border-dark border-top-0 border-end-0 border-start-0 rounded rounded-0" id="TopicVideoUrl" placeholder="Enter Topic Video URL" value={topicVideoUrl} onChange={(e) => { setTopicVideoUrl(e.target.value) }}  />
               </div>
 
               <div className="col-lg my-2">

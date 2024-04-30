@@ -14,7 +14,7 @@ const UpdateChapter = () => {
     const [chapterName, setChapterName] = useState('');
     const [chapterDesc, setChapterDesc] = useState('');
     const [moduleName, setModuleName] = useState('');
-
+    const [syllabus,setSyllabus] = useState('');
     // Load chapter details when 'id' changes
     useEffect(() => {
         loadChapter();
@@ -28,6 +28,7 @@ const UpdateChapter = () => {
             setChapterName(getChapter?.data?.name);
             setChapterDesc(getChapter?.data?.desc);
             setModuleName(getChapter?.data?.moduleName);
+            setSyllabus(getChapter?.data?.video_url)
         } catch (error) {
             console.log(`Error during load milestone: ${error}`);
         }
@@ -46,6 +47,7 @@ const UpdateChapter = () => {
         const body = {
             name: chapterName,
             desc: chapterDesc,
+            video_url:syllabus
         }
 
         try {
@@ -103,6 +105,12 @@ const UpdateChapter = () => {
                                 </div>
                             </div>
                         </div>
+                        <div className="col-lg">
+                                <div className="form-floating mb-1 fw-bold">
+                                    <input type="text" className="form-control shadow-none border border-2 border-dark border-top-0 border-end-0 border-start-0 rounded rounded-0" id="milestonesCount" placeholder="Chapter Description" value={syllabus} onChange={(e) => { setSyllabus(e.target.value) }}required />
+                                    <label htmlFor="milestonesCount">Chapter Syllabus</label>
+                                </div>
+                            </div>
 
                         {/* Buttons */}
                         <div className="d-flex justify-content-end my-1">
