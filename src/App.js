@@ -18,8 +18,8 @@ import AddModule from './Components/Admin/Course/Module/AddModule';
 import { ViewModule } from '@mui/icons-material';
 
 export function urlFunction() {
-  //  return 'https://ourninjas.onrender.com/';
- return 'http://localhost:4000/'
+   return 'https://ourninjas.onrender.com/';
+//  return 'http://localhost:4000/'
 }
 
 const App = () => {
