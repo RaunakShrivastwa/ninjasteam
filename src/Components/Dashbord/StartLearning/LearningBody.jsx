@@ -81,10 +81,10 @@ function LearningBody() {
             <Nav name={subtopic[0]?.Chapter} mentor={mentor} subTopic={subtopic} setSelectedSubitem={setSelectedSubitem} cM={cM?.enrollCourse} />
             <div class="row p-0 m-0">
                 {/* for the Subtopics */}
-                <div className='col-md-4 p-2 g-0 col-sm-12 overflow-auto'>
+                <div className='col-md-4 p-2 g-0 col-sm-12  overflow-auto' style={{height:'90vh'}}>
 
                     {/* for the large device */}
-                    <div className='d-none d-md-block'>
+                    <div className='d-none d-md-block mb-5'>
                         {
                             subtopic.map((data, index) => (
                                 <div className={`card mb-3 shadow-lg form-control ${selectedSubitem === index ? 'text-success border-3 border-primary' : ''}`} style={{ cursor: 'pointer' }} onClick={() => handleSubitemClick(index)} key={index}>
