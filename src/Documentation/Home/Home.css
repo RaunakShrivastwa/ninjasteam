@@ -3,12 +3,15 @@
     padding: 0;
     box-sizing: border-box;
     overflow: hidden;
+    font-family: sans-serif;
+    /* border: 1px solid red; */
 }
 
 nav{
-    color: white !important;
-    background: rgb(15, 10, 10);
-    background: linear-gradient(90deg, rgb(49, 43, 43) 1%, rgba(30, 47, 106, 1) 100%, rgba(0, 212, 255, 0.4150035014005602) 100%);
+    box-shadow: none;
+    border: none;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(62,69,63,1) 0%, rgba(16,16,19,1) 59%);
     border:  linear-gradient(90deg, rgb(61, 47, 47) 1%, rgba(30, 47, 106, 1) 100%, rgba(0, 212, 255, 0.4150035014005602) 100%);
 }
 
@@ -27,7 +30,7 @@ nav{
         position: absolute;
         width: auto;
         padding: 10px;
-        margin-left: 20vw;
+        margin-left: 15vw;
         height: auto;
         display: flex;
         flex-direction: column;
@@ -37,9 +40,6 @@ nav{
         transition:0.5s ease;
         overflow: hidden;
         
-
-       
-
         .center {
             width: 400px;
             height: 300px;
@@ -105,8 +105,8 @@ nav{
         height: 100vh;
         z-index: 1;
         clip-path: polygon(0 0, 100% 0%, 100% 95%, 0 44%);
-        background: rgb(15, 10, 10);
-        background: linear-gradient(90deg, rgba(15, 10, 10, 1) 1%, rgba(30, 47, 106, 1) 100%, rgba(0, 212, 255, 0.4150035014005602) 100%);
+        background: rgb(0,0,0);
+        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(62,69,63,1) 0%, rgba(16,16,19,1) 59%);
          display: flex;
         .floating_box_parents {
             transform: rotate(5deg);
@@ -118,14 +118,15 @@ nav{
                 width: 20vw;
                 height: 30vh;
                 width: 20vw;
-                background-color: #1c2a5d;
-                opacity: 0.2;
+                background-color: #080b1264;
+                opacity: 0.4;
                 overflow-y: auto;
 
             }
 
             .shape1 {
-                background-color: #1c2a5d67;
+                background-color: #080b1264;
+                border-bottom: 1px solid #41495d8d;;
                 color: white;
             }
         }
@@ -138,11 +139,25 @@ nav{
         height: 100vh;
         /* height: 100vh; */
         background-color: #bfc2c0;
+        padding-bottom: 80px;
     }
 }
 
 @media(max-width : 532px) {
     .shape_container {
         display: none !important;
+    }
+
+    .nav1{
+        display: none !important;
+    }
+
+    .nav2{
+        display: block !important;
+    }
+
+    .banner1{
+        margin-top: 110px !important;
+        width: 100vw !important;
     }
 }

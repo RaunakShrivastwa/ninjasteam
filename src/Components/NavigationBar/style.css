@@ -12,8 +12,8 @@
 
 .navbar {
   animation: slideInFromTop 0.5s ease-out, bounce 2s infinite;
-  background-color: #13503a !important;
-  box-shadow: 0 4px 6px rgba(208, 61, 61, 0.1);
+  background-color: #13503a !important; 
+   box-shadow: 0 4px 6px rgba(208, 61, 61, 0.1);
 }
 
 .navbar-brand {

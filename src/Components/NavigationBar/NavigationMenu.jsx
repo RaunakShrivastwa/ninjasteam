@@ -58,7 +58,7 @@ function NavigationMenu() {
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-light fixed-top mb-3">
+            <nav className="navbar navbar-expand-lg  fixed-top mb-3">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="#">
                         <img className='logos' width='40px' src="https://res.cloudinary.com/dqarshyzz/image/upload/v1710520447/public/image/icon/mps96bl2hb2sjyxrgzyn.png" alt="ninjas" srcSet="" />
