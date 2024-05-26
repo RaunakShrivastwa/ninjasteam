@@ -15,11 +15,12 @@ import DashboardPanel from './Components/Admin/Common/DashboardPanel';
 import ErrorPages from './Components/ErrorPage/ErrorPages';
 import AddCoursePanel from './Components/Admin/Course/Course/AddCoursePanel';
 import AddModule from './Components/Admin/Course/Module/AddModule';
-import { ViewModule } from '@mui/icons-material';
+import DHome from './Documentation/Home/Home'
+import OnlineCompiler from './Documentation/Home/OnlineCompiler ';
 
 export function urlFunction() {
-   return 'https://ourninjas.onrender.com/';
-//  return 'http://localhost:4000/'
+  //  return 'https://ourninjas.onrender.com/';
+ return 'http://localhost:4000/'
 }
 
 const App = () => {
@@ -70,6 +71,9 @@ const App = () => {
           <Route exact path="/ninja/Admin/course/module/Chapter/updateTopics/:id" element={<DashboardPanel pageName={"updateCourseTopics"} />} />
           <Route exact path="/ninja/Admin/course/module/Chapter/viewTopics/:id" element={<DashboardPanel pageName={"viewCourseTopics"} />} />
           <Route exact path="/ninja/Admin/course/module/Chapter/AddTopics/:chapterName" element={<DashboardPanel pageName={"addCourseTopics"} />} />
+
+          <Route exact path='/ninjas/documentation/homepage' element={ <DHome />} />
+          <Route exact path='/ninjas/documentation/homepage1' element={ <OnlineCompiler/>} />
 
         </Routes>
       </Router>

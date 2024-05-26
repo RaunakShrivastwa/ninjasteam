@@ -84,7 +84,7 @@ function LearningBody() {
                 <div className='col-md-4 p-2 g-0 col-sm-12  overflow-auto' style={{height:'90vh'}}>
 
                     {/* for the large device */}
-                    <div className='d-none d-md-block mb-5'>
+                    <div className='d-md-block mb-5'>
                         {
                             subtopic.map((data, index) => (
                                 <div className={`card mb-3 shadow-lg form-control ${selectedSubitem === index ? 'text-success border-3 border-primary' : ''}`} style={{ cursor: 'pointer' }} onClick={() => handleSubitemClick(index)} key={index}>
