@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden;
+    /* overflow: hidden; */
     font-family: sans-serif;
     /* border: 1px solid red; */
 }
@@ -17,6 +17,7 @@ nav{
 
 
 .containers {
+    overflow: hidden;
     width: 100%;
     height: 100vh;
     position: relative;
@@ -64,6 +65,7 @@ nav{
                 overflow: scroll;
                 border-bottom-left-radius: 20px;
                 border-bottom-right-radius: 20px;
+                /* border-radius: 20%; */
 
                 &::-webkit-scro {
                     width: 1px;

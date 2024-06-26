@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Editor from '@monaco-editor/react';
 import Nav from '../../Components/NavigationBar/NavigationMenu';
-import './Home.css'
+import './HomeDocument.css'
 import { Link } from 'react-router-dom';
 function Home() {
     const [toggle, setToggle] = useState('true')
@@ -90,7 +90,7 @@ function Home() {
 
     return (
         <>
-            <div class="containers">
+            <div class="containers vh-100"> 
                 <div className='shape_container' id='shape'>
                     <div class="center">
                         <Editor
@@ -120,28 +120,28 @@ function Home() {
                         {
                             toggle ? (
                                 <>
-                                <div className='nav1 container d-flex justify-content-between text-white'>
-                                    <div className='p-3 d-flex column-gap-2'>
-                                        <div><img className='logos' width='40px' src="https://res.cloudinary.com/dqarshyzz/image/upload/v1710520447/public/image/icon/mps96bl2hb2sjyxrgzyn.png" alt="ninjas" srcSet="" />
+                                    <div className='nav1 container d-flex justify-content-between text-white'>
+                                        <div className='p-3 d-flex column-gap-2'>
+                                            <div><img className='logos' width='40px' src="https://res.cloudinary.com/dqarshyzz/image/upload/v1710520447/public/image/icon/mps96bl2hb2sjyxrgzyn.png" alt="ninjas" srcSet="" />
+                                            </div>
+                                            <div>OurNinjas</div>
                                         </div>
-                                        <div>OurNinjas</div>
-                                    </div>
-                                    <div className='p-3 d-flex column-gap-5 justify-content-end Nav'>
+                                        <div className='p-3 d-flex column-gap-5 justify-content-end Nav'>
 
-                                        <div><Link to='/ninja/auth/login' className='text-decoration-none text-warning'>Bootcamp</Link></div>
-                                        <div><Link to='/ninja/auth/login' className='text-decoration-none text-white'>Explore</Link></div>
-                                        <div><Link to='/ninja/auth/login' className='text-decoration-none text-white'>Practice Interview</Link></div>
-                                        <div><Link to='/ninja/auth/login' className='text-decoration-none text-white'>Developers</Link></div>
-                                        <div><Link to='/ninja/auth/login' className='text-decoration-none text-white'>SignIn</Link></div>
+                                            <div><Link to='/ninja/auth/login' className='text-decoration-none text-warning'>Bootcamp</Link></div>
+                                            <div><Link to='/ninja/auth/login' className='text-decoration-none text-white'>Explore</Link></div>
+                                            <div><Link to='/ninja/auth/login' className='text-decoration-none text-white'>Practice Interview</Link></div>
+                                            <div><Link to='/ninja/auth/login' className='text-decoration-none text-white'>Developers</Link></div>
+                                            <div><Link to='/ninja/auth/login' className='text-decoration-none text-white'>SignIn</Link></div>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div className='d-none d-md-none nav2'>
-                                    <Nav />
-                                </div>
-                                
+                                    <div className='d-none d-md-none nav2'>
+                                        <Nav />
+                                    </div>
+
                                 </>
-                                
+
                             ) : null
                         }
                         <div className='col-sm-12 banner1  d-flex  h-50 text-white'>
@@ -149,7 +149,7 @@ function Home() {
                             <div className='d-flex flex-column p-4 gap-4  justify-content-center align-items-center flex-grow-1'>
                                 <div><h2>A New Way to Learn</h2></div>
                                 <div className='px-5'>OurNinjas is the best platform to help you enhance your skills, expand your knowledge and prepare for technical interviews.</div>
-                                 <button className='btn rounded text-white' style={{backgroundColor:'#6fd0f6'}}>Create Account</button>
+                                <button className='btn rounded text-white' style={{ backgroundColor: '#6fd0f6' }}>Create Account</button>
                             </div>
                         </div>
                         <div className="floating_box_parents">
@@ -159,13 +159,12 @@ function Home() {
                     </div>
                 </div>
 
-                <div className="second_floating d-flex justify-content-around align-items-end">
-                    <div className='d-flex column-gap-3'>
-                        <div>Start Exploring</div>
-                        <div><img width='30px' src="https://cdn-icons-png.flaticon.com/128/9618/9618128.png" alt="" /></div>
-                    </div>
-                    <div></div>
-                </div>
+                <marquee className="second_floating d-flex  p-5  align-items-end px-5" behavior="" direction="right">
+                        <div className='d-flex px-5 column-gap-3'>
+                            <div>Start Exploring Everything From Here</div>
+                            <div><img width='30px' src="https://cdn-icons-png.flaticon.com/128/9618/9618128.png" alt="" /></div>
+                       </div>
+                        </marquee>
 
                 <div className='Round'>Round</div>
 

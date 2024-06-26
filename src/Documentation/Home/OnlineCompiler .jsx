@@ -1,13 +1,14 @@
 import React from 'react';
 import './Online.css'
 import Home from './Home';
+import Course from '../CourseList/Course';
+
 
 function OnlineCompiler() {
   return (
-    <div className='containers1'>
+    <div id='body1' className='d-flex flex-wrap w-100 vh-100 overflow-auto'>
       <Home />
-      <div className='div2'>div2</div>
-
+       <Course />
     </div>
   )
 }

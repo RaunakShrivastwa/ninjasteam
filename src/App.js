@@ -17,6 +17,7 @@ import AddCoursePanel from './Components/Admin/Course/Course/AddCoursePanel';
 import AddModule from './Components/Admin/Course/Module/AddModule';
 import DHome from './Documentation/Home/Home'
 import OnlineCompiler from './Documentation/Home/OnlineCompiler ';
+import VisitHome from './Documentation/javaScript/VisitHome';
 
 export function urlFunction() {
   //  return 'https://ourninjas.onrender.com/';
@@ -75,6 +76,7 @@ const App = () => {
           <Route exact path='/ninjas/documentation/homepage' element={ <DHome />} />
           <Route exact path='/ninjas/documentation/homepage1' element={ <OnlineCompiler/>} />
 
+          <Route exact path='/ninjas/documents/javascript/visit/home' element={<VisitHome />} />
         </Routes>
       </Router>
     </>

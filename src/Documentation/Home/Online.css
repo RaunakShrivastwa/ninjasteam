@@ -1,20 +1,5 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; 
-    overflow-y: auto;
-}
-
 .containers1{
-   width: 100%;
-   /* height: 100vh; */
-   background-color: red;
-   overflow: auto;
-   display: flex;
-   flex-direction: column;
-   .div2{
-    width: 100%;
-    height: 900px;
-    background-color: rgb(255, 238, 0);
-   }
+    /* overflow: hidden; */
+    height: 100vh;
+    width: 100vw;
 }
