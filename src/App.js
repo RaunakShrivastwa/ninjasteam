@@ -19,6 +19,16 @@ import DHome from './Documentation/Home/Home'
 import OnlineCompiler from './Documentation/Home/OnlineCompiler ';
 import VisitHome from './Documentation/javaScript/VisitHome';
 
+import Basics from './Documentation/javaScript/Basics/Basics';
+import JSIntro from './Documentation/javaScript/Basic_of_JS/Intro';
+import Version from './Documentation/javaScript/Basic_of_JS/Version';
+import Add_With_HTML from './Documentation/javaScript/Basic_of_JS/Add_With_HTML';
+import Statement from './Documentation/javaScript/Basic_of_JS/Statement';
+import Syntax from './Documentation/javaScript/Basic_of_JS/Syntax';
+import Output from './Documentation/javaScript/Basic_of_JS/JS_Output';
+import Comment from './Documentation/javaScript/Basic_of_JS/Comments';
+import Intro from './Documentation/javaScript/Basic_of_JS/Intro';
+
 export function urlFunction() {
   //  return 'https://ourninjas.onrender.com/';
  return 'http://localhost:4000/'
@@ -76,13 +86,28 @@ const App = () => {
           <Route exact path='/ninjas/documentation/homepage' element={ <DHome />} />
           <Route exact path='/ninjas/documentation/homepage1' element={ <OnlineCompiler/>} />
 
-          <Route exact path='/ninjas/documents/javascript/visit/home' element={<VisitHome />} />
+
+          {/* for the documentation */}
+
+          <Route exact path='/ninjas/documents/javascript/visit/home' element={<VisitHome/>} />
+
+          {/*  javascript basics*/}
+          <Route exact path='/ninjas/documentation/basics' element={<VisitHome Doc={Basics} />} />
+          <Route exact path='/ninjas/documentation/js/intro' element={<VisitHome Doc={Intro} title={'Introduction With Javascript'} />} />
+          <Route exact path='/ninjas/documentation/js/version' element={<VisitHome Doc={Version} title={'Javascript Version'} />} />
+          <Route exact path='/ninjas/documentation/js/html' element={<VisitHome Doc={Add_With_HTML} title={'Add JS in HTML'}/>} />
+          <Route exact path='/ninjas/documentation/js/statement' element={<VisitHome Doc={Statement} title={'Javascript Statement'} />} />
+          <Route exact path='/ninjas/documentation/js/syntax' element={<VisitHome Doc={Syntax} title={'Javascript Syntax'}/>} />
+          <Route exact path='/ninjas/documentation/js/output' element={<VisitHome Doc={Output} title={'Javascript Output'}/>} />
+          <Route exact path='/ninjas/documentation/js/comment' element={<VisitHome Doc={Comment} title={'Javascript Comment'}/>} />
+
+
+
         </Routes>
       </Router>
     </>
   );
-}
-
+} 
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
