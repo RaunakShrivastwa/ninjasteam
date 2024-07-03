@@ -24,17 +24,15 @@ function VisitHome({ Doc , title }) {
             </header>
 
             <main className='flex-grow-1  d-flex text-white'>
-                <div className={`bg-dark p-2 overflow-auto  d-none  col-md-3 d-md-${flag ? 'block' : 'none'}`} style={{height:'88vh'}}>
+                <div className={`bg-dark p-2 overflow-auto  d-none  col-md-3 d-md-${flag ? 'block' : 'none'}`} style={{height:'100vh'}}>
                     <SideBAr />
                 </div>
-                <div className={`overflow-auto `} style={{maxHeight:'83vh'}}>
+                <div className={`overflow-auto `} style={{maxHeight:'100vh'}}>
                      {Doc ?  <Doc /> : <DefaultPage /> }
                 </div>
             </main>
 
-            <footer className='p-2 text-light bg-warning'>
-                footer
-            </footer>
+           
         </div>
 
         
