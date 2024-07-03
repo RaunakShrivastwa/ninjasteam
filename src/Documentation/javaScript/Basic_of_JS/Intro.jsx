@@ -2,7 +2,7 @@ import React from 'react'
 
 function Intro() {
   return (
-    <div className='p-5  overflow-x-hidden'>
+    <div className='p-3  overflow-x-hidden mb-5'>
 
       <h1 class="mb-4 text-success">What is JavaScript?</h1>
       <p className='text-dark'>JavaScript is a programming language that helps make web pages interactive. When you see things like moving images, buttons that change when you click them, or forms that check if you filled them out correctly, that's often thanks to JavaScript. It works with HTML and CSS to create a complete web experience.</p>
@@ -267,6 +267,7 @@ function Intro() {
             </div>
         </div>
     </div>
+
 
 
     </div>

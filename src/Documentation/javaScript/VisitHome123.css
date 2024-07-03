@@ -22,6 +22,10 @@ p{
     color: black !important;
 }
 
+h1{
+    text-align: center !important;
+}
+
 
 .sidebar_1 {
     background-color: #bfc2c0;
