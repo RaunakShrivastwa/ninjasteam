@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './VisitHome123.css';
 import SideBAr from './SideBAr';
 import DefaultPage from './DefaultPage';
+import Footer from '../../Components/MainFooter/Footer'
 
 function VisitHome({ Doc , title }) {
 
@@ -32,7 +33,7 @@ function VisitHome({ Doc , title }) {
                 </div>
             </main>
 
-           
+            
         </div>
 
         

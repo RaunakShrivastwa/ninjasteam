@@ -18,11 +18,22 @@
     font-size: 1rem;
 }
 
+h1::selection {
+    background: yellow; /* Background color of the selected text */
+    color: red; /* Text color of the selected text */
+}
+
+::selection {
+    background: rgb(65, 65, 28); /* Background color of the selected text */
+    color: rgb(235, 227, 227); /* Text color of the selected text */
+}
+
 p{
     color: black !important;
 }
 
 h1{
+    color: rgb(25, 135, 84) !important;
     text-align: center !important;
 }
 

@@ -28,6 +28,7 @@ import Syntax from './Documentation/javaScript/Basic_of_JS/Syntax';
 import Output from './Documentation/javaScript/Basic_of_JS/JS_Output';
 import Comment from './Documentation/javaScript/Basic_of_JS/Comments';
 import Intro from './Documentation/javaScript/Basic_of_JS/Intro';
+import Footer from './Components/MainFooter/Footer';
 
 export function urlFunction() {
   //  return 'https://ourninjas.onrender.com/';
