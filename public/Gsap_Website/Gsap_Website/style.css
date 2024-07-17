@@ -1,0 +1,79 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:googleapis !important ;
+    font-size: 20px;
+}
+
+.page1_left h1{
+    font-size: 70px;
+    line-height: 70px;
+}
+
+.page1_left button{
+    width: 220px !important;
+}
+
+.compny_logo img{
+    width: 200px;
+    height: 60px;
+}
+
+.compny_logo img:nth-child(1){
+    width: 265px !important;
+    height: 139px;
+}
+.compny_logo img:nth-child(2){
+    width: 171px !important;
+    height: 48px;
+}
+
+.compny_logo img:nth-child(3){
+    width: 162px !important;
+    height: 185px;
+}
+
+.compny_logo img:nth-child(4){
+    width: 145px !important;
+    height: 113px;
+}
+
+.compny_logo img:nth-child(5){
+    width: 140px !important;
+    height: 54px;
+}
+
+.compny_logo img:nth-child(6){
+    width: 149px !important;
+    height: 50px;
+}
+
+.section2_div{
+    flex-shrink: 0;
+    width:600px;
+    height: 300px;
+    border: 3px solid black;
+    box-shadow: 0px 10px 0px black !important;
+    border-radius: 20px !important;
+}
+
+.section2_div h3{
+    background-color: #bbd55e !important;
+    border-radius: 8px;
+}
+
+.section2_div.right1{
+    background-color: black !important;
+    color: white !important;
+    
+}
+
+
+
+
+
+

@@ -97,6 +97,7 @@ function Home() {
                             className='edditer'
                             height="100%"
                             defaultLanguage="javascript"
+                            
                             defaultValue={code}
                             onChange={(value) => setCode(value || '')}
                             theme="vs-dark"

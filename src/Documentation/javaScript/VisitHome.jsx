@@ -4,7 +4,7 @@ import SideBAr from './SideBAr';
 import DefaultPage from './DefaultPage';
 import Footer from '../../Components/MainFooter/Footer'
 
-function VisitHome({ Doc , title }) {
+function VisitHome({ Doc ,url, title }) {
 
     const [flag, setFlag] = useState(true);
 
@@ -28,8 +28,8 @@ function VisitHome({ Doc , title }) {
                 <div className={`bg-dark p-2 overflow-auto  d-none  col-md-3 d-md-${flag ? 'block' : 'none'}`} style={{height:'100vh'}}>
                     <SideBAr />
                 </div>
-                <div className={`overflow-auto `} style={{maxHeight:'100vh'}}>
-                     {Doc ?  <Doc /> : <DefaultPage /> }
+                <div className={`overflow-auto d-flex`} style={{maxHeight:'100vh'}}>
+                     {Doc ?  <Doc  url={url}/> : <DefaultPage /> }
                 </div>
             </main>
 

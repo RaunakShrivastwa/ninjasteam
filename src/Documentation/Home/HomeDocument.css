@@ -6,18 +6,18 @@
     font-family: sans-serif;
     /* border: 1px solid red; */
 }
-
+/* 
 nav{
     box-shadow: none;
     border: none;
     background: rgb(0,0,0);
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(62,69,63,1) 0%, rgba(16,16,19,1) 59%);
     border:  linear-gradient(90deg, rgb(61, 47, 47) 1%, rgba(30, 47, 106, 1) 100%, rgba(0, 212, 255, 0.4150035014005602) 100%);
-}
+} */
 
 
 .containers {
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 100%;
     height: 100vh;
     position: relative;

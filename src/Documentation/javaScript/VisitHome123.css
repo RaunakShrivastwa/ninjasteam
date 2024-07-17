@@ -23,18 +23,26 @@ h1::selection {
     color: red; /* Text color of the selected text */
 }
 
+li, a{
+    border: none !important;
+}
+
+ul{
+    border: none !important;
+}
+
 ::selection {
     background: rgb(65, 65, 28); /* Background color of the selected text */
     color: rgb(235, 227, 227); /* Text color of the selected text */
 }
 
 p{
-    color: black !important;
+     color: black !important; 
 }
 
 h1{
     color: rgb(25, 135, 84) !important;
-    text-align: center !important;
+    /* text-align: center !important; */
 }
 
 
@@ -108,7 +116,7 @@ summary {
 
 
 span {
-    color: black;
+    /* color: black; */
 }
 
 

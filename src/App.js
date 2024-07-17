@@ -29,6 +29,7 @@ import Output from './Documentation/javaScript/Basic_of_JS/JS_Output';
 import Comment from './Documentation/javaScript/Basic_of_JS/Comments';
 import Intro from './Documentation/javaScript/Basic_of_JS/Intro';
 import Footer from './Components/MainFooter/Footer';
+import DefaultPage from './Documentation/javaScript/DefaultPage';
 
 export function urlFunction() {
   //  return 'https://ourninjas.onrender.com/';
@@ -36,6 +37,8 @@ export function urlFunction() {
 }
 
 const App = () => {
+
+  let url = 'https://codepen.io/RaunakShrivastwa/embed/VwJLwee?default-tab=html%2Cresult&editable=true&theme-id=dark';
   return (
     <>
       <Router>
@@ -90,13 +93,13 @@ const App = () => {
 
           {/* for the documentation */}
 
-          <Route exact path='/ninjas/documents/javascript/visit/home' element={<VisitHome/>} />
+          <Route exact path='/ninjas/documents/javascript/visit/home' element={<VisitHome />} />
 
           {/*  javascript basics*/}
-          <Route exact path='/ninjas/documentation/basics' element={<VisitHome Doc={Basics} />} />
+          <Route exact path='/ninjas/documentation/basics' element={<VisitHome Doc={Basics} title={'Introduction With Javascript'}/>} />
           <Route exact path='/ninjas/documentation/js/intro' element={<VisitHome Doc={Intro} title={'Introduction With Javascript'} />} />
           <Route exact path='/ninjas/documentation/js/version' element={<VisitHome Doc={Version} title={'Javascript Version'} />} />
-          <Route exact path='/ninjas/documentation/js/html' element={<VisitHome Doc={Add_With_HTML} title={'Add JS in HTML'}/>} />
+          <Route exact path='/ninjas/documentation/js/html' element={<VisitHome Doc={Add_With_HTML} url={url} title={'Add JS in HTML'}/>} />
           <Route exact path='/ninjas/documentation/js/statement' element={<VisitHome Doc={Statement} title={'Javascript Statement'} />} />
           <Route exact path='/ninjas/documentation/js/syntax' element={<VisitHome Doc={Syntax} title={'Javascript Syntax'}/>} />
           <Route exact path='/ninjas/documentation/js/output' element={<VisitHome Doc={Output} title={'Javascript Output'}/>} />

@@ -2,7 +2,7 @@ import React from 'react'
 
 function Intro() {
   return (
-    <div className='p-3  overflow-x-hidden mb-5'>
+    <div className='container p-2 border-0 overflow-x-hidden mb-5'>
 
       <h1 class="mb-4 text-success">What is JavaScript?</h1>
       <p className='text-dark'>JavaScript is a programming language that helps make web pages interactive. When you see things like moving images, buttons that change when you click them, or forms that check if you filled them out correctly, that's often thanks to JavaScript. It works with HTML and CSS to create a complete web experience.</p>
@@ -177,7 +177,6 @@ function Intro() {
     </div>
 
     {/* Execution of js */}
-
     <div class=" mt-4">
     <div class="row">
         <div class="col-md-12">
@@ -185,7 +184,7 @@ function Intro() {
               <p class="card-text">When you write JavaScript, it runs in a special environment called the JavaScript Runtime Environment (JRE). An interpreter reads your code line by line and does what each line says right away. And with JIT compilation, your code gets even faster over time by turning frequently used parts into faster versions.</p>
                     <p class="card-text">These parts work together to make sure your JavaScript programs work well and run smoothly wherever you use them, like on websites or in other programs.</p>
 
-            <div class="card text-dark">
+            <div class="card border-0 text-dark">
                 <div class="card-body">
                     <h5 class="card-title">JavaScript Runtime Environment (JRE):</h5>
                     <p class="card-text">Think of it like a playground for JavaScript. It's a safe place where your JavaScript code can run.</p>
@@ -219,45 +218,45 @@ function Intro() {
             <div class="col-md-12">
                 <h1 class="mt-4 mb-3 text-success">Career Paths in JavaScript</h1>
 
-                <div class="card">
-                    <div class="card-body text-dark">
+                <div class="card bg-dark text-light">
+                    <div class="card-body text-light">
                         <h5 class="card-title">Front-End Developer:</h5>
-                        <p class="card-text">Creating user interfaces for websites.</p>
+                        <p class="card-text text-light">Creating user interfaces for websites.</p>
                     </div>
                 </div>
 
-                <div class="card mt-3">
-                    <div class="card-body text-dark">
+                <div class="card mt-3 bg-dark">
+                    <div class="card-body text-white">
                         <h5 class="card-title">Back-End Developer:</h5>
-                        <p class="card-text">Handling server-side logic and databases.</p>
+                        <p class="card-text text-light">Handling server-side logic and databases.</p>
                     </div>
                 </div>
 
-                <div class="card mt-3">
+                <div class="card mt-3 bg-dark">
                     <div class="card-body text-dark">
-                        <h5 class="card-title">Full-Stack Developer:</h5>
-                        <p class="card-text">Combining front-end and back-end development.</p>
+                        <h5 class="card-title text-light">Full-Stack Developer:</h5>
+                        <p class="card-text text-light">Combining front-end and back-end development.</p>
                     </div>
                 </div>
 
-                <div class="card mt-3">
-                    <div class="card-body text-dark">
-                        <h5 class="card-title">Mobile App Developer:</h5>
-                        <p class="card-text">Building apps for iOS and Android.</p>
-                    </div>
-                </div>
-
-                <div class="card mt-3">
-                    <div class="card-body text-dark">
-                        <h5 class="card-title">Game Developer:</h5>
-                        <p class="card-text">Creating interactive games for web browsers.</p>
-                    </div>
-                </div>
-
-                <div class="card mt-3">
+                <div class="card mt-3 bg-dark">
                     <div class="card-body">
-                        <h5 class="card-title">Freelancer or Entrepreneur:</h5>
-                        <p class="card-text">Working independently on projects or starting a tech business.</p>
+                        <h5 class="card-title text-light">Mobile App Developer:</h5>
+                        <p class="card-text text-light">Building apps for iOS and Android.</p>
+                    </div>
+                </div>
+
+                <div class="card mt-3 bg-dark">
+                    <div class="card-body text-dark">
+                        <h5 class="card-title text-light">Game Developer:</h5>
+                        <p class="card-text text-light">Creating interactive games for web browsers.</p>
+                    </div>
+                </div>
+
+                <div class="card mt-3 bg-dark">
+                    <div class="card-body">
+                        <h5 class="card-title text-light">Freelancer or Entrepreneur:</h5>
+                        <p class="card-text text-light">Working independently on projects or starting a tech business.</p>
                     </div>
                 </div>
 

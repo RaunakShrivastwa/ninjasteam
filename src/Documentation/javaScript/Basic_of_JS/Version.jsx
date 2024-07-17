@@ -43,7 +43,7 @@ function Version() {
 
     {/* ECMA Version Image */}
     <div className='container d-flex justify-content-center'>
-        <img className='w-100' src="/ecma.JPG" alt="dd" />
+        <img className='w-100' src="https://res.cloudinary.com/dzhl7dmsp/image/upload/v1720718381/ecma_buffbz.jpg" alt="dd" />
     </div>
 
     <div class="container mt-5">
