@@ -1,15 +1,16 @@
 .Header-sec {
-    background-image: url('https://res.cloudinary.com/dzhl7dmsp/image/upload/v1709644354/bkbtmmcmfjadoc03cqad.jpg');
+    background-image: url('https://res.cloudinary.com/dzhl7dmsp/image/uploa...d/v1709644354/bkbtmmcmfjadoc03cqad.jpg');
     background-size: cover; /* Cover the entire container */
     background-position: center; /* Center the background image */
     height: 56vh;
     width: 100% !important;
+    background-color: lightblue;
 }
 
 @media (max-width: 768px) {
     /* Adjust card layout for small screens */
     .Header-sec {
-      background-image: url('https://res.cloudinary.com/dzhl7dmsp/image/upload/v1709644098/x2ep4mhxygww2huphu0r.jpg');
+      background-image: url('https://res.cloudinary.com/dzhl7dmsp/image/upl....oad/v1709644098/x2ep4mhxygww2huphu0r.jpg');
       height: 400px !important;
       
     }

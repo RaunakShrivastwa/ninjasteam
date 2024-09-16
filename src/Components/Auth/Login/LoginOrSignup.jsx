@@ -38,11 +38,11 @@ function LoginOrSignup() {
       if (user.status === 200) {
         Cookies.set('yourData', JSON.stringify(user.data), { expires: 3 }); // Expires in 1 day  
         const path = Cookies.get('path') || '/';
-        
-        if(user.data.status=='admin'){
+
+        if (user.data.status == 'admin') {
           history('/ninja/Admin/dashboard')
         }
-        else{
+        else {
           history('/');
         }
       } else {
@@ -55,13 +55,12 @@ function LoginOrSignup() {
     }
   };
 
-
   return (
-    <MDBContainer className=" my-5 gradient-form ">
 
-      <MDBRow>
+    <div className='vw-100 vh-100 d-flex justify-content-center align-align-items-center p-5'>
+      <div className='d-flex container p-0 m-0 shadow'>
 
-        <MDBCol className="mb-5 col-md-6 col-sm-12">
+        <MDBCol className="mb-5 col-md-6 col-sm-12 container">
           <div className="">
 
             <div className="text-center">
@@ -75,8 +74,8 @@ function LoginOrSignup() {
             <p>Please login to your account</p>
             <form onSubmit={(e) => { handleLogin(e) }}>
               <p id='info' style={{ width: '100%', display: 'none' }} className='text-center text-danger'><strong>Invalide Credential</strong></p>
-              <MDBInput wrapperClass='mb-4' value={email} onChange={(e) => { setEmail(e.target.value) }} label='Email address' id='form1' type='email' />
-              <MDBInput wrapperClass='mb-3' value={password} onChange={(e) => { setPassword(e.target.value) }} label='Password' id='form2' type='password' />
+              <MDBInput className='outline-none shadow-none' wrapperClass='mb-4 ' value={email} onChange={(e) => { setEmail(e.target.value) }} label='Email address' id='form1' type='email' />
+              <MDBInput className='outline-none shadow-none' wrapperClass='mb-3' value={password} onChange={(e) => { setPassword(e.target.value) }} label='Password' id='form2' type='password' />
               <div className="text-center pt-1 mb-3 pb-1">
                 <button className="mb-4 w-100 btn gradient-custom-2">Sign in</button>
                 <a className="text-muted" href="#!">Forgot password?</a>
@@ -89,7 +88,6 @@ function LoginOrSignup() {
               {/* for the github */}
 
               <img className='' id='http://localhost:8000/user/auth/github' onClick={(e) => { goLogin(e) }} width='30px' src="https://cdn-icons-png.flaticon.com/128/2111/2111425.png" alt="" />
-
 
               {/* for the linked */}
               <img className='' width='30px' src="https://cdn-icons-png.flaticon.com/128/145/145807.png" alt="" />
@@ -115,18 +113,18 @@ function LoginOrSignup() {
 
         </MDBCol>
 
-        <MDBCol className="mb-5 col-sm-12 col-md-6 d-none d-sm-block">
+        <MDBCol className="mb-5 col-sm-12 col-md-6 h-100 d-none d-md-block d-lg-block d-xl-block">
           <div className="d-flex flex-column  justify-content-center gradient-custom-2 h-100 mb-4 rounded">
 
             <div className="text-white px-3 py-4 p-md-5 mx-md-4">
               <h4 class="mb-4">Keep Coding</h4>
               <p class="small mb-0">
                 At OurNinjas, we're revolutionizing the way programming education is delivered. With our extensive selection of
-                 programming languages available at incredibly low prices, we're making quality education accessible to everyone.
-                  Our platform goes beyond traditional learning methods by offering interactive tutorials, real-time coding 
-                  challenges, and personalized mentorship from industry experts. Whether you're a beginner or an experienced 
-                  coder looking to expand your skills, OurNinjas is your ultimate destination for unlocking the world of 
-                  programming. Join us today and embark on a transformative learning experience!
+                programming languages available at incredibly low prices, we're making quality education accessible to everyone.
+                Our platform goes beyond traditional learning methods by offering interactive tutorials, real-time coding
+                challenges, and personalized mentorship from industry experts. Whether you're a beginner or an experienced
+                coder looking to expand your skills, OurNinjas is your ultimate destination for unlocking the world of
+                programming. Join us today and embark on a transformative learning experience!
 
               </p>
 
@@ -136,10 +134,8 @@ function LoginOrSignup() {
 
         </MDBCol>
 
-      </MDBRow>
-
-    </MDBContainer>
-  );
+      </div>
+    </div>);
 }
 
 export default LoginOrSignup;

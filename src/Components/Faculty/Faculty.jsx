@@ -7,50 +7,42 @@ function Faculty() {
 
   return (
     <div className="faculty-container">
-      <div className='mb-4'>
+      <div>
         <h4>Our Faculty</h4>
       </div>
       <div className={`row row-cols-1 row-cols-md-3 g-4 ${isHovered ? 'animate' : ''}`}>
-        <div className="col p-3">
+        <div className="p-3 mentor_div">
           <div className="card h-100" style={{ height: '40vh' }}>
-            <img height='200px' src="https://res.cloudinary.com/dqarshyzz/image/upload/v1710608870/btxxwsr4rdjaottnyzqe.jpg" className=" card-img-top" alt="..." />
+            <img height='200px' src="https://th.bing.com/th/id/OIP.fgJo-1LNpHQ4_c-cFI_hdQHaE7?w=216&h=180&c=7&r=0&o=5&pid=1.7" className=" card-img-top" alt="..." />
             <div className="card-body">
-              <h5 className="card-title text-center">Shubham Shrivastwa</h5>
-              <p className="card-text">Fullstack Developer , C.O. of Our Ninjas</p>
+              <p className='text-center h6'><u>Shubham Shrivastwa</u></p>
+              <small className='our_facilities'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At perspiciatis dolor illo aliquid esse dignissimos eum et velit facere ipsum.</small>
+              {/* <button className='px-2 mx-2 btn btn-warning'>Connnect</button> */}
             </div>
-            <button className='btn btn-primary'>
-              <a className='text-white text-decoration-none' href="https://www.linkedin.com/in/shubham-shrivastwa/"><strong>Connect</strong></a>
-            </button>
           </div>
         </div>
 
-        <div className="col p-3">
+        <div className="p-3 mentor_div">
           <div className="card h-100" style={{ height: '40vh' }}>
-            <img height='200px' src="https://res.cloudinary.com/dqarshyzz/image/upload/v1710608728/ats5lowklo5k0144q4pp.jpg" className=" card-img-top" alt="..." />
+            <img height='200px' src="https://th.bing.com/th/id/OIP.fgJo-1LNpHQ4_c-cFI_hdQHaE7?w=216&h=180&c=7&r=0&o=5&pid=1.7" className=" card-img-top" alt="..." />
             <div className="card-body">
-              <h5 className="card-title text-center">Manvi Baghel</h5>
-              <p className="card-text">Frontend Developer , Mentor</p>
+              <p className='text-center h6'><u>Shubham Shrivastwa</u></p>
+              <small className='our_facilities'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At perspiciatis dolor illo aliquid esse dignissimos eum et velit facere ipsum.</small>
+              {/* <button className='px-2 mx-2 btn btn-warning'>Connnect</button> */}
             </div>
-            <button className='btn btn-primary'>
-              <a className='text-white text-decoration-none' href="https://www.linkedin.com/in/java-abhijeet/"><strong>Connect</strong></a>
-            </button>
-
           </div>
         </div>
 
-        <div className="col p-3">
-          <div className="card h-100">
-            <img height='200px' src="https://res.cloudinary.com/dqarshyzz/image/upload/v1710608713/i4lhs48uukm7j0islumi.jpg" className=" card-img-top" alt="..." />
+        <div className="p-3 mentor_div">
+          <div className="card h-100" style={{ height: '40vh' }}>
+            <img height='200px' src="https://th.bing.com/th/id/OIP.fgJo-1LNpHQ4_c-cFI_hdQHaE7?w=216&h=180&c=7&r=0&o=5&pid=1.7" className=" card-img-top" alt="..." />
             <div className="card-body">
-              <h5 className="card-title text-center">Abhijeet Singh</h5>
-              <p className="card-text">Fullstack Developer , Founder of Our Ninjas</p>
+              <p className='text-center h6'><u>Shubham Shrivastwa</u></p>
+              <small className='our_facilities'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At perspiciatis dolor illo aliquid esse dignissimos eum et velit facere ipsum.</small>
+              {/* <button className='px-2 mx-2 btn btn-warning'>Connnect</button> */}
             </div>
-            <button className='btn btn-primary'>
-              <a className='text-white text-decoration-none' href="https://www.linkedin.com/in/java-abhijeet/"><strong>Connect</strong></a>
-            </button>
           </div>
-        </div>
-        {/* Repeat this structure for other faculty cards */}
+        </div>        {/* Repeat this structure for other faculty cards */}
       </div>
     </div>
   );

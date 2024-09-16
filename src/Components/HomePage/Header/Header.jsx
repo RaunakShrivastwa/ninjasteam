@@ -1,7 +1,6 @@
 import './Header.css'
 import EnquirePage from './EnquirePage';
 
-
 function Home() {
   return (
     <>
@@ -15,7 +14,7 @@ function Home() {
             </div>
 
             {/* form */}
-            <div class="col-sm-6 col-md-4 mt-3 rounded register position-fixed  end-0  py-5" style={{zIndex:'100'}} >
+            <div class="col-sm-12 d-sm-none d-lg-block d-md-block  col-md-12 col-lg-3 mt-3 rounded register position-fixed  end-0  py-5" style={{zIndex:'100', minWidth:'400px'}} >
               <div class="card border-0 rounded" id='en1'>
                 <div class=" card-body border-0 d-none rounded d-md-block bg-white shadow ">
                   <EnquirePage />

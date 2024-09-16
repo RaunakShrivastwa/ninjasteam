@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './Freeclass.css'
 
 function Freeclass() {
     const obj = [
@@ -22,7 +23,7 @@ function Freeclass() {
                                         </div>
                                     </div>
                                     <div class="col-9 border-0">
-                                        <p class="card-title ">{data.info}</p>
+                                        <p class="card-title details_id">{data.info}</p>
                                     </div>
                                 </div>
                             </div>
@@ -31,7 +32,6 @@ function Freeclass() {
                       }  
                 </div>
 
-                
             }
         </div>
     )

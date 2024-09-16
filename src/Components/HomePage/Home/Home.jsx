@@ -32,9 +32,9 @@ function Home() {
     <>
       <NavigationMenu />
       <Header />
-      <div className='container p-3 mb-3'>
+      <div className='container-lg container-xl p-3 mb-3'>
         <div className="row">
-          <div className="col-sm-6 col-md-8">
+          <div className="col-sm-12 col-md-12 col-lg-10">
             <div className="card border-0">
               <div className="card-body border-0">
                 <Content />

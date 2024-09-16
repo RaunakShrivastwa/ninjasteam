@@ -13,13 +13,12 @@ function Footer() {
                             </div>
                             <div class="card-body border-0">
                                 <h5 class="card-title">Engineered with <img width='20px' src="https://res.cloudinary.com/dqarshyzz/image/upload/v1710520447/public/image/icon/c1fsarh3zu4fnikxgk0z.png" alt="" /> by</h5>
-                                <p class="card-text">Keep Coding</p>
+                                <p class="card-text text-light">Keep Coding</p>
                                 <img width='100px' src="https://res.cloudinary.com/dqarshyzz/image/upload/v1710520448/public/image/icon/wzc9nqnqhx6spk4h1ehj.png" alt="" />
-                                <p>Download App</p>
+                                <p className='text-light mt-1'>Download App</p>
                             </div>
                         </div>
                     </div>
-
 
                     <div className='col-md-3 col-sm-12 ' style={{ overflow: 'hidden !important' }}>
                         <div class="card border-0 text-white border-0" style={{ backgroundColor: '#202738' }}>
@@ -31,11 +30,7 @@ function Footer() {
                                 <Link className='text-white text-decoration-none'><small>Training Roadmap of Your Career</small></Link><br />
                                 <Link className='text-white text-decoration-none'><small>Why Should You Learn Here?</small></Link><br />
                                 <Link className='text-white text-decoration-none'><small>Pay After Placement Training Programm</small></Link><br />
-                                <Link className='text-white text-decoration-none'><small>Check Your Resume Score and Create New one</small></Link><br />
-                                <Link className='text-white text-decoration-none'><small>Mannage Your Communication</small></Link><br />
-                                <Link className='text-white text-decoration-none'><small>Start Your Coding and Practice Sheet Here</small></Link><br />
-                                <Link className='text-white text-decoration-none'><small>Explore All👍👍</small></Link>
-
+                              
                             </div>
                         </div>
                     </div>
@@ -80,7 +75,7 @@ function Footer() {
                         <hr className='text-white' />
                         <h4 className='text-white'>Tutorials</h4>
                         <div className='p-2 text-white'>
-                            <p>Java   &nbsp; &nbsp; |  Spring boot   &nbsp; &nbsp; |   Data Structure   &nbsp; &nbsp; |    Javascript    &nbsp; &nbsp; |    MERN   &nbsp; &nbsp; | Data Science &nbsp; &nbsp; |
+                            <p className='text-light'>Java   &nbsp; &nbsp; |  Spring boot   &nbsp; &nbsp; |   Data Structure   &nbsp; &nbsp; |    Javascript    &nbsp; &nbsp; |    MERN   &nbsp; &nbsp; | Data Science &nbsp; &nbsp; |
                                 Cyber Security &nbsp; &nbsp; | React.js &nbsp; &nbsp; | Node.js &nbsp; &nbsp; | PHP &nbsp; &nbsp; | Python &nbsp; &nbsp; | AI &nbsp; &nbsp; |
                                 Fullstack Development &nbsp; &nbsp; | Backend Developer &nbsp; &nbsp; | Github
                             </p>

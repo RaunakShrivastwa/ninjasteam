@@ -1,0 +1,8 @@
+.our_facilities{
+    text-justify: auto;
+}
+
+.mentor_card{
+    min-width: 290px;
+    flex-grow: 1 !important;
+}

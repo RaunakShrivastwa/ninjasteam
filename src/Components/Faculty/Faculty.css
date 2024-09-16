@@ -7,6 +7,10 @@
   animation: moveRow 5s linear infinite; /* Animation for moving the row */
 }
 
+.mentor_div{
+  flex-grow: 1 !important;
+  min-width: 313px !important;
+}
 @keyframes moveRow {
   0% {
     transform: translateX(0); /* Starting position */
