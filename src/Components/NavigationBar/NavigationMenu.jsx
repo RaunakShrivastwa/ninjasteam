@@ -10,25 +10,14 @@ import Room from '../MyClassRoom/Room.jsx';
 
 function NavigationMenu() {
     const [user, setUser] = useState('');
-    const userString = Cookies.get('yourData');
 
     useEffect(() => {
         const yourDataCookie = Cookies.get('yourData');
-        console.log("Cookies", yourDataCookie);
-        if (yourDataCookie) {
-            proceed(yourDataCookie);
+        if(yourDataCookie){
+            setUser(JSON.parse(yourDataCookie))
         }
     }, []);
-
-    const proceed = async (yourDataCookie) => {
-        const d = JSON.parse(yourDataCookie);
-        const userData = await axios.get(urlFunction() + `user/fetchUser/${d.userEmail}`);
-        setUser(userData.data);
-    }
-
-    console.log(user);
-
-    const [activeItem, setActiveItem] = useState(null); // State to keep track of active item
+    const [activeItem, setActiveItem] = useState(null);
 
     // Function to handle click event on nav items
     const handleItemClick = (event, itemName) => {

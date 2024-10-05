@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Cookies from 'js-cookie';
 import {
     MDBContainer,
     MDBRow,
@@ -22,6 +23,7 @@ function SignUp() {
     const [fieldsDisabled, setFieldsDisabled] = useState(false);
     const [timer, setTimer] = useState(120); // Initial timer value in seconds
     const [timerCompleted, setTimerCompleted] = useState(false);
+    
     const [img,setImg] = useState('');
 
 
@@ -108,19 +110,11 @@ function SignUp() {
             userAddress: address,
             userDOB: dob,
             userBio: bio,
-            profile:'https://cdn-icons-png.flaticon.com/128/1999/1999625.png'
+            profile:'https://cdn-icons-png.flaticon.com/128/1999/1999625.png',
+            status:'student'
         }
-      
-
-        document.getElementById('otp').classList.remove('d-none');
-        document.getElementById('floatingAdress').classList.add('d-none');
-        setFieldsDisabled(true)
-        try {
-            const saveData = await axios.post(urlFunction()+`user/add`, body);
-            console.log(saveData);
-        } catch (error) {
-            return console.log("There is errro post data", error);
-        }
+        Cookies.set('RegisterUser', JSON.stringify(body), { expires: 3 }); // Expires in 1 day  
+        history('/ninjas/auth/login'); 
     };
 
     return (

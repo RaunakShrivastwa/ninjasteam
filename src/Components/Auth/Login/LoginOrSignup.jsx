@@ -16,6 +16,7 @@ function LoginOrSignup() {
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [error,setError] = useState(false);
   const history = useNavigate();
   const goLogin = async (e) => {
     try {
@@ -33,21 +34,16 @@ function LoginOrSignup() {
       password: password
     };
     try {
-      const user = await axios.post(urlFunction() + 'user/login', body);
-      console.log("Login User ", user.data);
-      if (user.status === 200) {
-        Cookies.set('yourData', JSON.stringify(user.data), { expires: 3 }); // Expires in 1 day  
-        const path = Cookies.get('path') || '/';
-        
-        if(user.data.status=='admin'){
-          history('/ninja/Admin/dashboard')
-        }
-        else{
-          history('/');
-        }
-      } else {
-        console.log("Login failed");
-      }
+       const data = JSON.parse(Cookies.get('RegisterUser'));
+       
+       
+       if(data.userEmail == body.email && data.userPassword == body.password){
+        Cookies.set('yourData', JSON.stringify(data), { expires: 3 }); // Expires in 1 day  
+        setError(!error)
+        history('/')
+       }else{
+           setError(!error)
+       }
     } catch (err) {
       const para = document.getElementById('info');
       para.style.display = 'block';
@@ -77,6 +73,9 @@ function LoginOrSignup() {
               <p id='info' style={{ width: '100%', display: 'none' }} className='text-center text-danger'><strong>Invalide Credential</strong></p>
               <MDBInput wrapperClass='mb-4' value={email} onChange={(e) => { setEmail(e.target.value) }} label='Email address' id='form1' type='email' />
               <MDBInput wrapperClass='mb-3' value={password} onChange={(e) => { setPassword(e.target.value) }} label='Password' id='form2' type='password' />
+              {
+                error ? (<p className='text-danger'>Invalide Credential</p>) : null
+              }
               <div className="text-center pt-1 mb-3 pb-1">
                 <button className="mb-4 w-100 btn gradient-custom-2">Sign in</button>
                 <a className="text-muted" href="#!">Forgot password?</a>

@@ -18,9 +18,9 @@ const CourseDetailsBanner = ({ course }) => {
 
     const loadData = async () => {
         const yourDataCookie = Cookies.get('yourData');
-        const u = yourDataCookie ? JSON.parse(yourDataCookie) : null;
-        const user = await axios.get(urlFunction() + `user/fetchUser/${u?.userEmail}`)
-        setUser(user.data)
+       if(yourDataCookie){
+        setUser(JSON.parse(yourDataCookie));
+       }
     }
 
     useEffect(() => {
@@ -48,6 +48,7 @@ const CourseDetailsBanner = ({ course }) => {
             return console.log("There is Error ", err);
         }
     }
+    console.log("now course",course);
     return (
         <>
             <div className="row row-cols-1 row-cols-md-2 g-2 my-5 pt-2">

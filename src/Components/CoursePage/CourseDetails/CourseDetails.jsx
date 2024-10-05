@@ -9,16 +9,21 @@ import NavigationMenu from '../../NavigationBar/NavigationMenu'
 import { useParams } from 'react-router'
 import axios from 'axios';
 import {urlFunction} from '../../../App.js';
+import courseObj from '../../../CourseObject/courseObject.js'
 
 const CourseDetails = () => {
     const [course,setCourse] = useState('');
+    const [filter,setFilter] = useState();
+
     const {id} = useParams();
      
     useEffect(() => {
         const loadUser = async () => {
             try {
-                const courseData = await axios.get(urlFunction()+`course/courseName/${id}`);
-                setCourse(courseData.data.courseInfo);
+                const courese = courseObj.filter((data)=>{
+                    return data.name == id;
+                })
+                setCourse(courese);
 
             } catch (err) {
                 console.log("There is Error ", err);
@@ -26,6 +31,7 @@ const CourseDetails = () => {
         };
         loadUser();
     }, []);
+    
     return (
         <>
             <NavigationMenu />

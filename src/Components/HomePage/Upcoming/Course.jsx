@@ -3,6 +3,7 @@ import './Upcoming.css';
 import { urlFunction } from '../../../App.js';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import courseObj from '../../../CourseObject/courseObject.js';
 
 function Course() {
     const [course, setCourse] = useState([]);
@@ -13,8 +14,7 @@ function Course() {
 
     const loadCourse = async () => {
         try {
-            const res = await axios(urlFunction() + "course/status");
-            setCourse(res.data);
+            setCourse(courseObj);
         } catch (err) {
             console.log("There is error ", err);
         }
@@ -35,14 +35,14 @@ function Course() {
                                         <h4>{data?.name}</h4>
                                         <span>{data?.description}</span>
                                     </div>
-                                    <div className='col-md-12 col-sm-12 d-flex p-2'>
-                                        <div className='col-md-7 col-sm-6'>
-                                            <img width='12px' src="https://cdn-icons-png.flaticon.com/128/2948/2948088.png" alt="" />
-                                            <span className='px-2'>{data?.startDate}</span>
+                                    <div className='col-md-12 col-sm-12 d-flex p-2 justify-content-between'>
+                                        <div className='d-flex gap-1 align-items-center'>
+                                        <img width='12px' height={'12px'} src="https://cdn-icons-png.flaticon.com/128/2948/2948088.png" alt="" />
+                                        <small className='px-2'>{data?.startDate}</small>
                                         </div>
-                                        <div className='col-md-5 col-sm-6'>
-                                            Free &nbsp;
-                                            <del className='text-muted-2 text-danger'>₹ {data?.marketPrice}</del>
+                                        <div>
+                                            <span className='me-2 shadow'>Free</span>
+                                            <del className='text-muted-2 text-danger' style={{fontSize:'17px'}}>₹ {data?.marketPrice}</del>
                                         </div>
                                     </div>
                                 </div>
