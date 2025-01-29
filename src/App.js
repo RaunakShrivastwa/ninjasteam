@@ -32,8 +32,8 @@ import Footer from './Components/MainFooter/Footer';
 import DefaultPage from './Documentation/javaScript/DefaultPage';
 
 export function urlFunction() {
-  //  return 'https://ourninjas.onrender.com/';
- return 'http://localhost:4000/'
+    return 'https://ourninjas.onrender.com/';
+// return 'http://localhost:4000/'
 }
 
 const App = () => {
